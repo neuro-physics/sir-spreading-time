@@ -30,14 +30,22 @@ function [B,cn] = generate_edge_bundling(inputMat,caseName,outFile,debundleFunct
         end
     end
     if isunix
-        aal=load('/host/scarus/local_raid/mauricio/data/AAL_data/aal_cortex_map_olf294_fix.mat');
+        if strcmp(get_hostname(),'neuropc')
+            aal=load('./aux_files/aal_cortex_map_olf294_fix.mat');
+        else
+            aal=load('/host/scarus/local_raid/mauricio/data/AAL_data/aal_cortex_map_olf294_fix.mat');
+        end
     else
         aal=load('D:\Dropbox\p\postdoc\data\AAL_data\aal_cortex_map_olf294_fix.mat');
     end
 
     matlabPath = path;
     if isunix
-        path(genpath('/host/scarus/local_raid/mauricio/matlab_toolbox/tools_edgebundle'),matlabPath); % matlab path has to come later because of the conflict with minmax function in debundle
+        if strcmp(get_hostname(),'neuropc')
+            path(genpath('/media/storage/matlab_toolbox/tools_edgebundle'),matlabPath); % matlab path has to come later because of the conflict with minmax function in debundle
+        else
+            path(genpath('/host/scarus/local_raid/mauricio/matlab_toolbox/tools_edgebundle'),matlabPath); % matlab path has to come later because of the conflict with minmax function in debundle
+        end
     else
         path(genpath('D:\matlab_toolbox\tools_edgebundle'),matlabPath); % matlab path has to come later because of the conflict with minmax function in debundle
     end
