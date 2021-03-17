@@ -1,0 +1,36 @@
+* Density
+  - matrix A (no edge length sampling) = 0.11678
+  - matrix B    (edge length sampling) = 0.10312
+  - all matrices average               = 0.1196
+---
+* Weighted clustering coefficient
+  - matrix A (no edge length sampling) (mean +/- sderr) = 0.15166 +/- 0.0017757
+  - matrix B    (edge length sampling) (mean +/- sderr) = 0.10579 +/- 0.0014388
+  - all matrices                       (mean +/- sderr) = 0.14898 +/- 0.0014242
+* Weighted clustering coefficient mean absolute error
+  - matrix A (no edge length sampling) (mean +/- sderr) = 0.015772 +/- 0.00068698
+  - matrix B    (edge length sampling) (mean +/- sderr) = 0.043347 +/- 0.0011953
+---
+* Node connectivity
+  - matrix A (no edge length sampling) (mean +/- sderr) = 35.735 +/- 0.67949
+  - matrix B    (edge length sampling) (mean +/- sderr) = 31.556 +/- 0.76772
+  - all matrices                       (mean +/- sderr) = 36.598 +/- 0.55273
+* Node connectivity mean absolute error
+  - matrix A (no edge length sampling) (mean +/- sderr) = 4.9273 +/- 0.228
+  - matrix B    (edge length sampling) (mean +/- sderr) = 6.7191 +/- 0.25881
+---
+* Connectivity distribution
+  - matrix A (no edge length sampling) (mean +/- sderr) = 0.003268 +/- 0.00054335
+  - matrix B    (edge length sampling) (mean +/- sderr) = 0.003268 +/- 0.0005234
+  - all matrices                       (mean +/- sderr) = 0.003268 +/- 0.00046394
+* Connectivity distribution mean absolute error
+  - matrix A (no edge length sampling) (mean +/- sderr) = 0.0012312 +/- 0.00019855
+  - matrix B    (edge length sampling) (mean +/- sderr) = 0.0016917 +/- 0.00025653
+---
+* Betweenness centrality
+  - matrix A (no edge length sampling) (mean +/- sderr) = 338.94 +/- 18.394
+  - matrix B    (edge length sampling) (mean +/- sderr) = 328.01 +/- 22.305
+  - all matrices                       (mean +/- sderr) = 314.2 +/- 12.307
+* Betweenness centrality mean absolute error
+  - matrix A (no edge length sampling) (mean +/- sderr) = 86.183 +/- 6.5604
+  - matrix B    (edge length sampling) (mean +/- sderr) = 120.09 +/- 10.468

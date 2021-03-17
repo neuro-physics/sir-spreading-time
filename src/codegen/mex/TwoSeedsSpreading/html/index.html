@@ -1,0 +1,1092 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Code Generation Report</title>
+<link rel="stylesheet" type="text/css" href="resources/eml_report.css" />
+<link rel="stylesheet" type="text/css" href="resources/jQuery/ui.resizable.css" />
+<link rel="stylesheet" type="text/css" href="index.css" />
+<style>
+	pre.code{
+		-moz-tab-size: 4; /* For Firefox */
+		-o-tab-size: 4; /* For Opera 10.6-12.1 */
+		tab-size: 4; /* For Chrome */
+	}
+</style>
+<script type="text/javascript" src="resources/jQuery/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="resources/jQuery/jquery-ui-1.7.custom.min.js"></script>
+<script type="text/javascript" src="resources/jQuery/jquery.tablesorter.mod.js"></script>
+<script type="text/javascript" src="resources/jQuery/jquery.hotkeys-0.7.8.js"></script>
+<script type="text/javascript" src="resources/eml_report_interactions.js"></script>
+<script type="text/javascript" src="resources/eml_report_layout.js"></script>
+<script type="text/javascript" src="rtwshrink.js"></script>
+<script type="text/javascript">
+var localizedMessages = {
+    callSelectPrompt: "Select a function call:",
+    callSelectSource: "Calls from this function",
+    callSelectTarget: "Calls to this function",
+    infoForExpression: "Information for the selected expression:",
+    infoForVarType: "Information for the selected variable:",
+    infoForVarConst: "Information for the selected compile-time constant:",
+    infoForVarNone: "This variable does not have information associated with it.",
+    infoForFilter: "Matched {0}/{1} functions, {2}/{3} methods",
+    autoExtrinsicCall: "Only supported within the MATLAB environment."
+};
+var keyBindings = {
+        selectMCodeTab: "Ctrl+m",
+    selectCallStackTab: "Ctrl+k",
+        selectCCodeTab: "Ctrl+c",
+       selectReportTab: "Ctrl+r",
+     selectCenterPanel: "Ctrl+w",
+      selectSummaryTab: "Ctrl+s",
+     selectMessagesTab: "Ctrl+a",
+    selectWatchListTab: "Ctrl+v",
+     selectBuildLogTab: "Ctrl+t",
+    clearAllHighlights: "Esc"
+};
+var functionInfoTable = {
+ MATLABcode1: "TwoSeedsSpreading1_mcode.html",
+ fpath1: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/TwoSeedsSpreading.m",
+ lines1: [1, 1, 83],
+ watch1: "TwoSeedsSpreading1_watch.html",
+ title1: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\TwoSeedsSpreading.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\TwoSeedsSpreading.m')\">TwoSeedsSpreading</a></span>",
+ tcall1: [  ],
+ scall1: [ [ "From line 40 to GetSimulationParam", "267#srcline1" ], [ "From line 41 to GetNodes", "341#srcline1" ], [ "From line 54 to EvolveSINetwork", "388#srcline1" ], [ "From line 57 to TwoSeedsSpreading > getAvalancheSizeForNode", "398#srcline164" ], [ "From line 58 to TwoSeedsSpreading > getAvalancheSizeForNode", "398#srcline164" ], [ "From line 59 to TwoSeedsSpreading > getConformityForNetwork", "399#srcline117" ], [ "From line 60 to TwoSeedsSpreading > getEntropyForNetwork", "410#srcline133" ], [ "From line 61 to TwoSeedsSpreading > getNodeActivationTime", "419#srcline83" ], [ "From line 73 to TwoSeedsSpreading > vecToMatrix", "420#srcline109" ], [ "From line 74 to TwoSeedsSpreading > vecToMatrix", "420#srcline109" ], [ "From line 75 to TwoSeedsSpreading > vecToMatrix", "420#srcline109" ], [ "From line 76 to TwoSeedsSpreading > matToTensor", "421#srcline97" ], [ "From line 77 to TwoSeedsSpreading > vecToMatrix", "420#srcline109" ], [ "From line 78 to TwoSeedsSpreading > matToTensor", "421#srcline97" ] ],
+ MATLABcode246: "getRandPerm246_mcode.html",
+ fpath246: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/fillUpMatrix.m",
+ lines246: [24, 25, 33],
+ watch246: "getRandPerm246_watch.html",
+ title246: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\fillUpMatrix.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\fillUpMatrix.m')\">fillUpMatrix &gt; getRandPerm</a></span>",
+ tcall246: [ [ "From fillUpMatrix line 14", "262#F246N27:B49" ] ],
+ scall246: [  ],
+ MATLABcode262: "fillUpMatrix262_mcode.html",
+ fpath262: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/fillUpMatrix.m",
+ lines262: [1, 1, 25],
+ watch262: "fillUpMatrix262_watch.html",
+ title262: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\fillUpMatrix.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\fillUpMatrix.m')\">fillUpMatrix</a></span>",
+ tcall262: [ [ "From GetSimulationParam line 52", "267#F262N26:B149" ] ],
+ scall262: [ [ "From line 14 to fillUpMatrix > getRandPerm", "246#srcline25" ] ],
+ MATLABcode267: "GetSimulationParam267_mcode.html",
+ fpath267: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/GetSimulationParam.m",
+ lines267: [1, 1, 67],
+ watch267: "GetSimulationParam267_watch.html",
+ title267: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\GetSimulationParam.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\GetSimulationParam.m')\">GetSimulationParam</a></span>",
+ tcall267: [ [ "From TwoSeedsSpreading line 40", "1#F267N8:B77" ] ],
+ scall267: [ [ "From line 52 to fillUpMatrix", "262#srcline1" ] ],
+ MATLABcode271: "repeatToComplete271_mcode.html",
+ fpath271: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/repeatToComplete.m",
+ lines271: [1, 1, 14],
+ watch271: "repeatToComplete271_watch.html",
+ title271: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\repeatToComplete.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\repeatToComplete.m')\">repeatToComplete &gt; 1</a></span>",
+ tcall271: [ [ "From GetNodes line 15", "341#F271N28:B61" ] ],
+ scall271: [  ],
+ MATLABcode273: "repeatToComplete273_mcode.html",
+ fpath273: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/repeatToComplete.m",
+ lines273: [1, 1, 14],
+ watch273: "repeatToComplete273_watch.html",
+ title273: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\repeatToComplete.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\repeatToComplete.m')\">repeatToComplete &gt; 2</a></span>",
+ tcall273: [ [ "From GetNodes line 16", "341#F273N28:B68" ] ],
+ scall273: [  ],
+ MATLABcode274: "getParStruct274_mcode.html",
+ fpath274: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/GetNodes.m",
+ lines274: [28, 29, 40],
+ watch274: "getParStruct274_watch.html",
+ title274: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\GetNodes.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\GetNodes.m')\">GetNodes &gt; getParStruct</a></span>",
+ tcall274: [ [ "From GetNodes line 17", "341#F274N7:B92" ], [ "From GetNodes line 25", "341#F274N7:B178" ] ],
+ scall274: [  ],
+ MATLABcode341: "GetNodes341_mcode.html",
+ fpath341: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/GetNodes.m",
+ lines341: [1, 1, 29],
+ watch341: "GetNodes341_watch.html",
+ title341: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\GetNodes.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\GetNodes.m')\">GetNodes</a></span>",
+ tcall341: [ [ "From TwoSeedsSpreading line 41", "1#F341N6:B88" ] ],
+ scall341: [ [ "From line 15 to repeatToComplete > 1", "271#srcline1" ], [ "From line 16 to repeatToComplete > 2", "273#srcline1" ], [ "From line 17 to GetNodes > getParStruct", "274#srcline29" ], [ "From line 25 to GetNodes > getParStruct", "274#srcline29" ] ],
+ MATLABcode378: "UpdateInputNSeed378_mcode.html",
+ fpath378: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/UpdateInputNSeed.m",
+ lines378: [1, 1, 27],
+ watch378: "UpdateInputNSeed378_watch.html",
+ title378: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\UpdateInputNSeed.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\UpdateInputNSeed.m')\">UpdateInputNSeed</a></span>",
+ tcall378: [ [ "From EvolveSINetwork > EvolveSINetwork_main > 1 line 52", "382#F378N20:B83" ] ],
+ scall378: [  ],
+ MATLABcode379: "calcSpTime379_mcode.html",
+ fpath379: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/calcSpTime.m",
+ lines379: [1, 1, 13],
+ watch379: "calcSpTime379_watch.html",
+ title379: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\calcSpTime.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\calcSpTime.m')\">calcSpTime</a></span>",
+ tcall379: [ [ "From SINElementIter line 6", "380#F379N21:B81" ], [ "From SIElementIter line 10", "385#F379N21:B75" ] ],
+ scall379: [  ],
+ MATLABcode380: "SINElementIter380_mcode.html",
+ fpath380: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/SINElementIter.m",
+ lines380: [1, 1, 9],
+ watch380: "SINElementIter380_watch.html",
+ title380: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\SINElementIter.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\SINElementIter.m')\">SINElementIter</a></span>",
+ tcall380: [ [ "From EvolveSINetwork > EvolveSINetwork_main > 1 line 57", "382#F380N10:B84" ] ],
+ scall380: [ [ "From line 6 to calcSpTime", "379#srcline1" ] ],
+ MATLABcode381: "getTimeIndex_same381_mcode.html",
+ fpath381: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/EvolveSINetwork.m",
+ lines381: [19, 20, 24],
+ watch381: "getTimeIndex_same381_watch.html",
+ title381: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m')\">EvolveSINetwork &gt; getTimeIndex_same</a></span>",
+ tcall381: [ [ "From EvolveSINetwork > EvolveSINetwork_main > 1 line 58", "382#F381N5:B85" ], [ "From EvolveSINetwork > EvolveSINetwork_main > 1 line 59", "382#F381N5:B85" ], [ "From EvolveSINetwork > EvolveSINetwork_main > 2 line 58", "386#F381N5:B85" ], [ "From EvolveSINetwork > EvolveSINetwork_main > 2 line 59", "386#F381N5:B85" ] ],
+ scall381: [  ],
+ MATLABcode382: "EvolveSINetwork_main382_mcode.html",
+ fpath382: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/EvolveSINetwork.m",
+ lines382: [27, 28, 74],
+ watch382: "EvolveSINetwork_main382_watch.html",
+ title382: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m')\">EvolveSINetwork &gt; EvolveSINetwork_main &gt; 1</a></span>",
+ tcall382: [ [ "From EvolveSINetwork > EvolveSINetwork_internal > 1 line 14", "383#F382N4:B92" ] ],
+ scall382: [ [ "From line 52 to UpdateInputNSeed", "378#srcline1" ], [ "From line 57 to SINElementIter", "380#srcline1" ], [ "From line 58 to EvolveSINetwork > getTimeIndex_same", "381#srcline20" ], [ "From line 59 to EvolveSINetwork > getTimeIndex_same", "381#srcline20" ] ],
+ MATLABcode383: "EvolveSINetwork_internal383_mcode.html",
+ fpath383: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/EvolveSINetwork.m",
+ lines383: [11, 12, 20],
+ watch383: "EvolveSINetwork_internal383_watch.html",
+ title383: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m')\">EvolveSINetwork &gt; EvolveSINetwork_internal &gt; 1</a></span>",
+ tcall383: [ [ "From EvolveSINetwork line 6", "388#F383N3:B40" ] ],
+ scall383: [ [ "From line 14 to EvolveSINetwork > EvolveSINetwork_main > 1", "382#srcline28" ] ],
+ MATLABcode384: "UpdateInput1Seed384_mcode.html",
+ fpath384: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/UpdateInput1Seed.m",
+ lines384: [1, 1, 7],
+ watch384: "UpdateInput1Seed384_watch.html",
+ title384: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\UpdateInput1Seed.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\UpdateInput1Seed.m')\">UpdateInput1Seed</a></span>",
+ tcall384: [ [ "From EvolveSINetwork > EvolveSINetwork_main > 2 line 52", "386#F384N19:B86" ] ],
+ scall384: [  ],
+ MATLABcode385: "SIElementIter385_mcode.html",
+ fpath385: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/SIElementIter.m",
+ lines385: [1, 1, 13],
+ watch385: "SIElementIter385_watch.html",
+ title385: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\SIElementIter.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\SIElementIter.m')\">SIElementIter</a></span>",
+ tcall385: [ [ "From EvolveSINetwork > EvolveSINetwork_main > 2 line 57", "386#F385N9:B87" ] ],
+ scall385: [ [ "From line 10 to calcSpTime", "379#srcline1" ] ],
+ MATLABcode386: "EvolveSINetwork_main386_mcode.html",
+ fpath386: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/EvolveSINetwork.m",
+ lines386: [27, 28, 74],
+ watch386: "EvolveSINetwork_main386_watch.html",
+ title386: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m')\">EvolveSINetwork &gt; EvolveSINetwork_main &gt; 2</a></span>",
+ tcall386: [ [ "From EvolveSINetwork > EvolveSINetwork_internal > 2 line 14", "387#F386N4:B92" ] ],
+ scall386: [ [ "From line 52 to UpdateInput1Seed", "384#srcline1" ], [ "From line 57 to SIElementIter", "385#srcline1" ], [ "From line 58 to EvolveSINetwork > getTimeIndex_same", "381#srcline20" ], [ "From line 59 to EvolveSINetwork > getTimeIndex_same", "381#srcline20" ] ],
+ MATLABcode387: "EvolveSINetwork_internal387_mcode.html",
+ fpath387: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/EvolveSINetwork.m",
+ lines387: [11, 12, 20],
+ watch387: "EvolveSINetwork_internal387_watch.html",
+ title387: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m')\">EvolveSINetwork &gt; EvolveSINetwork_internal &gt; 2</a></span>",
+ tcall387: [ [ "From EvolveSINetwork line 8", "388#F387N3:B58" ] ],
+ scall387: [ [ "From line 14 to EvolveSINetwork > EvolveSINetwork_main > 2", "386#srcline28" ] ],
+ MATLABcode388: "EvolveSINetwork388_mcode.html",
+ fpath388: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/EvolveSINetwork.m",
+ lines388: [1, 1, 12],
+ watch388: "EvolveSINetwork388_watch.html",
+ title388: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m')\">EvolveSINetwork</a></span>",
+ tcall388: [ [ "From TwoSeedsSpreading line 54", "1#F388N2:B166" ] ],
+ scall388: [ [ "From line 6 to EvolveSINetwork > EvolveSINetwork_internal > 1", "383#srcline12" ], [ "From line 8 to EvolveSINetwork > EvolveSINetwork_internal > 2", "387#srcline12" ] ],
+ MATLABcode398: "getAvalancheSizeForNode398_mcode.html",
+ fpath398: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/TwoSeedsSpreading.m",
+ lines398: [163, 164, 168],
+ watch398: "getAvalancheSizeForNode398_watch.html",
+ title398: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\TwoSeedsSpreading.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\TwoSeedsSpreading.m')\">TwoSeedsSpreading &gt; getAvalancheSizeForNode</a></span>",
+ tcall398: [ [ "From TwoSeedsSpreading line 57", "1#F398N12:B197" ], [ "From TwoSeedsSpreading line 58", "1#F398N12:B211" ] ],
+ scall398: [  ],
+ MATLABcode399: "getConformityForNetwork399_mcode.html",
+ fpath399: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/TwoSeedsSpreading.m",
+ lines399: [116, 117, 133],
+ watch399: "getConformityForNetwork399_watch.html",
+ title399: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\TwoSeedsSpreading.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\TwoSeedsSpreading.m')\">TwoSeedsSpreading &gt; getConformityForNetwork</a></span>",
+ tcall399: [ [ "From TwoSeedsSpreading line 59", "1#F399N13:B225" ] ],
+ scall399: [  ],
+ MATLABcode409: "xlogx409_mcode.html",
+ fpath409: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/TwoSeedsSpreading.m",
+ lines409: [153, 154, 164],
+ watch409: "xlogx409_watch.html",
+ title409: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\TwoSeedsSpreading.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\TwoSeedsSpreading.m')\">TwoSeedsSpreading &gt; xlogx</a></span>",
+ tcall409: [ [ "From TwoSeedsSpreading > getEntropyForNetwork line 147", "410#F409N18:B682" ] ],
+ scall409: [  ],
+ MATLABcode410: "getEntropyForNetwork410_mcode.html",
+ fpath410: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/TwoSeedsSpreading.m",
+ lines410: [132, 133, 154],
+ watch410: "getEntropyForNetwork410_watch.html",
+ title410: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\TwoSeedsSpreading.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\TwoSeedsSpreading.m')\">TwoSeedsSpreading &gt; getEntropyForNetwork</a></span>",
+ tcall410: [ [ "From TwoSeedsSpreading line 60", "1#F410N14:B234" ] ],
+ scall410: [ [ "From line 147 to TwoSeedsSpreading > xlogx", "409#srcline154" ] ],
+ MATLABcode419: "getNodeActivationTime419_mcode.html",
+ fpath419: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/TwoSeedsSpreading.m",
+ lines419: [82, 83, 97],
+ watch419: "getNodeActivationTime419_watch.html",
+ title419: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\TwoSeedsSpreading.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\TwoSeedsSpreading.m')\">TwoSeedsSpreading &gt; getNodeActivationTime</a></span>",
+ tcall419: [ [ "From TwoSeedsSpreading line 61", "1#F419N15:B247" ] ],
+ scall419: [  ],
+ MATLABcode420: "vecToMatrix420_mcode.html",
+ fpath420: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/TwoSeedsSpreading.m",
+ lines420: [108, 109, 117],
+ watch420: "vecToMatrix420_watch.html",
+ title420: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\TwoSeedsSpreading.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\TwoSeedsSpreading.m')\">TwoSeedsSpreading &gt; vecToMatrix</a></span>",
+ tcall420: [ [ "From TwoSeedsSpreading line 73", "1#F420N17:B277" ], [ "From TwoSeedsSpreading line 74", "1#F420N17:B285" ], [ "From TwoSeedsSpreading line 75", "1#F420N17:B293" ], [ "From TwoSeedsSpreading line 77", "1#F420N17:B309" ] ],
+ scall420: [  ],
+ MATLABcode421: "matToTensor421_mcode.html",
+ fpath421: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/TwoSeedsSpreading.m",
+ lines421: [96, 97, 109],
+ watch421: "matToTensor421_watch.html",
+ title421: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\TwoSeedsSpreading.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\TwoSeedsSpreading.m')\">TwoSeedsSpreading &gt; matToTensor</a></span>",
+ tcall421: [ [ "From TwoSeedsSpreading line 76", "1#F421N16:B301" ], [ "From TwoSeedsSpreading line 78", "1#F421N16:B317" ] ],
+ scall421: [  ],
+ rootFcnID: "1",
+ firstPage: "1",
+ htmlRoot: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/codegen/mex/TwoSeedsSpreading/html/"
+};
+var scriptInfoTable = {
+ fpath1: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/TwoSeedsSpreading.m",
+ fpath2: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/isBuiltInNumeric.m",
+ fpath3: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/isnan.m",
+ fpath4: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/ops/colon.m",
+ fpath5: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/nan.m",
+ fpath6: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/isinf.m",
+ fpath7: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/+scalar/floor.m",
+ fpath8: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/applyScalarFunctionInPlace.m",
+ fpath9: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elfun/floor.m",
+ fpath10: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/scalarEg.m",
+ fpath11: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/fixedpoint/isnumerictype.m",
+ fpath12: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/fixedpoint/isfimath.m",
+ fpath13: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/fixedpoint/isfi.m",
+ fpath14: "C:/Program Files/MATLAB/R2017b/toolbox/shared/coder/coder/+coder/+internal/narginchk.m",
+ fpath15: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/assertValidSizeArg.m",
+ fpath16: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/isIntegerClass.m",
+ fpath17: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/intmax.m",
+ fpath18: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/intmin.m",
+ fpath19: "C:/Program Files/MATLAB/R2017b/toolbox/shared/coder/coder/+coder/+internal/indexIntRelop.m",
+ fpath20: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/floatModel.m",
+ fpath21: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/eml/eml_int_forloop_overflow_check.m",
+ fpath22: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/scalexpAllocNoCheck.m",
+ fpath23: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/scalexpAlloc.m",
+ fpath24: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/minOrMax.m",
+ fpath25: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/datafun/max.m",
+ fpath26: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/repmat.m",
+ fpath27: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/prodsize.m",
+ fpath28: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/meshgrid.m",
+ fpath29: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/cat.m",
+ fpath30: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/nullAssignment.m",
+ fpath31: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/datafun/min.m",
+ fpath32: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/flintmax.m",
+ fpath33: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/randfun/randperm.m",
+ fpath34: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/ismatrix.m",
+ fpath35: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/isrow.m",
+ fpath36: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/nonSingletonDim.m",
+ fpath37: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/assertValidDim.m",
+ fpath38: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/sortIdx.m",
+ fpath39: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/relop.m",
+ fpath40: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/sortLE.m",
+ fpath41: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/sort.m",
+ fpath42: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/datafun/sort.m",
+ fpath43: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/ops/private/eml_setop.m",
+ fpath44: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/charmax.m",
+ fpath45: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/assertSupportedString.m",
+ fpath46: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/isaUint.m",
+ fpath47: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/unsignedClass.m",
+ fpath48: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/indexPlus.m",
+ fpath49: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/charCastCheck.m",
+ fpath50: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/strfun/char.m",
+ fpath51: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/strfun/eml_string_transform.m",
+ fpath52: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/strfun/upper.m",
+ fpath53: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/datafun/issorted.m",
+ fpath54: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/indexMinus.m",
+ fpath55: "C:/Program Files/MATLAB/R2017b/toolbox/shared/coder/coder/+coder/+internal/error.m",
+ fpath56: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/+scalar/abs.m",
+ fpath57: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/applyScalarFunction.m",
+ fpath58: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elfun/abs.m",
+ fpath59: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/scalexpCompatible.m",
+ fpath60: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/div.m",
+ fpath61: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/ops/rdivide.m",
+ fpath62: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/ops/mrdivide.p",
+ fpath63: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/mantissa_nbits.m",
+ fpath64: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/private/eml_realmin.m",
+ fpath65: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/private/eml_realmin_denormal.m",
+ fpath66: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/isfinite.m",
+ fpath67: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/eps.m",
+ fpath68: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/safeEq.m",
+ fpath69: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/sortLT.m",
+ fpath70: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/ops/intersect.m",
+ fpath71: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/fillUpMatrix.m",
+ fpath72: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/toLogicalCheck.m",
+ fpath73: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/GetSimulationParam.m",
+ fpath74: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/repeatToComplete.m",
+ fpath75: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/GetNodes.m",
+ fpath76: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/indexShapeCheck.m",
+ fpath77: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/find.m",
+ fpath78: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/codingForGPU.m",
+ fpath79: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/useParforConst.m",
+ fpath80: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/constNonSingletonDim.m",
+ fpath81: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/datafun/private/process_sumprod_inputs.m",
+ fpath82: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/private/eml_isequal_core.m",
+ fpath83: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/isequal.m",
+ fpath84: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/datafun/private/combineVectorElements.m",
+ fpath85: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/datafun/private/sumprod.m",
+ fpath86: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/datafun/sum.m",
+ fpath87: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/randfun/private/eml_is_rand_extrinsic.m",
+ fpath88: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/randfun/private/eml_rand_str2id.m",
+ fpath89: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/randfun/private/eml_rand_mcg16807.m",
+ fpath90: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/randfun/private/eml_rand_mcg16807_stateful.m",
+ fpath91: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/randfun/private/eml_rand_shr3cong.m",
+ fpath92: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/randfun/private/eml_rand_shr3cong_stateful.m",
+ fpath93: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/randfun/eml_rand_mt19937ar.m",
+ fpath94: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/private/eml_eps.m",
+ fpath95: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/randfun/private/eml_rand_mt19937ar_stateful.m",
+ fpath96: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/randfun/private/eml_rand.m",
+ fpath97: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/randfun/rand.m",
+ fpath98: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/UpdateInputNSeed.m",
+ fpath99: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/calcSpTime.m",
+ fpath100: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/SINElementIter.m",
+ fpath101: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/EvolveSINetwork.m",
+ fpath102: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/UpdateInput1Seed.m",
+ fpath103: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/SIElementIter.m",
+ fpath104: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/sparfun/issparse.m",
+ fpath105: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/isDomainError.m",
+ fpath106: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/private/eml_realmax.m",
+ fpath107: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/realmax.m",
+ fpath108: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/+scalar/log.m",
+ fpath109: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elfun/log.m",
+ fpath110: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/strfun/strlength.m"
+};
+</script>
+</head>
+<body>
+
+<div class="west">
+<ul class="ui-tabs-nav">
+<li class="ui-tabs-nav-item ui-tabs-selected"><span class="tab-link" id="MATLABcode"><span>MATLAB code</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="callstack"><span>Call stack</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="ccode"><span>C code</span></span></li>
+</ul>
+<div id="MATLABcodebody" class="ui-tabs-panel">
+<!-- Begin Filter -->
+<div class="grayline methodset" onclick="filterClick(event);">
+<a class="collapsed">Filter</a>
+</div>
+<div id="filterbody" class="hidden">
+<table class="myfunc-filter-tbl">
+<tr>
+<td title="Use this filter to display only functions and methods that contain variables or expressions with the specified attributes." colspan="2" class="checkbox">
+<div class="myfunc-filterby-chk"><input type="checkbox" class="filterenable" />
+<div class="filter-enable-lbl">Filter functions and methods</div></div></td></tr><tr>
+<td class="label"><div class="myfunc-filterby-lbl">Filter by:</div></td>
+<td class="select">
+<div class="filters">
+<select class="myfunc-filterby">
+<option id="size">Size</option>
+<option id="complex">Complexity</option>
+<option id="class">Class</option>
+</select>
+</div>
+</td>
+</tr>
+
+<tr>
+<td class="label"><div class="myfunc-filterstr-lbl">Filter:</div></td>
+<td class="input"><div>
+
+<div class="size">
+<select class="myfunc-filter size">
+<option value="246 262">1 x 0</option>
+<option value="1 246 262 267 271 273 274 341 378 379 380 381 382 383 384 385 386 387 388 398 399 409 410 419 420 421">1 x 1</option>
+<option value="1 246 267 382 383 386 387 388 410">1 x 2</option>
+<option value="1 267 382 383 386 387 388">1 x 5</option>
+<option value="1 271 273 341 378 379 380 382 383 384 385 386 387 388 398 399 410 419">1 x <b>:</b>?</option>
+<option value="419"><b>:</b>1 x 1</option>
+<option value="1 341 378 379 380 382 383 384 385 386 387 388 399 410 420"><b>:</b>? x 1</option>
+<option value="1 262 267 382 383 386 387 388 420 421"><b>:</b>? x 2</option>
+<option value="1 267 341 382 383 386 387 388 419 420 421"><b>:</b>? x <b>:</b>?</option>
+<option value="1 421"><b>:</b>? x <b>:</b>? x <b>:</b>?</option>
+</select>
+</div>
+
+<div class="complex">
+<select class="myfunc-filter complex">
+<option value="">Complex values</option>
+<option value="1 246 262 267 271 273 274 341 378 379 380 381 382 383 384 385 386 387 388 398 399 409 410 419 420 421">Real values</option>
+</select>
+</div>
+<!-- Begin Class Filter -->
+<div class="class">
+<select class="myfunc-filter class">
+<option value="1 267 382 383 386 387 388">char</option>
+<option value="1 246 262 267 271 273 274 341 378 379 380 381 382 383 384 385 386 387 388 398 399 409 410 419 420 421">double</option>
+<option value="382 383 386 387">function_handle</option>
+<option value="382 386">logical</option>
+<option value="1 267 274 341 378 379 380 382 383 384 385 386 387 388 399 410">struct</option>
+</select>
+</div>
+<!-- End Class Filter -->
+</div>
+</td>
+</tr>
+</table>
+<div class="myfunc-count"></div>
+</div>
+<!-- End Filter -->
+<div class="grayline methodset" onmouseover="callTreeMouseOver(event);" onmouseout="callTreeMouseOut(event);" onclick="functionSetClick(event);">
+<a class="expanded">Functions</a>
+</div>
+<!-- Begin Function Tree -->
+<div id="functiontreebody">
+<div class="functionwrapper" onmouseover="callTreeMouseOver(event);" onmouseout="callTreeMouseOut(event);" onclick="functionTreeClick(event);">
+<ol class="tree">
+<!-- Begin Function Tree Roots -->
+<li class="leaf  passed"><a href="#" class="fcn  " id="F388N2:F1">EvolveSINetwork</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F383N3:F2">EvolveSINetwork &gt; EvolveSINetwork_internal &gt; 1</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F387N3:F3">EvolveSINetwork &gt; EvolveSINetwork_internal &gt; 2</a></li>
+<li class="leaf  warning"><a href="#" class="fcn  PD2 PD3 PD5 PD1 " id="F382N4:F4">EvolveSINetwork &gt; EvolveSINetwork_main &gt; 1</a></li>
+<li class="leaf  warning"><a href="#" class="fcn  PD2 PD3 PD5 " id="F386N4:F5">EvolveSINetwork &gt; EvolveSINetwork_main &gt; 2</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F381N5:F6">EvolveSINetwork &gt; getTimeIndex_same</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  PD3 PD6 PD7 " id="F341N6:F7">GetNodes</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F274N7:F8">GetNodes &gt; getParStruct</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F267N8:F9">GetSimulationParam</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F385N9:F10">SIElementIter</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F380N10:F11">SINElementIter</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  PD3 PD4 PD5 PD7 PD8 PD9 " id="F1N11:F12">TwoSeedsSpreading</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F398N12:F13">TwoSeedsSpreading &gt; getAvalancheSizeForNode</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  PD3 " id="F399N13:F14">TwoSeedsSpreading &gt; getConformityForNetwork</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  PD3 " id="F410N14:F15">TwoSeedsSpreading &gt; getEntropyForNetwork</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  PD3 PD6 " id="F419N15:F16">TwoSeedsSpreading &gt; getNodeActivationTime</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  PD3 PD5 " id="F421N16:F17">TwoSeedsSpreading &gt; matToTensor</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  PD3 PD5 " id="F420N17:F18">TwoSeedsSpreading &gt; vecToMatrix</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  PD1 " id="F409N18:F19">TwoSeedsSpreading &gt; xlogx</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F384N19:F20">UpdateInput1Seed</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F378N20:F21">UpdateInputNSeed</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F379N21:F22">calcSpTime</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  PD3 PD5 " id="F262N26:F23">fillUpMatrix</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F246N27:F24">fillUpMatrix &gt; getRandPerm</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F271N28:F25">repeatToComplete &gt; 1</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F273N28:F26">repeatToComplete &gt; 2</a></li>
+<!-- End Function Tree Roots -->
+</ol>
+<!-- Function Tree Nodes -->
+<div class="functiontreenodes hidden">
+</div>
+<!-- End Function Tree Nodes -->
+</div>
+</div>
+<!-- End Function Tree -->
+</div>
+<!-- Begin Call Tree -->
+<div id="callstackbody" class="ui-tabs-panel hidden">
+<div class="treewrapper" onmouseover="callTreeMouseOver(event);" onmouseout="callTreeMouseOut(event);" onclick="callTreeClick(event);">
+<ol class="tree">
+<!-- Call Tree Root -->
+<li class="node collapsed passed"><a href="#" class="fcn  PD3 PD4 PD5 PD7 PD8 PD9 " id="F1N11:L1">TwoSeedsSpreading</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F267N8:L2">GetSimulationParam</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn  PD3 PD6 PD7 " id="F341N6:L3">GetNodes</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F388N2:L4">EvolveSINetwork</a></li>
+<li class="leaf passed"><a href="#" class="fcn  " id="F398N12:L5">TwoSeedsSpreading &gt; getAvalancheSizeForNode</a></li>
+<li class="leaf passed"><a href="#" class="fcn  PD3 " id="F399N13:L6">TwoSeedsSpreading &gt; getConformityForNetwork</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn  PD3 " id="F410N14:L7">TwoSeedsSpreading &gt; getEntropyForNetwork</a></li>
+<li class="leaf passed"><a href="#" class="fcn  PD3 PD6 " id="F419N15:L8">TwoSeedsSpreading &gt; getNodeActivationTime</a></li>
+<li class="leaf passed"><a href="#" class="fcn  PD3 PD5 " id="F420N17:L9">TwoSeedsSpreading &gt; vecToMatrix</a></li>
+<li class="leaf passed"><a href="#" class="fcn  PD3 PD5 " id="F421N16:L10">TwoSeedsSpreading &gt; matToTensor</a></li>
+</ul>
+</li>
+</ol>
+<!-- Call Tree Nodes -->
+<div class="callstacknodes hidden">
+<ol class="callstacknode" id="callstacknode1">
+
+<li class="node collapsed passed"><a href="#" class="fcn  PD3 PD4 PD5 PD7 PD8 PD9 " id="F1N11:l1">TwoSeedsSpreading</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F267N8:l2">GetSimulationParam</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn  PD3 PD6 PD7 " id="F341N6:l3">GetNodes</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F388N2:l4">EvolveSINetwork</a></li>
+<li class="leaf passed"><a href="#" class="fcn  " id="F398N12:l5">TwoSeedsSpreading &gt; getAvalancheSizeForNode</a></li>
+<li class="leaf passed"><a href="#" class="fcn  PD3 " id="F399N13:l6">TwoSeedsSpreading &gt; getConformityForNetwork</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn  PD3 " id="F410N14:l7">TwoSeedsSpreading &gt; getEntropyForNetwork</a></li>
+<li class="leaf passed"><a href="#" class="fcn  PD3 PD6 " id="F419N15:l8">TwoSeedsSpreading &gt; getNodeActivationTime</a></li>
+<li class="leaf passed"><a href="#" class="fcn  PD3 PD5 " id="F420N17:l9">TwoSeedsSpreading &gt; vecToMatrix</a></li>
+<li class="leaf passed"><a href="#" class="fcn  PD3 PD5 " id="F421N16:l10">TwoSeedsSpreading &gt; matToTensor</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode246">
+
+<li class="leaf passed"><a href="#" class="fcn  " id="F246N27:l11">fillUpMatrix &gt; getRandPerm</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode262">
+
+<li class="node collapsed passed"><a href="#" class="fcn  PD3 PD5 " id="F262N26:l12">fillUpMatrix</a>
+<ul>
+<li class="leaf passed"><a href="#" class="fcn  " id="F246N27:l13">fillUpMatrix &gt; getRandPerm</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode267">
+
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F267N8:l14">GetSimulationParam</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn  PD3 PD5 " id="F262N26:l15">fillUpMatrix</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode271">
+
+<li class="leaf passed"><a href="#" class="fcn  " id="F271N28:l16">repeatToComplete &gt; 1</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode273">
+
+<li class="leaf passed"><a href="#" class="fcn  " id="F273N28:l17">repeatToComplete &gt; 2</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode274">
+
+<li class="leaf passed"><a href="#" class="fcn  " id="F274N7:l18">GetNodes &gt; getParStruct</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode341">
+
+<li class="node collapsed passed"><a href="#" class="fcn  PD3 PD6 PD7 " id="F341N6:l19">GetNodes</a>
+<ul>
+<li class="leaf passed"><a href="#" class="fcn  " id="F271N28:l20">repeatToComplete &gt; 1</a></li>
+<li class="leaf passed"><a href="#" class="fcn  " id="F273N28:l21">repeatToComplete &gt; 2</a></li>
+<li class="leaf passed"><a href="#" class="fcn  " id="F274N7:l22">GetNodes &gt; getParStruct</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode378">
+
+<li class="leaf passed"><a href="#" class="fcn  " id="F378N20:l23">UpdateInputNSeed</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode379">
+
+<li class="leaf passed"><a href="#" class="fcn  " id="F379N21:l24">calcSpTime</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode380">
+
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F380N10:l25">SINElementIter</a>
+<ul>
+<li class="leaf passed"><a href="#" class="fcn  " id="F379N21:l26">calcSpTime</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode381">
+
+<li class="leaf passed"><a href="#" class="fcn  " id="F381N5:l27">EvolveSINetwork &gt; getTimeIndex_same</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode382">
+
+<li class="node collapsed warning"><a href="#" class="fcn  PD2 PD3 PD5 PD1 " id="F382N4:l28">EvolveSINetwork &gt; EvolveSINetwork_main &gt; 1</a>
+<ul>
+<li class="leaf passed"><a href="#" class="fcn  " id="F378N20:l29">UpdateInputNSeed</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F380N10:l30">SINElementIter</a></li>
+<li class="leaf passed"><a href="#" class="fcn  " id="F381N5:l31">EvolveSINetwork &gt; getTimeIndex_same</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode383">
+
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F383N3:l32">EvolveSINetwork &gt; EvolveSINetwork_internal &gt; 1</a>
+<ul>
+<li class="node collapsed warning"><a href="#" class="fcn  PD2 PD3 PD5 PD1 " id="F382N4:l33">EvolveSINetwork &gt; EvolveSINetwork_main &gt; 1</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode384">
+
+<li class="leaf passed"><a href="#" class="fcn  " id="F384N19:l34">UpdateInput1Seed</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode385">
+
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F385N9:l35">SIElementIter</a>
+<ul>
+<li class="leaf passed"><a href="#" class="fcn  " id="F379N21:l36">calcSpTime</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode386">
+
+<li class="node collapsed warning"><a href="#" class="fcn  PD2 PD3 PD5 " id="F386N4:l37">EvolveSINetwork &gt; EvolveSINetwork_main &gt; 2</a>
+<ul>
+<li class="leaf passed"><a href="#" class="fcn  " id="F384N19:l38">UpdateInput1Seed</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F385N9:l39">SIElementIter</a></li>
+<li class="leaf passed"><a href="#" class="fcn  " id="F381N5:l40">EvolveSINetwork &gt; getTimeIndex_same</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode387">
+
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F387N3:l41">EvolveSINetwork &gt; EvolveSINetwork_internal &gt; 2</a>
+<ul>
+<li class="node collapsed warning"><a href="#" class="fcn  PD2 PD3 PD5 " id="F386N4:l42">EvolveSINetwork &gt; EvolveSINetwork_main &gt; 2</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode388">
+
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F388N2:l43">EvolveSINetwork</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F383N3:l44">EvolveSINetwork &gt; EvolveSINetwork_internal &gt; 1</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F387N3:l45">EvolveSINetwork &gt; EvolveSINetwork_internal &gt; 2</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode398">
+
+<li class="leaf passed"><a href="#" class="fcn  " id="F398N12:l46">TwoSeedsSpreading &gt; getAvalancheSizeForNode</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode399">
+
+<li class="leaf passed"><a href="#" class="fcn  PD3 " id="F399N13:l47">TwoSeedsSpreading &gt; getConformityForNetwork</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode409">
+
+<li class="leaf passed"><a href="#" class="fcn  PD1 " id="F409N18:l48">TwoSeedsSpreading &gt; xlogx</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode410">
+
+<li class="node collapsed passed"><a href="#" class="fcn  PD3 " id="F410N14:l49">TwoSeedsSpreading &gt; getEntropyForNetwork</a>
+<ul>
+<li class="leaf passed"><a href="#" class="fcn  PD1 " id="F409N18:l50">TwoSeedsSpreading &gt; xlogx</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode419">
+
+<li class="leaf passed"><a href="#" class="fcn  PD3 PD6 " id="F419N15:l51">TwoSeedsSpreading &gt; getNodeActivationTime</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode420">
+
+<li class="leaf passed"><a href="#" class="fcn  PD3 PD5 " id="F420N17:l52">TwoSeedsSpreading &gt; vecToMatrix</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode421">
+
+<li class="leaf passed"><a href="#" class="fcn  PD3 PD5 " id="F421N16:l53">TwoSeedsSpreading &gt; matToTensor</a>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<!-- End Call Tree -->
+<!-- Begin C Code -->
+<div id="ccodebody" class="ui-tabs-panel hidden">
+<div class="grayline methodset" onclick="ccodeClick(event,1);">
+<a class="expanded">Target Source Files</a>
+</div>
+<!-- Begin C Code List -->
+<div id="ccodelistbody1" class="visible">
+<table class="myfunc-list" cellspacing="0" cellpadding="0" onclick="cFileClickWithMexWarning(event);">
+<tbody>
+<tr class="ccode" id="EvolveSINetwork_cpp.html"><td class="ccode"><a href="#">EvolveSINetwork.cpp</a></td></tr>
+<tr class="ccode" id="EvolveSINetwork_h.html"><td class="ccode"><a href="#">EvolveSINetwork.h</a></td></tr>
+<tr class="ccode" id="GetNodes_cpp.html"><td class="ccode"><a href="#">GetNodes.cpp</a></td></tr>
+<tr class="ccode" id="GetNodes_h.html"><td class="ccode"><a href="#">GetNodes.h</a></td></tr>
+<tr class="ccode" id="GetSimulationParam_cpp.html"><td class="ccode"><a href="#">GetSimulationParam.cpp</a></td></tr>
+<tr class="ccode" id="GetSimulationParam_h.html"><td class="ccode"><a href="#">GetSimulationParam.h</a></td></tr>
+<tr class="ccode" id="TwoSeedsSpreading_cpp.html"><td class="ccode"><a href="#">TwoSeedsSpreading.cpp</a></td></tr>
+<tr class="ccode" id="TwoSeedsSpreading_h.html"><td class="ccode"><a href="#">TwoSeedsSpreading.h</a></td></tr>
+<tr class="ccode" id="TwoSeedsSpreading_data_cpp.html"><td class="ccode"><a href="#">TwoSeedsSpreading_data.cpp</a></td></tr>
+<tr class="ccode" id="TwoSeedsSpreading_data_h.html"><td class="ccode"><a href="#">TwoSeedsSpreading_data.h</a></td></tr>
+<tr class="ccode" id="TwoSeedsSpreading_emxutil_cpp.html"><td class="ccode"><a href="#">TwoSeedsSpreading_emxutil.cpp</a></td></tr>
+<tr class="ccode" id="TwoSeedsSpreading_emxutil_h.html"><td class="ccode"><a href="#">TwoSeedsSpreading_emxutil.h</a></td></tr>
+<tr class="ccode" id="TwoSeedsSpreading_initialize_cpp.html"><td class="ccode"><a href="#">TwoSeedsSpreading_initialize.cpp</a></td></tr>
+<tr class="ccode" id="TwoSeedsSpreading_initialize_h.html"><td class="ccode"><a href="#">TwoSeedsSpreading_initialize.h</a></td></tr>
+<tr class="ccode" id="TwoSeedsSpreading_mexutil_cpp.html"><td class="ccode"><a href="#">TwoSeedsSpreading_mexutil.cpp</a></td></tr>
+<tr class="ccode" id="TwoSeedsSpreading_mexutil_h.html"><td class="ccode"><a href="#">TwoSeedsSpreading_mexutil.h</a></td></tr>
+<tr class="ccode" id="TwoSeedsSpreading_terminate_cpp.html"><td class="ccode"><a href="#">TwoSeedsSpreading_terminate.cpp</a></td></tr>
+<tr class="ccode" id="TwoSeedsSpreading_terminate_h.html"><td class="ccode"><a href="#">TwoSeedsSpreading_terminate.h</a></td></tr>
+<tr class="ccode" id="TwoSeedsSpreading_types_h.html"><td class="ccode"><a href="#">TwoSeedsSpreading_types.h</a></td></tr>
+<tr class="ccode" id="assertValidSizeArg_cpp.html"><td class="ccode"><a href="#">assertValidSizeArg.cpp</a></td></tr>
+<tr class="ccode" id="assertValidSizeArg_h.html"><td class="ccode"><a href="#">assertValidSizeArg.h</a></td></tr>
+<tr class="ccode" id="calcSpTime_cpp.html"><td class="ccode"><a href="#">calcSpTime.cpp</a></td></tr>
+<tr class="ccode" id="calcSpTime_h.html"><td class="ccode"><a href="#">calcSpTime.h</a></td></tr>
+<tr class="ccode" id="cpp_mexapi_version_cpp.html"><td class="ccode"><a href="#">cpp_mexapi_version.cpp</a></td></tr>
+<tr class="ccode" id="eml_int_forloop_overflow_check_cpp.html"><td class="ccode"><a href="#">eml_int_forloop_overflow_check.cpp</a></td></tr>
+<tr class="ccode" id="eml_int_forloop_overflow_check_h.html"><td class="ccode"><a href="#">eml_int_forloop_overflow_check.h</a></td></tr>
+<tr class="ccode" id="eml_rand_cpp.html"><td class="ccode"><a href="#">eml_rand.cpp</a></td></tr>
+<tr class="ccode" id="eml_rand_h.html"><td class="ccode"><a href="#">eml_rand.h</a></td></tr>
+<tr class="ccode" id="eml_rand_mcg16807_stateful_cpp.html"><td class="ccode"><a href="#">eml_rand_mcg16807_stateful.cpp</a></td></tr>
+<tr class="ccode" id="eml_rand_mcg16807_stateful_h.html"><td class="ccode"><a href="#">eml_rand_mcg16807_stateful.h</a></td></tr>
+<tr class="ccode" id="eml_rand_mt19937ar_stateful_cpp.html"><td class="ccode"><a href="#">eml_rand_mt19937ar_stateful.cpp</a></td></tr>
+<tr class="ccode" id="eml_rand_mt19937ar_stateful_h.html"><td class="ccode"><a href="#">eml_rand_mt19937ar_stateful.h</a></td></tr>
+<tr class="ccode" id="eml_rand_shr3cong_stateful_cpp.html"><td class="ccode"><a href="#">eml_rand_shr3cong_stateful.cpp</a></td></tr>
+<tr class="ccode" id="eml_rand_shr3cong_stateful_h.html"><td class="ccode"><a href="#">eml_rand_shr3cong_stateful.h</a></td></tr>
+<tr class="ccode" id="eml_setop_cpp.html"><td class="ccode"><a href="#">eml_setop.cpp</a></td></tr>
+<tr class="ccode" id="eml_setop_h.html"><td class="ccode"><a href="#">eml_setop.h</a></td></tr>
+<tr class="ccode" id="error_cpp.html"><td class="ccode"><a href="#">error.cpp</a></td></tr>
+<tr class="ccode" id="error_h.html"><td class="ccode"><a href="#">error.h</a></td></tr>
+<tr class="ccode" id="fillUpMatrix_cpp.html"><td class="ccode"><a href="#">fillUpMatrix.cpp</a></td></tr>
+<tr class="ccode" id="fillUpMatrix_h.html"><td class="ccode"><a href="#">fillUpMatrix.h</a></td></tr>
+<tr class="ccode" id="meshgrid_cpp.html"><td class="ccode"><a href="#">meshgrid.cpp</a></td></tr>
+<tr class="ccode" id="meshgrid_h.html"><td class="ccode"><a href="#">meshgrid.h</a></td></tr>
+<tr class="ccode" id="nullAssignment_cpp.html"><td class="ccode"><a href="#">nullAssignment.cpp</a></td></tr>
+<tr class="ccode" id="nullAssignment_h.html"><td class="ccode"><a href="#">nullAssignment.h</a></td></tr>
+<tr class="ccode" id="rand_cpp.html"><td class="ccode"><a href="#">rand.cpp</a></td></tr>
+<tr class="ccode" id="rand_h.html"><td class="ccode"><a href="#">rand.h</a></td></tr>
+<tr class="ccode" id="rdivide_cpp.html"><td class="ccode"><a href="#">rdivide.cpp</a></td></tr>
+<tr class="ccode" id="rdivide_h.html"><td class="ccode"><a href="#">rdivide.h</a></td></tr>
+<tr class="ccode" id="rt_nonfinite_h.html"><td class="ccode"><a href="#">rt_nonfinite.h</a></td></tr>
+<tr class="ccode" id="rtwtypes_h.html"><td class="ccode"><a href="#">rtwtypes.h</a></td></tr>
+<tr class="ccode" id="sort1_cpp.html"><td class="ccode"><a href="#">sort1.cpp</a></td></tr>
+<tr class="ccode" id="sort1_h.html"><td class="ccode"><a href="#">sort1.h</a></td></tr>
+<tr class="ccode" id="sortIdx_cpp.html"><td class="ccode"><a href="#">sortIdx.cpp</a></td></tr>
+<tr class="ccode" id="sortIdx_h.html"><td class="ccode"><a href="#">sortIdx.h</a></td></tr>
+</tbody>
+</table>
+</div>
+<!-- End C Code List -->
+<div class="grayline methodset" onclick="ccodeClick(event,3);">
+<a class="collapsed">Interface Source Files</a>
+</div>
+<!-- Begin C Code List -->
+<div id="ccodelistbody3" class="hidden">
+<table class="myfunc-list" cellspacing="0" cellpadding="0" onclick="cFileClickWithMexWarning(event);">
+<tbody>
+<tr class="ccode" id="_coder_TwoSeedsSpreading_api_cpp.html"><td class="ccode"><a href="#">_coder_TwoSeedsSpreading_api.cpp</a></td></tr>
+<tr class="ccode" id="_coder_TwoSeedsSpreading_api_h.html"><td class="ccode"><a href="#">_coder_TwoSeedsSpreading_api.h</a></td></tr>
+<tr class="ccode" id="_coder_TwoSeedsSpreading_info_cpp.html"><td class="ccode"><a href="#">_coder_TwoSeedsSpreading_info.cpp</a></td></tr>
+<tr class="ccode" id="_coder_TwoSeedsSpreading_info_h.html"><td class="ccode"><a href="#">_coder_TwoSeedsSpreading_info.h</a></td></tr>
+<tr class="ccode" id="_coder_TwoSeedsSpreading_mex_cpp.html"><td class="ccode"><a href="#">_coder_TwoSeedsSpreading_mex.cpp</a></td></tr>
+<tr class="ccode" id="_coder_TwoSeedsSpreading_mex_h.html"><td class="ccode"><a href="#">_coder_TwoSeedsSpreading_mex.h</a></td></tr>
+</tbody>
+</table>
+</div>
+<!-- End C Code List -->
+</div>
+<!-- End C Code -->
+</div>
+<!-- Tooltips -->
+<div class="aux hidden">
+<div class="tooltips">
+<div class="tooltip" id="TT1"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x <b>:</b>?</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT2"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT3"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x <b>:</b>? x <b>:</b>?</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT4"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT5"><table class="tooltip"><tr><th>Size</th><td>1 x <b>:</b>?</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT6"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x 2</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT7"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>struct</td></tr></table></div>
+<div class="tooltip" id="TT8"><table class="tooltip"><tr><th>Size</th><td>1 x 5</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT9"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT10"><table class="tooltip"><tr><th>Size</th><td>1 x <b>:</b>?</td></tr><tr><th>Class</th><td>struct</td></tr></table></div>
+<div class="tooltip" id="TT11"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>struct</td></tr></table></div>
+<div class="tooltip" id="TT12"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT13"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT14"><table class="tooltip"><tr><th>Size</th><td>1 x <b>:</b>?</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT15"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT16"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT17"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT18"><table class="tooltip"><tr><th>Size</th><td>1 x 0</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT19"><table class="tooltip"><tr><th>Size</th><td>1 x 0</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT20"><table class="tooltip"><tr><th>Size</th><td>1 x 6</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT21"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT22"><table class="tooltip"><tr><th>Size</th><td>1 x 23</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT23"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>int32</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT24"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>uint8</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT25"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT26"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT27"><table class="tooltip"><tr><th>Size</th><td>1 x 3</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT28"><table class="tooltip"><tr><th>Size</th><td>1 x 3</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT29"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x <b>:</b>?</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT30"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x 1</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT31"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT32"><table class="tooltip"><tr><th>Size</th><td>1 x 15</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT33"><table class="tooltip"><tr><th>Size</th><td>2 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT34"><table class="tooltip"><tr><th>Size</th><td>0 x 0</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT35"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT36"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT37"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT38"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT39"><table class="tooltip"><tr><th>Size</th><td>2 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT40"><table class="tooltip"><tr><th>Size</th><td>2 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT41"><table class="tooltip"><tr><th>Size</th><td>1 x <b>:</b>?</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT42"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT43"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT44"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT45"><table class="tooltip"><tr><th>Size</th><td>2 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT46"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>int8</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT47"><table class="tooltip"><tr><th>Size</th><td>1 x 4</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT48"><table class="tooltip"><tr><th>Size</th><td>1 x 9</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT49"><table class="tooltip"><tr><th>Size</th><td>1 x 128</td></tr><tr><th>Class</th><td>int8</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT50"><table class="tooltip"><tr><th>Size</th><td>128 x 1</td></tr><tr><th>Class</th><td>int8</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT51"><table class="tooltip"><tr><th>Size</th><td>1 x 128</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT52"><table class="tooltip"><tr><th>Size</th><td>0 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT53"><table class="tooltip"><tr><th>Size</th><td>1 x 17</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT54"><table class="tooltip"><tr><th>Size</th><td>1 x 33</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT55"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT56"><table class="tooltip"><tr><th>Size</th><td>1 x 0 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT57"><table class="tooltip"><tr><th>Size</th><td>0 x 1 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT58"><table class="tooltip"><tr><th>Size</th><td>0 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT59"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x 1</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT60"><table class="tooltip"><tr><th>Size</th><td>1 x 19</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT61"><table class="tooltip"><tr><th>Size</th><td>1 x <b>:</b>1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT62"><table class="tooltip"><tr><th>Size</th><td>1 x <b>:</b>?</td></tr><tr><th>Class</th><td>struct</td></tr></table></div>
+<div class="tooltip" id="TT63"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>struct</td></tr></table></div>
+<div class="tooltip" id="TT64"><table class="tooltip"><tr><th>Size</th><td>0 x 0</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT65"><table class="tooltip"><tr><th>Size</th><td>1 x 0</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT66"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>mxArray</td></tr></table></div>
+<div class="tooltip" id="TT67"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT68"><table class="tooltip"><tr><th>Size</th><td>4 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT69"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT70"><table class="tooltip"><tr><th>Size</th><td>4 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT71"><table class="tooltip"><tr><th>Size</th><td>256 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT72"><table class="tooltip"><tr><th>Size</th><td>256 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT73"><table class="tooltip"><tr><th>Size</th><td>1 x 7</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT74"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT75"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>struct</td></tr></table></div>
+<div class="tooltip" id="TT76"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>uint32</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT77"><table class="tooltip"><tr><th>Size</th><td>1 x 8</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT78"><table class="tooltip"><tr><th>Size</th><td>1 x 13</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT79"><table class="tooltip"><tr><th>Size</th><td>1 x 16</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT80"><table class="tooltip"><tr><th>Size</th><td>2 x 1</td></tr><tr><th>Class</th><td>uint32</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT81"><table class="tooltip"><tr><th>Size</th><td>625 x 1</td></tr><tr><th>Class</th><td>uint32</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT82"><table class="tooltip"><tr><th>Size</th><td>1 x 37</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT83"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT84"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT85"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT86"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT87"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT88"><table class="tooltip"><tr><th>Size</th><td>1 x 30</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT89"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT90"><table class="tooltip"><tr><th>Size</th><td><b>:</b>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT91"><table class="tooltip"><tr><th>Size</th><td>1 x 1 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT92"><table class="tooltip"><tr><th>Size</th><td><b>:</b>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT93"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>unknown</td></tr></table></div>
+<div class="tooltip" id="V1"><table class="tooltip"><tr><th>Value</th><td>     0</br></td></tr></table></div>
+<div class="tooltip" id="V2"><table class="tooltip"><tr><th>Value</th><td>     2</br></td></tr></table></div>
+<div class="tooltip" id="V3"><table class="tooltip"><tr><th>Value</th><td>fixed</br></td></tr></table></div>
+<div class="tooltip" id="V4"><table class="tooltip"><tr><th>Value</th><td>     1</br></td></tr></table></div>
+</div>
+</div>
+<!-- End Tooltips -->
+
+<div class="south">
+<ul class="ui-tabs-nav">
+<li class="ui-tabs-nav-item ui-tabs-selected"><span class="tab-link" id="summary"><span>Summary</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="messages"><span>All Messages (2)</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="potentialDifferences"><span>Potential Differences</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="watchlist"><span>Variables</span></span></li>
+<li class="ui-tabs-nav-item hidden"><span class="tab-link" id="watchload"><span>Variables</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="buildlog1"><span>Build Log</span></span></li>
+</ul>
+
+<!-- Compilation Summary -->
+<div id="summarybody" class="ui-tabs-panel">
+<table cellpadding="1" cellspacing="4">
+<tr><td>C source code generated on:</td><td>24-Apr-2018 13:54:32</td></tr>
+<tr><td>Coding target:</td><td>MEX Function</td></tr>
+<tr><td>Number of errors:</td><td><a href="javascript:selectMessagesTab();">0</a></td></tr>
+<tr><td>Number of warnings:</td><td><a href="javascript:selectMessagesTab();">2</a></td></tr>
+<tr><td>Number of notices:</td><td><a href="javascript:selectMessagesTab();">0</a></td></tr>
+<tr><td>Number of potential differences:</td><td><a href="javascript:selectPotentialDifferencesTab();">9</a></td></tr>
+</table>
+<p/><p/><table>
+<tr><td><b>Tell Us What You Think</b></td></tr>
+<tr><td>We value your feedback. Please take a few minutes to answer this short questionnaire regarding the Code Generation Report.</td></tr>
+<tr><td><a href="matlab: emlcprivate('launchReportSurvey');">&gt;&gt;Provide Feedback</a></td></tr>
+</table>
+</div>
+
+<!-- Message Table -->
+<div id="messagesbody" class="ui-tabs-panel hidden">
+<table class="grid" summary="This table lists the messages produced during code generation." cellspacing="0" cellpadding="6">
+<thead>
+<tr>
+<th id="msgorder" scope="col"><div class="d1"><div class="d2"><a href="#">Order</a></div></div></th>
+<th id="msgtype" scope="col"><div class="d1"><div class="d2"><a href="#">Type</a></div></div></th>
+<th id="function" scope="col"><div class="d1"><div class="d2"><a href="#">Function</a></div></div></th>
+<th id="location" scope="col"><div class="d1"><div class="d2"><a href="#">Line</a></div></div></th>
+<th id="text" scope="col"><div class="d1"><div class="d2"><a href="#">Description</a></div></div></th>
+</tr>
+</thead>
+<tbody onmouseover="messagesMouseOver(event);" onmouseout="messagesMouseOut(event);" onclick="messagesClick(event);">
+<tr class="message warning" id="M1F382">
+<td class="msgorder" headers="msgorder"><a href="#">1</a></td>
+<td class="warning" headers="msgtype"></td>
+<td class="function" headers="function"><div>EvolveSINetwork &gt; EvolveSINetwork_main &gt; 1</div></td>
+<td class="location" headers="location"><div>50</div></td>
+<td class="text" headers="text"><div>Index variable t is used outside its corresponding FOR loop. The run-time behavior will differ from MATLAB if the loop is not executed.</div></td>
+</tr>
+<tr class="message warning" id="M2F386">
+<td class="msgorder" headers="msgorder"><a href="#">2</a></td>
+<td class="warning" headers="msgtype"></td>
+<td class="function" headers="function"><div>EvolveSINetwork &gt; EvolveSINetwork_main &gt; 2</div></td>
+<td class="location" headers="location"><div>50</div></td>
+<td class="text" headers="text"><div>Index variable t is used outside its corresponding FOR loop. The run-time behavior will differ from MATLAB if the loop is not executed.</div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Watchlist Table -->
+<div id="watchlistbody" class="ui-tabs-panel hidden">
+</div>
+<div id="watchloadbody" class="ui-tabs-panel hidden">
+Loading Variables table ...
+</div>
+
+<!-- Build Log -->
+<div id="buildlog1body" class="ui-tabs-panel hidden">
+<div class="grayline"></div>
+<table cellpadding="4" cellspacing="1"><tr>
+<td align="left" class="td-linebottomrt-gray" colspan="2">Build Parameters</td>
+</tr>
+<tr><td align="left" valign="top" class="td-linebottomrt">Build directory</td>
+<td align="left" valign="top" class="td-linebottomrt-link"><a href="matlab: cd('D:\Dropbox\p\postdoc\programs\matlab\sirs\spreading\src\codegen\mex\TwoSeedsSpreading')">D:\Dropbox\p\postdoc\programs\matlab\sirs\spreading\src\codegen\mex\TwoSeedsSpreading</a></td></tr>
+<tr><td align="left" valign="top" class="td-linebottomrt">Make wrapper</td>
+<td align="left" valign="top" class="td-linebottomrt-link">TwoSeedsSpreading_mex.bat</td></tr>
+</table>
+<br/>
+<table border="1" cellpadding="4" cellspacing="1" width="100%">
+<tr><td align="left" class="td-linebottomrt-gray">Build Log</td></tr>
+<tr><td valign="top" class="td-script">
+<pre>
+<span class="td-line-number">    1   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "TwoSeedsSpreading_mexutil.cpp"</span>
+<span class="td-line-number">    2   </span><span class="td-line-normal">TwoSeedsSpreading_mexutil.cpp</span>
+<span class="td-line-number">    3   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "TwoSeedsSpreading_data.cpp"</span>
+<span class="td-line-number">    4   </span><span class="td-line-normal">TwoSeedsSpreading_data.cpp</span>
+<span class="td-line-number">    5   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "TwoSeedsSpreading_initialize.cpp"</span>
+<span class="td-line-number">    6   </span><span class="td-line-normal">TwoSeedsSpreading_initialize.cpp</span>
+<span class="td-line-number">    7   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "TwoSeedsSpreading_terminate.cpp"</span>
+<span class="td-line-number">    8   </span><span class="td-line-normal">TwoSeedsSpreading_terminate.cpp</span>
+<span class="td-line-number">    9   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "TwoSeedsSpreading.cpp"</span>
+<span class="td-line-number">   10   </span><span class="td-line-normal">TwoSeedsSpreading.cpp</span>
+<span class="td-line-number">   11   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "meshgrid.cpp"</span>
+<span class="td-line-number">   12   </span><span class="td-line-normal">meshgrid.cpp</span>
+<span class="td-line-number">   13   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "assertValidSizeArg.cpp"</span>
+<span class="td-line-number">   14   </span><span class="td-line-normal">assertValidSizeArg.cpp</span>
+<span class="td-line-number">   15   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "eml_int_forloop_overflow_check.cpp"</span>
+<span class="td-line-number">   16   </span><span class="td-line-normal">eml_int_forloop_overflow_check.cpp</span>
+<span class="td-line-number">   17   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "nullAssignment.cpp"</span>
+<span class="td-line-number">   18   </span><span class="td-line-normal">nullAssignment.cpp</span>
+<span class="td-line-number">   19   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "GetSimulationParam.cpp"</span>
+<span class="td-line-number">   20   </span><span class="td-line-normal">GetSimulationParam.cpp</span>
+<span class="td-line-number">   21   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "fillUpMatrix.cpp"</span>
+<span class="td-line-number">   22   </span><span class="td-line-normal">fillUpMatrix.cpp</span>
+<span class="td-line-number">   23   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "sort1.cpp"</span>
+<span class="td-line-number">   24   </span><span class="td-line-normal">sort1.cpp</span>
+<span class="td-line-number">   25   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "sortIdx.cpp"</span>
+<span class="td-line-number">   26   </span><span class="td-line-normal">sortIdx.cpp</span>
+<span class="td-line-number">   27   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "eml_setop.cpp"</span>
+<span class="td-line-number">   28   </span><span class="td-line-normal">eml_setop.cpp</span>
+<span class="td-line-number">   29   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "error.cpp"</span>
+<span class="td-line-number">   30   </span><span class="td-line-normal">error.cpp</span>
+<span class="td-line-number">   31   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "rdivide.cpp"</span>
+<span class="td-line-number">   32   </span><span class="td-line-normal">rdivide.cpp</span>
+<span class="td-line-number">   33   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "GetNodes.cpp"</span>
+<span class="td-line-number">   34   </span><span class="td-line-normal">GetNodes.cpp</span>
+<span class="td-line-number">   35   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "EvolveSINetwork.cpp"</span>
+<span class="td-line-number">   36   </span><span class="td-line-normal">EvolveSINetwork.cpp</span>
+<span class="td-line-number">   37   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "rand.cpp"</span>
+<span class="td-line-number">   38   </span><span class="td-line-normal">rand.cpp</span>
+<span class="td-line-number">   39   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "eml_rand.cpp"</span>
+<span class="td-line-number">   40   </span><span class="td-line-normal">eml_rand.cpp</span>
+<span class="td-line-number">   41   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "eml_rand_mcg16807_stateful.cpp"</span>
+<span class="td-line-number">   42   </span><span class="td-line-normal">eml_rand_mcg16807_stateful.cpp</span>
+<span class="td-line-number">   43   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "eml_rand_shr3cong_stateful.cpp"</span>
+<span class="td-line-number">   44   </span><span class="td-line-normal">eml_rand_shr3cong_stateful.cpp</span>
+<span class="td-line-number">   45   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "eml_rand_mt19937ar_stateful.cpp"</span>
+<span class="td-line-number">   46   </span><span class="td-line-normal">eml_rand_mt19937ar_stateful.cpp</span>
+<span class="td-line-number">   47   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "calcSpTime.cpp"</span>
+<span class="td-line-number">   48   </span><span class="td-line-normal">calcSpTime.cpp</span>
+<span class="td-line-number">   49   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "interface/_coder_TwoSeedsSpreading_info.cpp"</span>
+<span class="td-line-number">   50   </span><span class="td-line-normal">_coder_TwoSeedsSpreading_info.cpp</span>
+<span class="td-line-number">   51   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "interface/_coder_TwoSeedsSpreading_api.cpp"</span>
+<span class="td-line-number">   52   </span><span class="td-line-normal">_coder_TwoSeedsSpreading_api.cpp</span>
+<span class="td-line-number">   53   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "interface/_coder_TwoSeedsSpreading_mex.cpp"</span>
+<span class="td-line-number">   54   </span><span class="td-line-normal">_coder_TwoSeedsSpreading_mex.cpp</span>
+<span class="td-line-number">   55   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "TwoSeedsSpreading_emxutil.cpp"</span>
+<span class="td-line-number">   56   </span><span class="td-line-normal">TwoSeedsSpreading_emxutil.cpp</span>
+<span class="td-line-number">   57   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\TwoSeedsSpreading" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "cpp_mexapi_version.cpp"</span>
+<span class="td-line-number">   58   </span><span class="td-line-normal">cpp_mexapi_version.cpp</span>
+<span class="td-line-number">   59   </span><span class="td-line-normal">link /nologo /manifest /DLL /LIBPATH:"C:\Program Files\MATLAB\R2017b\extern\lib\win64\microsoft" libmx.lib libmex.lib libmat.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /EXPORT:mexFunction /NODEFAULTLIB:LIBCMT   /OUT:TwoSeedsSpreading_mex.mexw64  TwoSeedsSpreading_mexutil.obj TwoSeedsSpreading_data.obj TwoSeedsSpreading_initialize.obj TwoSeedsSpreading_terminate.obj TwoSeedsSpreading.obj meshgrid.obj assertValidSizeArg.obj eml_int_forloop_overflow_check.obj nullAssignment.obj GetSimulationParam.obj fillUpMatrix.obj sort1.obj sortIdx.obj eml_setop.obj error.obj rdivide.obj GetNodes.obj EvolveSINetwork.obj rand.obj eml_rand.obj eml_rand_mcg16807_stateful.obj eml_rand_shr3cong_stateful.obj eml_rand_mt19937ar_stateful.obj calcSpTime.obj _coder_TwoSeedsSpreading_info.obj _coder_TwoSeedsSpreading_api.obj _coder_TwoSeedsSpreading_mex.obj TwoSeedsSpreading_emxutil.obj cpp_mexapi_version.obj   @TwoSeedsSpreading_mex_mex.arf</span>
+<span class="td-line-number">   60   </span><span class="td-line-normal">   Creating library TwoSeedsSpreading_mex.lib and object TwoSeedsSpreading_mex.exp</span>
+<span class="td-line-number">   61   </span><span class="td-line-normal">Build completed using compiler msvcpp120</span>
+<span class="td-line-number">   62   </span><span class="td-line-normal">mt -outputresource:"TwoSeedsSpreading_mex.mexw64;2" -manifest "TwoSeedsSpreading_mex.mexw64.manifest"</span>
+<span class="td-line-number">   63   </span><span class="td-line-normal">Microsoft (R) Manifest Tool version 6.3.9600.16384</span>
+<span class="td-line-number">   64   </span><span class="td-line-normal">Copyright (c) Microsoft Corporation 2012. </span>
+<span class="td-line-number">   65   </span><span class="td-line-normal">All rights reserved.</span>
+</pre>
+</td></tr></table>
+
+</div>
+
+<!-- Potential Differences -->
+<div id="potentialDifferencesBody" class="ui-tabs-panel hidden">
+<div id="potentialDifferencesBanner">The following differences from MATLAB may be encountered while executing the generated code.
+<a href="matlab:helpview('C:/Program Files/MATLAB/R2017b/help/coder/helptargets.map','msginfo_Coder_reportGen_potentialDifferencesBannerText');">More information</a></div>
+<table class="grid" summary="This table lists the messages produced during code generation." cellspacing="0" cellpadding="6">
+<thead>
+<tr>
+<th id="msgorder" scope="col"><div class="d1"><div class="d2"><a href="#">Order</a></div></div></th>
+<th id="text" scope="col"><div class="d1"><div class="d2"><a href="#">Description</a></div></div></th>
+</tr>
+</thead>
+<tbody onmouseover="messagesMouseOver(event);" onmouseout="messagesMouseOut(event);" onclick="clickPotentialDifferenceMessage(event);">
+<tr class="message potentialdiff" id="PD1">
+<td class="msgorder" headers="msgorder"><a href="#">1</a></td>
+<td class="text" headers="text"><div>The generated code assumes that real input values result in real outputs. If complex outputs are expected, use the 'complex' function to give the input a zero imaginary part.</div></td>
+</tr>
+<tr class="message potentialdiff" id="PD2">
+<td class="msgorder" headers="msgorder"><a href="#">2</a></td>
+<td class="text" headers="text"><div>The generated code assumes that the number of iterations of the loop is representable using the C type 'int'.</div></td>
+</tr>
+<tr class="message potentialdiff" id="PD3">
+<td class="msgorder" headers="msgorder"><a href="#">3</a></td>
+<td class="text" headers="text"><div>The generated code assumes that the index is within the array bounds. If the index exceeds the bounds, the array will not grow. To grow the array, consider preallocating memory or using concatenation. For example, [X A].</div></td>
+</tr>
+<tr class="message potentialdiff" id="PD4">
+<td class="msgorder" headers="msgorder"><a href="#">4</a></td>
+<td class="text" headers="text"><div>The generated code assumes that the sizes on the left and right sides match.</div></td>
+</tr>
+<tr class="message potentialdiff" id="PD5">
+<td class="msgorder" headers="msgorder"><a href="#">5</a></td>
+<td class="text" headers="text"><div>The generated code assumes that the input is representable using the C type 'int'.</div></td>
+</tr>
+<tr class="message potentialdiff" id="PD6">
+<td class="msgorder" headers="msgorder"><a href="#">6</a></td>
+<td class="text" headers="text"><div>For indexing a vector with a vector, vector1(vector2), the code generator assumed that the result would have the same orientation as vector1. If vector1 is a scalar at run time, the orientation of vector2 must match vector1.<br/><a href="matlab:helpview('C:/Program Files/MATLAB/R2017b/help/coder/helptargets.map','msginfo_Coder_potentialDifferences_VectorVector');">More information</a></div></td>
+</tr>
+<tr class="message potentialdiff" id="PD7">
+<td class="msgorder" headers="msgorder"><a href="#">7</a></td>
+<td class="text" headers="text"><div>In the generated code, the dimension to operate along is selected automatically, and might be different from MATLAB. Consider specifying the working dimension explicitly as a constant value.<br/><a href="matlab:helpview('C:/Program Files/MATLAB/R2017b/help/coder/helptargets.map','msginfo_Coder_potentialDifferences_autoDimIncompatibility');">More information</a></div></td>
+</tr>
+<tr class="message potentialdiff" id="PD8">
+<td class="msgorder" headers="msgorder"><a href="#">8</a></td>
+<td class="text" headers="text"><div>The generated code assumes that the size vector is a row vector with finite integer elements that are less than intmax('int32'), and that fit in the C data type 'int' on the target hardware.<br/><a href="matlab:helpview('C:/Program Files/MATLAB/R2017b/help/coder/helptargets.map','msginfo_Coder_potentialDifferences_emluUuassertuUuvaliduUusizeuUuarguUuinvalidSizeVector');">More information</a></div></td>
+</tr>
+<tr class="message potentialdiff" id="PD9">
+<td class="msgorder" headers="msgorder"><a href="#">9</a></td>
+<td class="text" headers="text"><div>The generated code assumes that the dimension to operate along has non-zero length.</div></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+<!-- Begin MATLAB Code Panel -->
+<div class="center">
+<div class="center-title">
+<div class="ui-tabs-nav-item ui-tabs-selected">
+<span class="functiontitle">
+</span>
+<!-- Begin Call Sites -->
+<span id="callsiteselecttable" class="call-sites-tbl">
+<span id="callsiteselectlabel" class="filtered">Calls:</span>
+<select id="callsiteselect" onchange="callSiteChange(event)">
+<option value="callsiteprompt">Select a function call:</option>
+</select>
+</span>
+<!-- End Call Sites -->
+</div>
+</div>
+<div class="ui-tabs-panel">
+<iframe id="hiddenCodeFrame"></iframe>
+<div class="code" onmouseover="mcodeMouseOver(event);" onmouseout="mcodeMouseOut(event);"onclick="mcodeClick(event);">
+</div>
+</div>
+</div>
+<!-- End MATLAB Code Panel -->
+</body>
+</html>

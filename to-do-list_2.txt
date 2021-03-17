@@ -1,0 +1,63 @@
+--------------
+OK - color code the significant regions according z-score in gradient fashion
+- remove top panels from surface figures
+- put the brain func comm around the spiders
+- get the surfaces for subcortical and plot together with surfaces
+- correlate the average spreading time z-score of MTL nodes with hippocampus volume and cortical thickness
+OK - correlate the average spreading time z-score of the significant findings with hippocampus volume (global)
+OK - correlate the average cortical thickness with average z-score of subjects (global)
+OK - group effects of (controlling for) cortical thickness and hippocampus volume on node spreading time (nodal on L+R) on the map
+
+
+structure of figures:
+
+fig 1) methods
+
+fig 2) L + R sp times (in/out together, maybe?)
+
+fig 3) L + R corrected for cortical thickness + global effects of cort thick
+
+fig 4) L + R corrected for Hippocampus volume + global effects of hippocampus volume
+
+fig 5) maybe close with the statistical analysis between t-values of sp times VS t-val of sp times corrected for hip vol and cort thickness
+
+
+----
+Hi Maurizio,
+
+You can retrieve the data she used from the matlab file: /host/gypsy/local_raid/min/CTWManalysis/CTWManalysis2016Mar.mat. You’ll find her list of patients there.
+
+The cortical thickness data are in /data/noel/noel9/Controls_3T_Trio/{case}/CIVET-1.2.1/thickness for the controls, /data/noel/noel9/TLE_3T_Trio/{case}/CIVET-1.2.1/thickness for the tles.
+
+For the hippocampal volumes, they are stored in /host/gypsy/local_raid/min/CTWManalysis/get3TMultiSurfVol.txt
+
+Voilà !!
+----
+Hi all
+
+(Boris, check item 6 below and the description of figs 3, 4 and 5, please)
+
+I have presented the results to Andrea and Boris today concerning what we are calling the "weighted spreading time" that is calculated using the inverse FA weights. The weighted spreading time between two immediate nodes is equal to the inverse FA weight between these nodes.
+
+However, the signal that activates a given node comes from many active neighbors, instead of from only one. Then the spreading time to a given node i is equal to the average spreading time to reach i from each of its active neighbors, added to the average spreading time to reach each of the active neighbors of i. This measure should be similar to the "asynchronous spreading time" that Bratislav discusses in his paper. It can be physiologically interpreted by saying the nodes have an internal "delay" for each arriving signal, so that the integration of the signal coming from neighbor nodes is does not happen instantaneously. It is supported by the fact that a node represents a neuron population, instead of a single neuron.
+
+You can see in the figures I sent yesterday now we have a very nice and consistent set of results. The overall average weighted spreading times (z-scored to controls) is consistently greater in patients, meaning that the signal is slower in patients (fig in page 1, right column). When going to the individual nodes, we can see that there are frontal, temporal and occcipital nodes that are slower in patients, both in L and R TLE, and also in the L + flipped R TLE (pages 2 and 3). This happens can be seen consistently also for the MTL seeds (pages 4 and 5). There is more regions marked in the MTL seeds figure because there is a reduced number of comparisons for the FDR (Tsince I am isolating only the MTL nodes).
+
+We decided for some modifications to the figures:
+1) for the surface plots, all the findings are FDR corrected, and there is a lot of them. Thus, I will color code in a gradient of light to dark blue the weighted spreading time difference of TLE to controls for each node, such that we know which nodes are reached faster and which are reached slower.
+2) remove top panels from the surface plots, in which I show the z-score value for patients and controls (this information will be encoded in the blue gradient in item 1)
+3) highlight the functional communities in surface plots of the Yeo parcellation around the spider graphics.
+4) get the surfaces for subcortical nodes to add them to the surface plots
+5) make a correlation plot of the z-scored average spreading time of the significant findings Vs. both the Hippocampus volume and the Cortical Thickness.
+6) verify the group effects on the nodal spreading time when controlling for cortical thickness and when controling for hippocampus volume. Boris: I understood how to calculate the T-values for these measures. However, I am not quite sure what to do with the T-values obtained when controlling for either cortical thickness or hippocampus volume. Should I threshold these T-values at +or- 2 to plot them on the surface? Or should I just plot the T-values on the surface?
+
+For the structure of the paper, we decided to have:
+fig 1: methods
+fig 2: L + flipped R in/out spreading times together on the surface + spider plot
+fig 3: L + flipped R corrected for cortical thickness + correlation plot of avg sp time Vs. cort thick
+fig 4: L + flipped R corrected for hippocampus volume + correlation plot of avg sp time Vs. hippocampus volume
+fig 5: "multimodal" statistical analysis analysis of the t-values coming from sp times per nodes Vs. the sp time corrected for hippocampus volume and versus the sp time corrected for cortical thickness.
+
+Boris: I am not sure what I should plot in the surfaces for figs 3, 4 and 5.
+
+Have a good night!

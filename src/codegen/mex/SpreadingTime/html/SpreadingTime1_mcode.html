@@ -1,0 +1,54 @@
+<!-- saved from url=(0014)about:internet -->
+<html>
+<body>
+<script src="resources/eml_report_loadable_data.js"></script>
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="1,1" id="srcline1"> 1</a></span><span class="line"><span class="keyword">function</span> [<span class="var type1" id="S2T1U3">T</span>,<span class="var type1" id="S3T1U4">V</span>,<span class="var type1" id="S4T1U5">S</span>] = SpreadingTime(<span class="var type1" id="S5T1U8">A</span>, <span class="var type1" id="S6T2U9">Theta</span>, <span class="var type1" id="S7T2U10">nSim</span>, <span class="var type1" id="S8T2U11">tTotal</span>)</span></span>
+<span class="srcline"><span class="lineno"><a href="1,2" id="srcline2"> 2</a></span><span class="line">    <span class="mxinfo " id="T3:U8"><span class="var type1" id="S9T3U14">nodes</span> = <span class="mxinfo " id="T3:U10"><span class="fcn" id="F153N2:B16">GetNodes</span>(<span class="var type1" id="S5T1U17">A</span>, <span class="var type1" id="S6T2U18">Theta</span>, 0, <span class="mxinfo " id="T2:U13">1</span>, false)</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,3" id="srcline3"> 3</a></span><span class="line">    <span class="mxinfo " id="T2:U14"><span class="var type1" id="S12T2U25">N</span> = <span class="mxinfo " id="T2:U16">numel(<span class="var type1" id="S9T3U28">nodes</span>)</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,4" id="srcline4"> 4</a></span><span class="line">    <span class="mxinfo " id="T1:U18"><span class="var type1" id="S2T1U31">T</span> = <span class="mxinfo " id="T1:U20">zeros(<span class="var type1" id="S12T2U34">N</span>,<span class="var type1" id="S12T2U35">N</span>)</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,5" id="srcline5"> 5</a></span><span class="line">    <span class="mxinfo " id="T1:U23"><span class="var type1" id="S3T1U38">V</span> = <span class="mxinfo " id="T1:U25">zeros(<span class="var type1" id="S12T2U41">N</span>,<span class="var type1" id="S12T2U42">N</span>)</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,6" id="srcline6"> 6</a></span><span class="line">    <span class="mxinfo " id="T1:U28"><span class="var type1" id="S4T1U45">S</span> = <span class="mxinfo " id="T1:U30">zeros(<span class="var type1" id="S12T2U48">N</span>,<span class="var type1" id="S12T2U49">N</span>)</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,7" id="srcline7"> 7</a></span><span class="line">    <span class="keyword">for</span> <span class="var type1" id="S15T2U52">i</span> = <span class="mxinfo " id="T2:U34">1</span>:<span class="var type1" id="S12T2U55">N</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,8" id="srcline8"> 8</a></span><span class="line">        <span class="keyword">for</span> <span class="var type1" id="S16T2U58">j</span> = <span class="mxinfo " id="T2:U37">1</span>:<span class="var type1" id="S12T2U61">N</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,9" id="srcline9"> 9</a></span><span class="line">            [<span class="mxinfo " id="T2:U39"><span class="potentialdiff PD2"><span class="var type1" id="S2T1U66">T</span>(<span class="var type1" id="S15T2U67">i</span>,<span class="var type1" id="S16T2U68">j</span>)</span></span>, <span class="mxinfo " id="T2:U43"><span class="potentialdiff PD2"><span class="var type1" id="S3T1U70">V</span>(<span class="var type1" id="S15T2U71">i</span>,<span class="var type1" id="S16T2U72">j</span>)</span></span>, <span class="mxinfo " id="T2:U47"><span class="potentialdiff PD2"><span class="var type1" id="S4T1U74">S</span>(<span class="var type1" id="S15T2U75">i</span>,<span class="var type1" id="S16T2U76">j</span>)</span></span>] = <span class="fcn" id="F158N7:B78">SpreadNodeToNodeNTimes</span>(<span class="var type1" id="S15T2U79">i</span>, <span class="var type1" id="S16T2U80">j</span>, <span class="var type1" id="S9T3U81">nodes</span>, <span class="var type1" id="S7T2U82">nSim</span>, <span class="var type1" id="S8T2U83">tTotal</span>);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,10" id="srcline10">10</a></span><span class="line">        <span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,11" id="srcline11">11</a></span><span class="line">    <span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,12" id="srcline12">12</a></span><span class="line"><span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,13" id="srcline13">13</a></span><span class="line"></span></span>
+</pre>
+<div class="dead">
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="1,14" id="srcline14">14</a></span><span class="line">function [T,V,S] = SpreadNodeToNodeNTimes(i, j, nodes, nSim, tTotal)</span></span>
+<span class="srcline"><span class="lineno"><a href="1,15" id="srcline15">15</a></span><span class="line">    T = 0.0;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,16" id="srcline16">16</a></span><span class="line">    S = 0.0;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,17" id="srcline17">17</a></span><span class="line">    V = 0.0;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,18" id="srcline18">18</a></span><span class="line">    nn = 0;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,19" id="srcline19">19</a></span><span class="line">    for k = 1:nSim</span></span>
+<span class="srcline"><span class="lineno"><a href="1,20" id="srcline20">20</a></span><span class="line">        [TT,SS] = SpreadNodeToNode(i,j,nodes,tTotal);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,21" id="srcline21">21</a></span><span class="line">        if ~isnan(TT)</span></span>
+<span class="srcline"><span class="lineno"><a href="1,22" id="srcline22">22</a></span><span class="line">            T = T + TT;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,23" id="srcline23">23</a></span><span class="line">            V = V + TT .* TT;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,24" id="srcline24">24</a></span><span class="line">            S = S + SS;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,25" id="srcline25">25</a></span><span class="line">            nn = nn + 1;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,26" id="srcline26">26</a></span><span class="line">        end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,27" id="srcline27">27</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,28" id="srcline28">28</a></span><span class="line">    if nn == 0</span></span>
+<span class="srcline"><span class="lineno"><a href="1,29" id="srcline29">29</a></span><span class="line">        <span class="comment">% all TT were NaN</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,30" id="srcline30">30</a></span><span class="line">        T = NaN;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,31" id="srcline31">31</a></span><span class="line">        V = NaN;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,32" id="srcline32">32</a></span><span class="line">        S = NaN;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,33" id="srcline33">33</a></span><span class="line">    else</span></span>
+<span class="srcline"><span class="lineno"><a href="1,34" id="srcline34">34</a></span><span class="line">        T = T ./ nn;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,35" id="srcline35">35</a></span><span class="line">        V = V ./ nn - T .* T;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,36" id="srcline36">36</a></span><span class="line">        S = S ./ nn;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,37" id="srcline37">37</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,38" id="srcline38">38</a></span><span class="line">    if V &lt; 0.0</span></span>
+<span class="srcline"><span class="lineno"><a href="1,39" id="srcline39">39</a></span><span class="line">        V = 0.0;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,40" id="srcline40">40</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,41" id="srcline41">41</a></span><span class="line">end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,42" id="srcline42">42</a></span><span class="line"> </span></span>
+</pre>
+</div>
+</body>
+</html>

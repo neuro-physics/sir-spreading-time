@@ -1,0 +1,11 @@
+clearvars
+close all
+
+compile_EvolveSINetwork
+compile_EvolveSINetworkAndCountActive
+compile_FindBestFunctionalMatch
+compile_FunctionalConnGuess
+compile_NetworkActivationTime
+compile_PhaseTransition
+compile_SpreadingTime
+compile_TwoSeedsSpreading

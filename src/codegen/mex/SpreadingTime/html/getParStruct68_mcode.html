@@ -1,0 +1,51 @@
+<!-- saved from url=(0014)about:internet -->
+<html>
+<body>
+<script src="resources/eml_report_loadable_data.js"></script>
+<div class="dead">
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="29,1" id="srcline1"> 1</a></span><span class="line">function nodes = GetNodes(A,Theta,x0,nSeeds,isCompetitive)</span></span>
+<span class="srcline"><span class="lineno"><a href="29,2" id="srcline2"> 2</a></span><span class="line"><span class="comment">% A       -&gt; [N,N] adjacency matrix (either weighted or binary)</span></span></span>
+<span class="srcline"><span class="lineno"><a href="29,3" id="srcline3"> 3</a></span><span class="line"><span class="comment">% Theta   -&gt; [1,1] to [1,N] vector activation threshold; if a vector is provided, each element has Theta(i) activation Threshold</span></span></span>
+<span class="srcline"><span class="lineno"><a href="29,4" id="srcline4"> 4</a></span><span class="line"><span class="comment">% x0      -&gt; [1,1] to [1,N] initial condition; if a vector is provided, each element has ic x0(i)</span></span></span>
+<span class="srcline"><span class="lineno"><a href="29,5" id="srcline5"> 5</a></span><span class="line">    if nargin &lt; 4 || isempty(nSeeds)</span></span>
+<span class="srcline"><span class="lineno"><a href="29,6" id="srcline6"> 6</a></span><span class="line">        nSeeds = 1;</span></span>
+<span class="srcline"><span class="lineno"><a href="29,7" id="srcline7"> 7</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="29,8" id="srcline8"> 8</a></span><span class="line">    if nargin &lt; 5 || isempty(isCompetitive)</span></span>
+<span class="srcline"><span class="lineno"><a href="29,9" id="srcline9"> 9</a></span><span class="line">        isCompetitive = false;</span></span>
+<span class="srcline"><span class="lineno"><a href="29,10" id="srcline10">10</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="29,11" id="srcline11">11</a></span><span class="line">    if ~isCompetitive</span></span>
+<span class="srcline"><span class="lineno"><a href="29,12" id="srcline12">12</a></span><span class="line">        nSeeds = 1;</span></span>
+<span class="srcline"><span class="lineno"><a href="29,13" id="srcline13">13</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="29,14" id="srcline14">14</a></span><span class="line">    N = numel(A(1,:));</span></span>
+<span class="srcline"><span class="lineno"><a href="29,15" id="srcline15">15</a></span><span class="line">    x_init = repeatToComplete(x0, N);</span></span>
+<span class="srcline"><span class="lineno"><a href="29,16" id="srcline16">16</a></span><span class="line">    Theta_el = repeatToComplete(Theta, N);</span></span>
+<span class="srcline"><span class="lineno"><a href="29,17" id="srcline17">17</a></span><span class="line">    nodes = repmat(struct('x', 0.0, 'neigh', zeros(0,1), 'w', zeros(0,1), 'par', getParStruct(0.0, 0.0, 0, 0.0, 0, 0, 0, 0.0)), 1, N);</span></span>
+<span class="srcline"><span class="lineno"><a href="29,18" id="srcline18">18</a></span><span class="line">    coder.varsize('nodes(:).neigh', 'nodes(:).w');</span></span>
+<span class="srcline"><span class="lineno"><a href="29,19" id="srcline19">19</a></span><span class="line">    for j = 1:N</span></span>
+<span class="srcline"><span class="lineno"><a href="29,20" id="srcline20">20</a></span><span class="line">        ind = find(A(:,j));</span></span>
+<span class="srcline"><span class="lineno"><a href="29,21" id="srcline21">21</a></span><span class="line">        [~,s] = sort(A(ind,j),'descend'); <span class="comment">% sorting connections from the heaviest to the lightest</span></span></span>
+<span class="srcline"><span class="lineno"><a href="29,22" id="srcline22">22</a></span><span class="line">        nodes(j).x = x_init(j);</span></span>
+<span class="srcline"><span class="lineno"><a href="29,23" id="srcline23">23</a></span><span class="line">        nodes(j).neigh = ind(s);</span></span>
+<span class="srcline"><span class="lineno"><a href="29,24" id="srcline24">24</a></span><span class="line">        nodes(j).w = A(ind(s),j);</span></span>
+<span class="srcline"><span class="lineno"><a href="29,25" id="srcline25">25</a></span><span class="line">        nodes(j).par = getParStruct(0.0, 0.0, 0, Theta_el(j), sum(A(ind,j)), numel(ind), nSeeds, 0.0);</span></span>
+<span class="srcline"><span class="lineno"><a href="29,26" id="srcline26">26</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="29,27" id="srcline27">27</a></span><span class="line">end</span></span>
+</pre>
+</div>
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="29,28" id="srcline28">28</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="29,29" id="srcline29">29</a></span><span class="line"><span class="keyword">function</span> <span class="var type1" id="S28T5U198">p</span> = getParStruct(<span class="var type1" id="S29T2U201">Iext</span>, <span class="var type1" id="S30T2U202">Isyn</span>, <span class="var type1" id="S31T2U203">kInp</span>, <span class="var type1" id="S32T2U204">Theta</span>, <span class="var type1" id="S33T2U205">W</span>, <span class="var type1" id="S34T2U206">n</span>, <span class="var type1" id="S35T2U207">nInp</span>, <span class="var type1" id="S36T2U208">s</span>)</span></span>
+<span class="srcline"><span class="lineno"><a href="29,30" id="srcline30">30</a></span><span class="line"><span class="comment">% Iext -&gt; external current used to initially excite a given node</span></span></span>
+<span class="srcline"><span class="lineno"><a href="29,31" id="srcline31">31</a></span><span class="line"><span class="comment">% Isyn -&gt; sum of weighted inputs over node i; i.e. sum of w_ij * s_j</span></span></span>
+<span class="srcline"><span class="lineno"><a href="29,32" id="srcline32">32</a></span><span class="line"><span class="comment">% kInp -&gt; (only for multiple seeds) the state towards which node i must be updated (can be from 1 to nInp)</span></span></span>
+<span class="srcline"><span class="lineno"><a href="29,33" id="srcline33">33</a></span><span class="line"><span class="comment">% Theta -&gt; the element threshold for firing</span></span></span>
+<span class="srcline"><span class="lineno"><a href="29,34" id="srcline34">34</a></span><span class="line"><span class="comment">% W -&gt; total input weight over node i</span></span></span>
+<span class="srcline"><span class="lineno"><a href="29,35" id="srcline35">35</a></span><span class="line"><span class="comment">% n -&gt; number of inputs over node i</span></span></span>
+<span class="srcline"><span class="lineno"><a href="29,36" id="srcline36">36</a></span><span class="line"><span class="comment">% nInp -&gt; total number of possible states</span></span></span>
+<span class="srcline"><span class="lineno"><a href="29,37" id="srcline37">37</a></span><span class="line"><span class="comment">% s -&gt; cumulative time it took for node i to get activated during spreading time simulation (summing up all times from the initial seed stimulation)</span></span></span>
+<span class="srcline"><span class="lineno"><a href="29,38" id="srcline38">38</a></span><span class="line">    <span class="mxinfo " id="T5:U10"><span class="var type1" id="S28T5U211">p</span> = <span class="mxinfo " id="T5:U12">struct(<span class="string">'Iext'</span>, <span class="var type1" id="S29T2U215">Iext</span>, <span class="string">'Isyn'</span>, <span class="var type1" id="S30T2U217">Isyn</span>, <span class="string">'kInp'</span>, <span class="var type1" id="S31T2U219">kInp</span>, <span class="string">'Theta'</span>, <span class="var type1" id="S32T2U221">Theta</span>, <span class="string">'W'</span>, <span class="var type1" id="S33T2U223">W</span>, <span class="string">'n'</span>, <span class="var type1" id="S34T2U225">n</span>, <span class="string">'nInp'</span>, <span class="var type1" id="S35T2U227">nInp</span>, <span class="string">'spTime'</span>, <span class="var type1" id="S36T2U229">s</span>)</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="29,39" id="srcline39">39</a></span><span class="line"><span class="keyword">end</span></span></span>
+</pre>
+</body>
+</html>

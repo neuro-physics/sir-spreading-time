@@ -1,0 +1,957 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Code Generation Report</title>
+<link rel="stylesheet" type="text/css" href="resources/eml_report.css" />
+<link rel="stylesheet" type="text/css" href="resources/jQuery/ui.resizable.css" />
+<link rel="stylesheet" type="text/css" href="index.css" />
+<style>
+	pre.code{
+		-moz-tab-size: 4; /* For Firefox */
+		-o-tab-size: 4; /* For Opera 10.6-12.1 */
+		tab-size: 4; /* For Chrome */
+	}
+</style>
+<script type="text/javascript" src="resources/jQuery/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="resources/jQuery/jquery-ui-1.7.custom.min.js"></script>
+<script type="text/javascript" src="resources/jQuery/jquery.tablesorter.mod.js"></script>
+<script type="text/javascript" src="resources/jQuery/jquery.hotkeys-0.7.8.js"></script>
+<script type="text/javascript" src="resources/eml_report_interactions.js"></script>
+<script type="text/javascript" src="resources/eml_report_layout.js"></script>
+<script type="text/javascript" src="rtwshrink.js"></script>
+<script type="text/javascript">
+var localizedMessages = {
+    callSelectPrompt: "Select a function call:",
+    callSelectSource: "Calls from this function",
+    callSelectTarget: "Calls to this function",
+    infoForExpression: "Information for the selected expression:",
+    infoForVarType: "Information for the selected variable:",
+    infoForVarConst: "Information for the selected compile-time constant:",
+    infoForVarNone: "This variable does not have information associated with it.",
+    infoForFilter: "Matched {0}/{1} functions, {2}/{3} methods",
+    autoExtrinsicCall: "Only supported within the MATLAB environment."
+};
+var keyBindings = {
+        selectMCodeTab: "Ctrl+m",
+    selectCallStackTab: "Ctrl+k",
+        selectCCodeTab: "Ctrl+c",
+       selectReportTab: "Ctrl+r",
+     selectCenterPanel: "Ctrl+w",
+      selectSummaryTab: "Ctrl+s",
+     selectMessagesTab: "Ctrl+a",
+    selectWatchListTab: "Ctrl+v",
+     selectBuildLogTab: "Ctrl+t",
+    clearAllHighlights: "Esc"
+};
+var functionInfoTable = {
+ MATLABcode1: "NetworkActivationTime1_mcode.html",
+ fpath1: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/NetworkActivationTime.m",
+ lines1: [1, 1, 13],
+ watch1: "NetworkActivationTime1_watch.html",
+ title1: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\NetworkActivationTime.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\NetworkActivationTime.m')\">NetworkActivationTime</a></span>",
+ tcall1: [  ],
+ scall1: [ [ "From line 2 to GetNodes", "155#srcline1" ], [ "From line 4 to GetSimulationParam", "404#srcline1" ], [ "From line 8 to EvolveSINetwork", "415#srcline1" ] ],
+ MATLABcode68: "repeatToComplete68_mcode.html",
+ fpath68: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/repeatToComplete.m",
+ lines68: [1, 1, 14],
+ watch68: "repeatToComplete68_watch.html",
+ title68: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\repeatToComplete.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\repeatToComplete.m')\">repeatToComplete &gt; 1</a></span>",
+ tcall68: [ [ "From GetNodes line 15", "155#F68N21:B61" ] ],
+ scall68: [  ],
+ MATLABcode70: "repeatToComplete70_mcode.html",
+ fpath70: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/repeatToComplete.m",
+ lines70: [1, 1, 14],
+ watch70: "repeatToComplete70_watch.html",
+ title70: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\repeatToComplete.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\repeatToComplete.m')\">repeatToComplete &gt; 2</a></span>",
+ tcall70: [ [ "From GetNodes line 16", "155#F70N21:B68" ] ],
+ scall70: [  ],
+ MATLABcode71: "getParStruct71_mcode.html",
+ fpath71: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/GetNodes.m",
+ lines71: [28, 29, 40],
+ watch71: "getParStruct71_watch.html",
+ title71: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\GetNodes.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\GetNodes.m')\">GetNodes &gt; getParStruct</a></span>",
+ tcall71: [ [ "From GetNodes line 17", "155#F71N7:B92" ], [ "From GetNodes line 25", "155#F71N7:B178" ] ],
+ scall71: [  ],
+ MATLABcode155: "GetNodes155_mcode.html",
+ fpath155: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/GetNodes.m",
+ lines155: [1, 1, 29],
+ watch155: "GetNodes155_watch.html",
+ title155: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\GetNodes.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\GetNodes.m')\">GetNodes</a></span>",
+ tcall155: [ [ "From NetworkActivationTime line 2", "1#F155N6:B18" ] ],
+ scall155: [ [ "From line 15 to repeatToComplete > 1", "68#srcline1" ], [ "From line 16 to repeatToComplete > 2", "70#srcline1" ], [ "From line 17 to GetNodes > getParStruct", "71#srcline29" ], [ "From line 25 to GetNodes > getParStruct", "71#srcline29" ] ],
+ MATLABcode346: "getRandPerm346_mcode.html",
+ fpath346: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/fillUpMatrix.m",
+ lines346: [24, 25, 33],
+ watch346: "getRandPerm346_watch.html",
+ title346: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\fillUpMatrix.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\fillUpMatrix.m')\">fillUpMatrix &gt; getRandPerm</a></span>",
+ tcall346: [ [ "From fillUpMatrix line 14", "359#F346N20:B49" ] ],
+ scall346: [  ],
+ MATLABcode359: "fillUpMatrix359_mcode.html",
+ fpath359: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/fillUpMatrix.m",
+ lines359: [1, 1, 25],
+ watch359: "fillUpMatrix359_watch.html",
+ title359: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\fillUpMatrix.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\fillUpMatrix.m')\">fillUpMatrix</a></span>",
+ tcall359: [ [ "From GetSimulationParam line 52", "404#F359N19:B149" ] ],
+ scall359: [ [ "From line 14 to fillUpMatrix > getRandPerm", "346#srcline25" ] ],
+ MATLABcode404: "GetSimulationParam404_mcode.html",
+ fpath404: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/GetSimulationParam.m",
+ lines404: [1, 1, 67],
+ watch404: "GetSimulationParam404_watch.html",
+ title404: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\GetSimulationParam.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\GetSimulationParam.m')\">GetSimulationParam</a></span>",
+ tcall404: [ [ "From NetworkActivationTime line 4", "1#F404N8:B35" ] ],
+ scall404: [ [ "From line 52 to fillUpMatrix", "359#srcline1" ] ],
+ MATLABcode405: "UpdateInputNSeed405_mcode.html",
+ fpath405: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/UpdateInputNSeed.m",
+ lines405: [1, 1, 27],
+ watch405: "UpdateInputNSeed405_watch.html",
+ title405: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\UpdateInputNSeed.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\UpdateInputNSeed.m')\">UpdateInputNSeed</a></span>",
+ tcall405: [ [ "From EvolveSINetwork > EvolveSINetwork_main > 1 line 52", "409#F405N13:B75" ] ],
+ scall405: [  ],
+ MATLABcode406: "calcSpTime406_mcode.html",
+ fpath406: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/calcSpTime.m",
+ lines406: [1, 1, 13],
+ watch406: "calcSpTime406_watch.html",
+ title406: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\calcSpTime.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\calcSpTime.m')\">calcSpTime</a></span>",
+ tcall406: [ [ "From SINElementIter line 6", "407#F406N14:B81" ], [ "From SIElementIter line 10", "412#F406N14:B75" ] ],
+ scall406: [  ],
+ MATLABcode407: "SINElementIter407_mcode.html",
+ fpath407: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/SINElementIter.m",
+ lines407: [1, 1, 9],
+ watch407: "SINElementIter407_watch.html",
+ title407: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\SINElementIter.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\SINElementIter.m')\">SINElementIter</a></span>",
+ tcall407: [ [ "From EvolveSINetwork > EvolveSINetwork_main > 1 line 57", "409#F407N11:B76" ] ],
+ scall407: [ [ "From line 6 to calcSpTime", "406#srcline1" ] ],
+ MATLABcode408: "getTimeIndex_one408_mcode.html",
+ fpath408: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/EvolveSINetwork.m",
+ lines408: [23, 24, 28],
+ watch408: "getTimeIndex_one408_watch.html",
+ title408: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m')\">EvolveSINetwork &gt; getTimeIndex_one</a></span>",
+ tcall408: [ [ "From EvolveSINetwork > EvolveSINetwork_main > 1 line 59", "409#F408N5:B77" ], [ "From EvolveSINetwork > EvolveSINetwork_main > 1 line 58", "409#F408N5:B77" ], [ "From EvolveSINetwork > EvolveSINetwork_main > 2 line 59", "413#F408N5:B77" ], [ "From EvolveSINetwork > EvolveSINetwork_main > 2 line 58", "413#F408N5:B77" ] ],
+ scall408: [  ],
+ MATLABcode409: "EvolveSINetwork_main409_mcode.html",
+ fpath409: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/EvolveSINetwork.m",
+ lines409: [27, 28, 74],
+ watch409: "EvolveSINetwork_main409_watch.html",
+ title409: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m')\">EvolveSINetwork &gt; EvolveSINetwork_main &gt; 1</a></span>",
+ tcall409: [ [ "From EvolveSINetwork > EvolveSINetwork_internal > 1 line 16", "410#F409N4:B110" ] ],
+ scall409: [ [ "From line 52 to UpdateInputNSeed", "405#srcline1" ], [ "From line 57 to SINElementIter", "407#srcline1" ], [ "From line 59 to EvolveSINetwork > getTimeIndex_one", "408#srcline24" ], [ "From line 58 to EvolveSINetwork > getTimeIndex_one", "408#srcline24" ] ],
+ MATLABcode410: "EvolveSINetwork_internal410_mcode.html",
+ fpath410: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/EvolveSINetwork.m",
+ lines410: [11, 12, 20],
+ watch410: "EvolveSINetwork_internal410_watch.html",
+ title410: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m')\">EvolveSINetwork &gt; EvolveSINetwork_internal &gt; 1</a></span>",
+ tcall410: [ [ "From EvolveSINetwork line 6", "415#F410N3:B40" ] ],
+ scall410: [ [ "From line 16 to EvolveSINetwork > EvolveSINetwork_main > 1", "409#srcline28" ] ],
+ MATLABcode411: "UpdateInput1Seed411_mcode.html",
+ fpath411: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/UpdateInput1Seed.m",
+ lines411: [1, 1, 7],
+ watch411: "UpdateInput1Seed411_watch.html",
+ title411: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\UpdateInput1Seed.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\UpdateInput1Seed.m')\">UpdateInput1Seed</a></span>",
+ tcall411: [ [ "From EvolveSINetwork > EvolveSINetwork_main > 2 line 52", "413#F411N12:B78" ] ],
+ scall411: [  ],
+ MATLABcode412: "SIElementIter412_mcode.html",
+ fpath412: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/SIElementIter.m",
+ lines412: [1, 1, 13],
+ watch412: "SIElementIter412_watch.html",
+ title412: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\SIElementIter.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\SIElementIter.m')\">SIElementIter</a></span>",
+ tcall412: [ [ "From EvolveSINetwork > EvolveSINetwork_main > 2 line 57", "413#F412N10:B79" ] ],
+ scall412: [ [ "From line 10 to calcSpTime", "406#srcline1" ] ],
+ MATLABcode413: "EvolveSINetwork_main413_mcode.html",
+ fpath413: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/EvolveSINetwork.m",
+ lines413: [27, 28, 74],
+ watch413: "EvolveSINetwork_main413_watch.html",
+ title413: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m')\">EvolveSINetwork &gt; EvolveSINetwork_main &gt; 2</a></span>",
+ tcall413: [ [ "From EvolveSINetwork > EvolveSINetwork_internal > 2 line 16", "414#F413N4:B110" ] ],
+ scall413: [ [ "From line 52 to UpdateInput1Seed", "411#srcline1" ], [ "From line 57 to SIElementIter", "412#srcline1" ], [ "From line 59 to EvolveSINetwork > getTimeIndex_one", "408#srcline24" ], [ "From line 58 to EvolveSINetwork > getTimeIndex_one", "408#srcline24" ] ],
+ MATLABcode414: "EvolveSINetwork_internal414_mcode.html",
+ fpath414: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/EvolveSINetwork.m",
+ lines414: [11, 12, 20],
+ watch414: "EvolveSINetwork_internal414_watch.html",
+ title414: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m')\">EvolveSINetwork &gt; EvolveSINetwork_internal &gt; 2</a></span>",
+ tcall414: [ [ "From EvolveSINetwork line 8", "415#F414N3:B58" ] ],
+ scall414: [ [ "From line 16 to EvolveSINetwork > EvolveSINetwork_main > 2", "413#srcline28" ] ],
+ MATLABcode415: "EvolveSINetwork415_mcode.html",
+ fpath415: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/EvolveSINetwork.m",
+ lines415: [1, 1, 12],
+ watch415: "EvolveSINetwork415_watch.html",
+ title415: "Function: <span class='functionname'><a title='D:&nbsp;\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m' class='functionlink' href=\"matlab: open('D:\\Dropbox\\p\\postdoc\\programs\\matlab\\sirs\\spreading\\src\\EvolveSINetwork.m')\">EvolveSINetwork</a></span>",
+ tcall415: [ [ "From NetworkActivationTime line 8", "1#F415N2:B72" ] ],
+ scall415: [ [ "From line 6 to EvolveSINetwork > EvolveSINetwork_internal > 1", "410#srcline12" ], [ "From line 8 to EvolveSINetwork > EvolveSINetwork_internal > 2", "414#srcline12" ] ],
+ rootFcnID: "1",
+ firstPage: "1",
+ htmlRoot: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/codegen/mex/NetworkActivationTime/html/"
+};
+var scriptInfoTable = {
+ fpath1: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/NetworkActivationTime.m",
+ fpath2: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/isBuiltInNumeric.m",
+ fpath3: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/isnan.m",
+ fpath4: "C:/Program Files/MATLAB/R2017b/toolbox/shared/coder/coder/+coder/+internal/error.m",
+ fpath5: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/toLogicalCheck.m",
+ fpath6: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/scalexpCompatible.m",
+ fpath7: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/div.m",
+ fpath8: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/ops/rdivide.m",
+ fpath9: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/ops/mrdivide.p",
+ fpath10: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/+scalar/floor.m",
+ fpath11: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/applyScalarFunctionInPlace.m",
+ fpath12: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elfun/floor.m",
+ fpath13: "C:/Program Files/MATLAB/R2017b/toolbox/shared/coder/coder/+coder/+internal/narginchk.m",
+ fpath14: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/assertValidSizeArg.m",
+ fpath15: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/isinf.m",
+ fpath16: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/isIntegerClass.m",
+ fpath17: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/intmax.m",
+ fpath18: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/intmin.m",
+ fpath19: "C:/Program Files/MATLAB/R2017b/toolbox/shared/coder/coder/+coder/+internal/indexIntRelop.m",
+ fpath20: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/floatModel.m",
+ fpath21: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/scalarEg.m",
+ fpath22: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/fixedpoint/isnumerictype.m",
+ fpath23: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/fixedpoint/isfimath.m",
+ fpath24: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/fixedpoint/isfi.m",
+ fpath25: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/eml/eml_int_forloop_overflow_check.m",
+ fpath26: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/scalexpAllocNoCheck.m",
+ fpath27: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/scalexpAlloc.m",
+ fpath28: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/minOrMax.m",
+ fpath29: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/datafun/max.m",
+ fpath30: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/repmat.m",
+ fpath31: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/repeatToComplete.m",
+ fpath32: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/GetNodes.m",
+ fpath33: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/indexPlus.m",
+ fpath34: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/indexShapeCheck.m",
+ fpath35: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/find.m",
+ fpath36: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/ismatrix.m",
+ fpath37: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/isrow.m",
+ fpath38: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/nonSingletonDim.m",
+ fpath39: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/assertValidDim.m",
+ fpath40: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/prodsize.m",
+ fpath41: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/codingForGPU.m",
+ fpath42: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/useParforConst.m",
+ fpath43: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/sortIdx.m",
+ fpath44: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/sort.m",
+ fpath45: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/datafun/sort.m",
+ fpath46: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/constNonSingletonDim.m",
+ fpath47: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/datafun/private/process_sumprod_inputs.m",
+ fpath48: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/private/eml_isequal_core.m",
+ fpath49: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/isequal.m",
+ fpath50: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/datafun/private/combineVectorElements.m",
+ fpath51: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/datafun/private/sumprod.m",
+ fpath52: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/datafun/sum.m",
+ fpath53: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/strcmp.m",
+ fpath54: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/strfun/isstring.m",
+ fpath55: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/charmax.m",
+ fpath56: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/assertSupportedString.m",
+ fpath57: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/ops/colon.m",
+ fpath58: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/isaUint.m",
+ fpath59: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/unsignedClass.m",
+ fpath60: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/charCastCheck.m",
+ fpath61: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/strfun/char.m",
+ fpath62: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/strfun/eml_string_transform.m",
+ fpath63: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/strfun/lower.m",
+ fpath64: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/flintmax.m",
+ fpath65: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/randfun/private/eml_is_rand_extrinsic.m",
+ fpath66: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/randfun/private/eml_rand_str2id.m",
+ fpath67: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/randfun/private/eml_rand_mcg16807.m",
+ fpath68: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/randfun/private/eml_rand_mcg16807_stateful.m",
+ fpath69: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/randfun/private/eml_rand_shr3cong.m",
+ fpath70: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/randfun/private/eml_rand_shr3cong_stateful.m",
+ fpath71: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/randfun/eml_rand_mt19937ar.m",
+ fpath72: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/private/eml_eps.m",
+ fpath73: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/eps.m",
+ fpath74: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/randfun/private/eml_rand_mt19937ar_stateful.m",
+ fpath75: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/randfun/private/eml_rand.m",
+ fpath76: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/randfun/rand.m",
+ fpath77: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/isFloatClass.m",
+ fpath78: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/isfinite.m",
+ fpath79: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/nan.m",
+ fpath80: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/+scalar/mod.m",
+ fpath81: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/applyBinaryScalarFunction.m",
+ fpath82: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elfun/mod.m",
+ fpath83: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/randfun/randperm.m",
+ fpath84: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/datafun/min.m",
+ fpath85: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/ops/private/eml_setop.m",
+ fpath86: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/strfun/upper.m",
+ fpath87: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/indexMinus.m",
+ fpath88: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/relop.m",
+ fpath89: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/sortLE.m",
+ fpath90: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/datafun/issorted.m",
+ fpath91: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/+scalar/abs.m",
+ fpath92: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/applyScalarFunction.m",
+ fpath93: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elfun/abs.m",
+ fpath94: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/mantissa_nbits.m",
+ fpath95: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/private/eml_realmin.m",
+ fpath96: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/elmat/private/eml_realmin_denormal.m",
+ fpath97: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/safeEq.m",
+ fpath98: "C:/Program Files/MATLAB/R2017b/toolbox/eml/eml/+coder/+internal/sortLT.m",
+ fpath99: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/ops/intersect.m",
+ fpath100: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/fillUpMatrix.m",
+ fpath101: "C:/Program Files/MATLAB/R2017b/toolbox/eml/lib/matlab/lang/error.m",
+ fpath102: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/GetSimulationParam.m",
+ fpath103: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/UpdateInputNSeed.m",
+ fpath104: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/calcSpTime.m",
+ fpath105: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/SINElementIter.m",
+ fpath106: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/EvolveSINetwork.m",
+ fpath107: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/UpdateInput1Seed.m",
+ fpath108: "D:/Dropbox/p/postdoc/programs/matlab/sirs/spreading/src/SIElementIter.m"
+};
+</script>
+</head>
+<body>
+
+<div class="west">
+<ul class="ui-tabs-nav">
+<li class="ui-tabs-nav-item ui-tabs-selected"><span class="tab-link" id="MATLABcode"><span>MATLAB code</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="callstack"><span>Call stack</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="ccode"><span>C code</span></span></li>
+</ul>
+<div id="MATLABcodebody" class="ui-tabs-panel">
+<!-- Begin Filter -->
+<div class="grayline methodset" onclick="filterClick(event);">
+<a class="collapsed">Filter</a>
+</div>
+<div id="filterbody" class="hidden">
+<table class="myfunc-filter-tbl">
+<tr>
+<td title="Use this filter to display only functions and methods that contain variables or expressions with the specified attributes." colspan="2" class="checkbox">
+<div class="myfunc-filterby-chk"><input type="checkbox" class="filterenable" />
+<div class="filter-enable-lbl">Filter functions and methods</div></div></td></tr><tr>
+<td class="label"><div class="myfunc-filterby-lbl">Filter by:</div></td>
+<td class="select">
+<div class="filters">
+<select class="myfunc-filterby">
+<option id="size">Size</option>
+<option id="complex">Complexity</option>
+<option id="class">Class</option>
+</select>
+</div>
+</td>
+</tr>
+
+<tr>
+<td class="label"><div class="myfunc-filterstr-lbl">Filter:</div></td>
+<td class="input"><div>
+
+<div class="size">
+<select class="myfunc-filter size">
+<option value="1 68 70 71 155 346 359 404 405 406 407 408 409 410 411 412 413 414 415">1 x 1</option>
+<option value="1 68 70 155 346 359 404 405 406 407 409 410 411 412 413 414 415">1 x <b>:</b>?</option>
+<option value="1 155 405 406 407 409 410 411 412 413 414 415"><b>:</b>? x 1</option>
+<option value="1 155 359 404 409 410 413 414 415"><b>:</b>? x <b>:</b>?</option>
+</select>
+</div>
+
+<div class="complex">
+<select class="myfunc-filter complex">
+<option value="">Complex values</option>
+<option value="1 68 70 71 155 346 359 404 405 406 407 408 409 410 411 412 413 414 415">Real values</option>
+</select>
+</div>
+<!-- Begin Class Filter -->
+<div class="class">
+<select class="myfunc-filter class">
+<option value="1 404 409 410 413 414 415">char</option>
+<option value="1 68 70 71 155 346 359 404 405 406 407 408 409 410 411 412 413 414 415">double</option>
+<option value="409 410 413 414">function_handle</option>
+<option value="409 413">logical</option>
+<option value="1 71 155 404 405 406 407 409 410 411 412 413 414 415">struct</option>
+</select>
+</div>
+<!-- End Class Filter -->
+</div>
+</td>
+</tr>
+</table>
+<div class="myfunc-count"></div>
+</div>
+<!-- End Filter -->
+<div class="grayline methodset" onmouseover="callTreeMouseOver(event);" onmouseout="callTreeMouseOut(event);" onclick="functionSetClick(event);">
+<a class="expanded">Functions</a>
+</div>
+<!-- Begin Function Tree -->
+<div id="functiontreebody">
+<div class="functionwrapper" onmouseover="callTreeMouseOver(event);" onmouseout="callTreeMouseOut(event);" onclick="functionTreeClick(event);">
+<ol class="tree">
+<!-- Begin Function Tree Roots -->
+<li class="leaf  passed"><a href="#" class="fcn  " id="F415N2:F1">EvolveSINetwork</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F410N3:F2">EvolveSINetwork &gt; EvolveSINetwork_internal &gt; 1</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F414N3:F3">EvolveSINetwork &gt; EvolveSINetwork_internal &gt; 2</a></li>
+<li class="leaf  warning"><a href="#" class="fcn  PD1 PD2 PD4 " id="F409N4:F4">EvolveSINetwork &gt; EvolveSINetwork_main &gt; 1</a></li>
+<li class="leaf  warning"><a href="#" class="fcn  PD1 PD2 PD4 " id="F413N4:F5">EvolveSINetwork &gt; EvolveSINetwork_main &gt; 2</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F408N5:F6">EvolveSINetwork &gt; getTimeIndex_one</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  PD2 PD5 PD6 " id="F155N6:F7">GetNodes</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F71N7:F8">GetNodes &gt; getParStruct</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  PD2 PD3 PD4 PD6 " id="F404N8:F9">GetSimulationParam</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  PD2 PD6 PD7 " id="F1N9:F10">NetworkActivationTime</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F412N10:F11">SIElementIter</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F407N11:F12">SINElementIter</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F411N12:F13">UpdateInput1Seed</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  PD1 " id="F405N13:F14">UpdateInputNSeed</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F406N14:F15">calcSpTime</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  PD2 PD4 " id="F359N19:F16">fillUpMatrix</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F346N20:F17">fillUpMatrix &gt; getRandPerm</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F68N21:F18">repeatToComplete &gt; 1</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F70N21:F19">repeatToComplete &gt; 2</a></li>
+<!-- End Function Tree Roots -->
+</ol>
+<!-- Function Tree Nodes -->
+<div class="functiontreenodes hidden">
+</div>
+<!-- End Function Tree Nodes -->
+</div>
+</div>
+<!-- End Function Tree -->
+</div>
+<!-- Begin Call Tree -->
+<div id="callstackbody" class="ui-tabs-panel hidden">
+<div class="treewrapper" onmouseover="callTreeMouseOver(event);" onmouseout="callTreeMouseOut(event);" onclick="callTreeClick(event);">
+<ol class="tree">
+<!-- Call Tree Root -->
+<li class="node collapsed passed"><a href="#" class="fcn  PD2 PD6 PD7 " id="F1N9:L1">NetworkActivationTime</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn  PD2 PD5 PD6 " id="F155N6:L2">GetNodes</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn  PD2 PD3 PD4 PD6 " id="F404N8:L3">GetSimulationParam</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F415N2:L4">EvolveSINetwork</a></li>
+</ul>
+</li>
+</ol>
+<!-- Call Tree Nodes -->
+<div class="callstacknodes hidden">
+<ol class="callstacknode" id="callstacknode1">
+
+<li class="node collapsed passed"><a href="#" class="fcn  PD2 PD6 PD7 " id="F1N9:l1">NetworkActivationTime</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn  PD2 PD5 PD6 " id="F155N6:l2">GetNodes</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn  PD2 PD3 PD4 PD6 " id="F404N8:l3">GetSimulationParam</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F415N2:l4">EvolveSINetwork</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode68">
+
+<li class="leaf passed"><a href="#" class="fcn  " id="F68N21:l5">repeatToComplete &gt; 1</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode70">
+
+<li class="leaf passed"><a href="#" class="fcn  " id="F70N21:l6">repeatToComplete &gt; 2</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode71">
+
+<li class="leaf passed"><a href="#" class="fcn  " id="F71N7:l7">GetNodes &gt; getParStruct</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode155">
+
+<li class="node collapsed passed"><a href="#" class="fcn  PD2 PD5 PD6 " id="F155N6:l8">GetNodes</a>
+<ul>
+<li class="leaf passed"><a href="#" class="fcn  " id="F68N21:l9">repeatToComplete &gt; 1</a></li>
+<li class="leaf passed"><a href="#" class="fcn  " id="F70N21:l10">repeatToComplete &gt; 2</a></li>
+<li class="leaf passed"><a href="#" class="fcn  " id="F71N7:l11">GetNodes &gt; getParStruct</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode346">
+
+<li class="leaf passed"><a href="#" class="fcn  " id="F346N20:l12">fillUpMatrix &gt; getRandPerm</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode359">
+
+<li class="node collapsed passed"><a href="#" class="fcn  PD2 PD4 " id="F359N19:l13">fillUpMatrix</a>
+<ul>
+<li class="leaf passed"><a href="#" class="fcn  " id="F346N20:l14">fillUpMatrix &gt; getRandPerm</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode404">
+
+<li class="node collapsed passed"><a href="#" class="fcn  PD2 PD3 PD4 PD6 " id="F404N8:l15">GetSimulationParam</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn  PD2 PD4 " id="F359N19:l16">fillUpMatrix</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode405">
+
+<li class="leaf passed"><a href="#" class="fcn  PD1 " id="F405N13:l17">UpdateInputNSeed</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode406">
+
+<li class="leaf passed"><a href="#" class="fcn  " id="F406N14:l18">calcSpTime</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode407">
+
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F407N11:l19">SINElementIter</a>
+<ul>
+<li class="leaf passed"><a href="#" class="fcn  " id="F406N14:l20">calcSpTime</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode408">
+
+<li class="leaf passed"><a href="#" class="fcn  " id="F408N5:l21">EvolveSINetwork &gt; getTimeIndex_one</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode409">
+
+<li class="node collapsed warning"><a href="#" class="fcn  PD1 PD2 PD4 " id="F409N4:l22">EvolveSINetwork &gt; EvolveSINetwork_main &gt; 1</a>
+<ul>
+<li class="leaf passed"><a href="#" class="fcn  PD1 " id="F405N13:l23">UpdateInputNSeed</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F407N11:l24">SINElementIter</a></li>
+<li class="leaf passed"><a href="#" class="fcn  " id="F408N5:l25">EvolveSINetwork &gt; getTimeIndex_one</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode410">
+
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F410N3:l26">EvolveSINetwork &gt; EvolveSINetwork_internal &gt; 1</a>
+<ul>
+<li class="node collapsed warning"><a href="#" class="fcn  PD1 PD2 PD4 " id="F409N4:l27">EvolveSINetwork &gt; EvolveSINetwork_main &gt; 1</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode411">
+
+<li class="leaf passed"><a href="#" class="fcn  " id="F411N12:l28">UpdateInput1Seed</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode412">
+
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F412N10:l29">SIElementIter</a>
+<ul>
+<li class="leaf passed"><a href="#" class="fcn  " id="F406N14:l30">calcSpTime</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode413">
+
+<li class="node collapsed warning"><a href="#" class="fcn  PD1 PD2 PD4 " id="F413N4:l31">EvolveSINetwork &gt; EvolveSINetwork_main &gt; 2</a>
+<ul>
+<li class="leaf passed"><a href="#" class="fcn  " id="F411N12:l32">UpdateInput1Seed</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F412N10:l33">SIElementIter</a></li>
+<li class="leaf passed"><a href="#" class="fcn  " id="F408N5:l34">EvolveSINetwork &gt; getTimeIndex_one</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode414">
+
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F414N3:l35">EvolveSINetwork &gt; EvolveSINetwork_internal &gt; 2</a>
+<ul>
+<li class="node collapsed warning"><a href="#" class="fcn  PD1 PD2 PD4 " id="F413N4:l36">EvolveSINetwork &gt; EvolveSINetwork_main &gt; 2</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode415">
+
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F415N2:l37">EvolveSINetwork</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F410N3:l38">EvolveSINetwork &gt; EvolveSINetwork_internal &gt; 1</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn  " id="F414N3:l39">EvolveSINetwork &gt; EvolveSINetwork_internal &gt; 2</a></li>
+</ul>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<!-- End Call Tree -->
+<!-- Begin C Code -->
+<div id="ccodebody" class="ui-tabs-panel hidden">
+<div class="grayline methodset" onclick="ccodeClick(event,1);">
+<a class="expanded">Target Source Files</a>
+</div>
+<!-- Begin C Code List -->
+<div id="ccodelistbody1" class="visible">
+<table class="myfunc-list" cellspacing="0" cellpadding="0" onclick="cFileClickWithMexWarning(event);">
+<tbody>
+<tr class="ccode" id="EvolveSINetwork_cpp.html"><td class="ccode"><a href="#">EvolveSINetwork.cpp</a></td></tr>
+<tr class="ccode" id="EvolveSINetwork_h.html"><td class="ccode"><a href="#">EvolveSINetwork.h</a></td></tr>
+<tr class="ccode" id="GetNodes_cpp.html"><td class="ccode"><a href="#">GetNodes.cpp</a></td></tr>
+<tr class="ccode" id="GetNodes_h.html"><td class="ccode"><a href="#">GetNodes.h</a></td></tr>
+<tr class="ccode" id="GetSimulationParam_cpp.html"><td class="ccode"><a href="#">GetSimulationParam.cpp</a></td></tr>
+<tr class="ccode" id="GetSimulationParam_h.html"><td class="ccode"><a href="#">GetSimulationParam.h</a></td></tr>
+<tr class="ccode" id="NetworkActivationTime_cpp.html"><td class="ccode"><a href="#">NetworkActivationTime.cpp</a></td></tr>
+<tr class="ccode" id="NetworkActivationTime_h.html"><td class="ccode"><a href="#">NetworkActivationTime.h</a></td></tr>
+<tr class="ccode" id="NetworkActivationTime_data_cpp.html"><td class="ccode"><a href="#">NetworkActivationTime_data.cpp</a></td></tr>
+<tr class="ccode" id="NetworkActivationTime_data_h.html"><td class="ccode"><a href="#">NetworkActivationTime_data.h</a></td></tr>
+<tr class="ccode" id="NetworkActivationTime_emxutil_cpp.html"><td class="ccode"><a href="#">NetworkActivationTime_emxutil.cpp</a></td></tr>
+<tr class="ccode" id="NetworkActivationTime_emxutil_h.html"><td class="ccode"><a href="#">NetworkActivationTime_emxutil.h</a></td></tr>
+<tr class="ccode" id="NetworkActivationTime_initialize_cpp.html"><td class="ccode"><a href="#">NetworkActivationTime_initialize.cpp</a></td></tr>
+<tr class="ccode" id="NetworkActivationTime_initialize_h.html"><td class="ccode"><a href="#">NetworkActivationTime_initialize.h</a></td></tr>
+<tr class="ccode" id="NetworkActivationTime_mexutil_cpp.html"><td class="ccode"><a href="#">NetworkActivationTime_mexutil.cpp</a></td></tr>
+<tr class="ccode" id="NetworkActivationTime_mexutil_h.html"><td class="ccode"><a href="#">NetworkActivationTime_mexutil.h</a></td></tr>
+<tr class="ccode" id="NetworkActivationTime_terminate_cpp.html"><td class="ccode"><a href="#">NetworkActivationTime_terminate.cpp</a></td></tr>
+<tr class="ccode" id="NetworkActivationTime_terminate_h.html"><td class="ccode"><a href="#">NetworkActivationTime_terminate.h</a></td></tr>
+<tr class="ccode" id="NetworkActivationTime_types_h.html"><td class="ccode"><a href="#">NetworkActivationTime_types.h</a></td></tr>
+<tr class="ccode" id="assertValidSizeArg_cpp.html"><td class="ccode"><a href="#">assertValidSizeArg.cpp</a></td></tr>
+<tr class="ccode" id="assertValidSizeArg_h.html"><td class="ccode"><a href="#">assertValidSizeArg.h</a></td></tr>
+<tr class="ccode" id="calcSpTime_cpp.html"><td class="ccode"><a href="#">calcSpTime.cpp</a></td></tr>
+<tr class="ccode" id="calcSpTime_h.html"><td class="ccode"><a href="#">calcSpTime.h</a></td></tr>
+<tr class="ccode" id="cpp_mexapi_version_cpp.html"><td class="ccode"><a href="#">cpp_mexapi_version.cpp</a></td></tr>
+<tr class="ccode" id="eml_int_forloop_overflow_check_cpp.html"><td class="ccode"><a href="#">eml_int_forloop_overflow_check.cpp</a></td></tr>
+<tr class="ccode" id="eml_int_forloop_overflow_check_h.html"><td class="ccode"><a href="#">eml_int_forloop_overflow_check.h</a></td></tr>
+<tr class="ccode" id="eml_rand_cpp.html"><td class="ccode"><a href="#">eml_rand.cpp</a></td></tr>
+<tr class="ccode" id="eml_rand_h.html"><td class="ccode"><a href="#">eml_rand.h</a></td></tr>
+<tr class="ccode" id="eml_rand_mcg16807_stateful_cpp.html"><td class="ccode"><a href="#">eml_rand_mcg16807_stateful.cpp</a></td></tr>
+<tr class="ccode" id="eml_rand_mcg16807_stateful_h.html"><td class="ccode"><a href="#">eml_rand_mcg16807_stateful.h</a></td></tr>
+<tr class="ccode" id="eml_rand_mt19937ar_stateful_cpp.html"><td class="ccode"><a href="#">eml_rand_mt19937ar_stateful.cpp</a></td></tr>
+<tr class="ccode" id="eml_rand_mt19937ar_stateful_h.html"><td class="ccode"><a href="#">eml_rand_mt19937ar_stateful.h</a></td></tr>
+<tr class="ccode" id="eml_rand_shr3cong_stateful_cpp.html"><td class="ccode"><a href="#">eml_rand_shr3cong_stateful.cpp</a></td></tr>
+<tr class="ccode" id="eml_rand_shr3cong_stateful_h.html"><td class="ccode"><a href="#">eml_rand_shr3cong_stateful.h</a></td></tr>
+<tr class="ccode" id="eml_setop_cpp.html"><td class="ccode"><a href="#">eml_setop.cpp</a></td></tr>
+<tr class="ccode" id="eml_setop_h.html"><td class="ccode"><a href="#">eml_setop.h</a></td></tr>
+<tr class="ccode" id="error_cpp.html"><td class="ccode"><a href="#">error.cpp</a></td></tr>
+<tr class="ccode" id="error_h.html"><td class="ccode"><a href="#">error.h</a></td></tr>
+<tr class="ccode" id="fillUpMatrix_cpp.html"><td class="ccode"><a href="#">fillUpMatrix.cpp</a></td></tr>
+<tr class="ccode" id="fillUpMatrix_h.html"><td class="ccode"><a href="#">fillUpMatrix.h</a></td></tr>
+<tr class="ccode" id="issorted_cpp.html"><td class="ccode"><a href="#">issorted.cpp</a></td></tr>
+<tr class="ccode" id="issorted_h.html"><td class="ccode"><a href="#">issorted.h</a></td></tr>
+<tr class="ccode" id="mod_cpp.html"><td class="ccode"><a href="#">mod.cpp</a></td></tr>
+<tr class="ccode" id="mod_h.html"><td class="ccode"><a href="#">mod.h</a></td></tr>
+<tr class="ccode" id="rand_cpp.html"><td class="ccode"><a href="#">rand.cpp</a></td></tr>
+<tr class="ccode" id="rand_h.html"><td class="ccode"><a href="#">rand.h</a></td></tr>
+<tr class="ccode" id="randperm_cpp.html"><td class="ccode"><a href="#">randperm.cpp</a></td></tr>
+<tr class="ccode" id="randperm_h.html"><td class="ccode"><a href="#">randperm.h</a></td></tr>
+<tr class="ccode" id="rt_nonfinite_h.html"><td class="ccode"><a href="#">rt_nonfinite.h</a></td></tr>
+<tr class="ccode" id="rtwtypes_h.html"><td class="ccode"><a href="#">rtwtypes.h</a></td></tr>
+<tr class="ccode" id="sort1_cpp.html"><td class="ccode"><a href="#">sort1.cpp</a></td></tr>
+<tr class="ccode" id="sort1_h.html"><td class="ccode"><a href="#">sort1.h</a></td></tr>
+<tr class="ccode" id="sortIdx_cpp.html"><td class="ccode"><a href="#">sortIdx.cpp</a></td></tr>
+<tr class="ccode" id="sortIdx_h.html"><td class="ccode"><a href="#">sortIdx.h</a></td></tr>
+<tr class="ccode" id="strcmp_cpp.html"><td class="ccode"><a href="#">strcmp.cpp</a></td></tr>
+<tr class="ccode" id="strcmp_h.html"><td class="ccode"><a href="#">strcmp.h</a></td></tr>
+</tbody>
+</table>
+</div>
+<!-- End C Code List -->
+<div class="grayline methodset" onclick="ccodeClick(event,3);">
+<a class="collapsed">Interface Source Files</a>
+</div>
+<!-- Begin C Code List -->
+<div id="ccodelistbody3" class="hidden">
+<table class="myfunc-list" cellspacing="0" cellpadding="0" onclick="cFileClickWithMexWarning(event);">
+<tbody>
+<tr class="ccode" id="_coder_NetworkActivationTime_api_cpp.html"><td class="ccode"><a href="#">_coder_NetworkActivationTime_api.cpp</a></td></tr>
+<tr class="ccode" id="_coder_NetworkActivationTime_api_h.html"><td class="ccode"><a href="#">_coder_NetworkActivationTime_api.h</a></td></tr>
+<tr class="ccode" id="_coder_NetworkActivationTime_info_cpp.html"><td class="ccode"><a href="#">_coder_NetworkActivationTime_info.cpp</a></td></tr>
+<tr class="ccode" id="_coder_NetworkActivationTime_info_h.html"><td class="ccode"><a href="#">_coder_NetworkActivationTime_info.h</a></td></tr>
+<tr class="ccode" id="_coder_NetworkActivationTime_mex_cpp.html"><td class="ccode"><a href="#">_coder_NetworkActivationTime_mex.cpp</a></td></tr>
+<tr class="ccode" id="_coder_NetworkActivationTime_mex_h.html"><td class="ccode"><a href="#">_coder_NetworkActivationTime_mex.h</a></td></tr>
+</tbody>
+</table>
+</div>
+<!-- End C Code List -->
+</div>
+<!-- End C Code -->
+</div>
+<!-- Tooltips -->
+<div class="aux hidden">
+<div class="tooltips">
+<div class="tooltip" id="TT1"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT2"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x <b>:</b>?</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT3"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT4"><table class="tooltip"><tr><th>Size</th><td>1 x <b>:</b>?</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT5"><table class="tooltip"><tr><th>Size</th><td>1 x <b>:</b>?</td></tr><tr><th>Class</th><td>struct</td></tr></table></div>
+<div class="tooltip" id="TT6"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>struct</td></tr></table></div>
+<div class="tooltip" id="TT7"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>struct</td></tr></table></div>
+<div class="tooltip" id="TT8"><table class="tooltip"><tr><th>Size</th><td>1 x <b>:</b>?</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT9"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT10"><table class="tooltip"><tr><th>Size</th><td>1 x 19</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT11"><table class="tooltip"><tr><th>Size</th><td>1 x 0</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT12"><table class="tooltip"><tr><th>Size</th><td>1 x 5</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT13"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT14"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT15"><table class="tooltip"><tr><th>Size</th><td>1 x 6</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT16"><table class="tooltip"><tr><th>Size</th><td>1 x 23</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT17"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT18"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>int32</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT19"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>uint8</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT20"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT21"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT22"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT23"><table class="tooltip"><tr><th>Size</th><td>1 x 3</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT24"><table class="tooltip"><tr><th>Size</th><td>1 x 3</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT25"><table class="tooltip"><tr><th>Size</th><td>1 x <b>:</b>?</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT26"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT27"><table class="tooltip"><tr><th>Size</th><td>1 x 15</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT28"><table class="tooltip"><tr><th>Size</th><td>1 x <b>:</b>1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT29"><table class="tooltip"><tr><th>Size</th><td>1 x <b>:</b>?</td></tr><tr><th>Class</th><td>struct</td></tr></table></div>
+<div class="tooltip" id="TT30"><table class="tooltip"><tr><th>Size</th><td>0 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT31"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>struct</td></tr></table></div>
+<div class="tooltip" id="TT32"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>unknown</td></tr></table></div>
+<div class="tooltip" id="TT33"><table class="tooltip"><tr><th>Size</th><td>0 x 0</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT34"><table class="tooltip"><tr><th>Size</th><td>0 x 0</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT35"><table class="tooltip"><tr><th>Size</th><td>0 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT36"><table class="tooltip"><tr><th>Size</th><td>1 x 0</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT37"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT38"><table class="tooltip"><tr><th>Size</th><td>1 x <b>:</b>?</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT39"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>mxArray</td></tr></table></div>
+<div class="tooltip" id="TT40"><table class="tooltip"><tr><th>Size</th><td>1 x 4</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT41"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT42"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT43"><table class="tooltip"><tr><th>Size</th><td>4 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT44"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT45"><table class="tooltip"><tr><th>Size</th><td>4 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT46"><table class="tooltip"><tr><th>Size</th><td>256 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT47"><table class="tooltip"><tr><th>Size</th><td>256 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT48"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT49"><table class="tooltip"><tr><th>Size</th><td>1 x 7</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT50"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>int8</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT51"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT52"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>struct</td></tr></table></div>
+<div class="tooltip" id="TT53"><table class="tooltip"><tr><th>Size</th><td>1 x 128</td></tr><tr><th>Class</th><td>int8</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT54"><table class="tooltip"><tr><th>Size</th><td>128 x 1</td></tr><tr><th>Class</th><td>int8</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT55"><table class="tooltip"><tr><th>Size</th><td>1 x 128</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT56"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>uint32</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT57"><table class="tooltip"><tr><th>Size</th><td>1 x 8</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT58"><table class="tooltip"><tr><th>Size</th><td>1 x 9</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT59"><table class="tooltip"><tr><th>Size</th><td>1 x 13</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT60"><table class="tooltip"><tr><th>Size</th><td>1 x 16</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT61"><table class="tooltip"><tr><th>Size</th><td>2 x 1</td></tr><tr><th>Class</th><td>uint32</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT62"><table class="tooltip"><tr><th>Size</th><td>625 x 1</td></tr><tr><th>Class</th><td>uint32</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT63"><table class="tooltip"><tr><th>Size</th><td>1 x 37</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT64"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT65"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT66"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT67"><table class="tooltip"><tr><th>Size</th><td>1 x 17</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT68"><table class="tooltip"><tr><th>Size</th><td>1 x 33</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT69"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT70"><table class="tooltip"><tr><th>Size</th><td>2 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT71"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x 1</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT72"><table class="tooltip"><tr><th>Size</th><td><b>:</b>2147483646 x <b>:</b>?</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT73"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x <b>:</b>?</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT74"><table class="tooltip"><tr><th>Size</th><td>1 x 0</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT75"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT76"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT77"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT78"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT79"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="V1"><table class="tooltip"><tr><th>Value</th><td>     0</br></td></tr></table></div>
+</div>
+</div>
+<!-- End Tooltips -->
+
+<div class="south">
+<ul class="ui-tabs-nav">
+<li class="ui-tabs-nav-item ui-tabs-selected"><span class="tab-link" id="summary"><span>Summary</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="messages"><span>All Messages (2)</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="potentialDifferences"><span>Potential Differences</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="watchlist"><span>Variables</span></span></li>
+<li class="ui-tabs-nav-item hidden"><span class="tab-link" id="watchload"><span>Variables</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="buildlog1"><span>Build Log</span></span></li>
+</ul>
+
+<!-- Compilation Summary -->
+<div id="summarybody" class="ui-tabs-panel">
+<table cellpadding="1" cellspacing="4">
+<tr><td>C source code generated on:</td><td>24-Apr-2018 13:53:50</td></tr>
+<tr><td>Coding target:</td><td>MEX Function</td></tr>
+<tr><td>Number of errors:</td><td><a href="javascript:selectMessagesTab();">0</a></td></tr>
+<tr><td>Number of warnings:</td><td><a href="javascript:selectMessagesTab();">2</a></td></tr>
+<tr><td>Number of notices:</td><td><a href="javascript:selectMessagesTab();">0</a></td></tr>
+<tr><td>Number of potential differences:</td><td><a href="javascript:selectPotentialDifferencesTab();">7</a></td></tr>
+</table>
+<p/><p/><table>
+<tr><td><b>Tell Us What You Think</b></td></tr>
+<tr><td>We value your feedback. Please take a few minutes to answer this short questionnaire regarding the Code Generation Report.</td></tr>
+<tr><td><a href="matlab: emlcprivate('launchReportSurvey');">&gt;&gt;Provide Feedback</a></td></tr>
+</table>
+</div>
+
+<!-- Message Table -->
+<div id="messagesbody" class="ui-tabs-panel hidden">
+<table class="grid" summary="This table lists the messages produced during code generation." cellspacing="0" cellpadding="6">
+<thead>
+<tr>
+<th id="msgorder" scope="col"><div class="d1"><div class="d2"><a href="#">Order</a></div></div></th>
+<th id="msgtype" scope="col"><div class="d1"><div class="d2"><a href="#">Type</a></div></div></th>
+<th id="function" scope="col"><div class="d1"><div class="d2"><a href="#">Function</a></div></div></th>
+<th id="location" scope="col"><div class="d1"><div class="d2"><a href="#">Line</a></div></div></th>
+<th id="text" scope="col"><div class="d1"><div class="d2"><a href="#">Description</a></div></div></th>
+</tr>
+</thead>
+<tbody onmouseover="messagesMouseOver(event);" onmouseout="messagesMouseOut(event);" onclick="messagesClick(event);">
+<tr class="message warning" id="M1F409">
+<td class="msgorder" headers="msgorder"><a href="#">1</a></td>
+<td class="warning" headers="msgtype"></td>
+<td class="function" headers="function"><div>EvolveSINetwork &gt; EvolveSINetwork_main &gt; 1</div></td>
+<td class="location" headers="location"><div>50</div></td>
+<td class="text" headers="text"><div>Index variable t is used outside its corresponding FOR loop. The run-time behavior will differ from MATLAB if the loop is not executed.</div></td>
+</tr>
+<tr class="message warning" id="M2F413">
+<td class="msgorder" headers="msgorder"><a href="#">2</a></td>
+<td class="warning" headers="msgtype"></td>
+<td class="function" headers="function"><div>EvolveSINetwork &gt; EvolveSINetwork_main &gt; 2</div></td>
+<td class="location" headers="location"><div>50</div></td>
+<td class="text" headers="text"><div>Index variable t is used outside its corresponding FOR loop. The run-time behavior will differ from MATLAB if the loop is not executed.</div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Watchlist Table -->
+<div id="watchlistbody" class="ui-tabs-panel hidden">
+</div>
+<div id="watchloadbody" class="ui-tabs-panel hidden">
+Loading Variables table ...
+</div>
+
+<!-- Build Log -->
+<div id="buildlog1body" class="ui-tabs-panel hidden">
+<div class="grayline"></div>
+<table cellpadding="4" cellspacing="1"><tr>
+<td align="left" class="td-linebottomrt-gray" colspan="2">Build Parameters</td>
+</tr>
+<tr><td align="left" valign="top" class="td-linebottomrt">Build directory</td>
+<td align="left" valign="top" class="td-linebottomrt-link"><a href="matlab: cd('D:\Dropbox\p\postdoc\programs\matlab\sirs\spreading\src\codegen\mex\NetworkActivationTime')">D:\Dropbox\p\postdoc\programs\matlab\sirs\spreading\src\codegen\mex\NetworkActivationTime</a></td></tr>
+<tr><td align="left" valign="top" class="td-linebottomrt">Make wrapper</td>
+<td align="left" valign="top" class="td-linebottomrt-link">NetworkActivationTime_mex.bat</td></tr>
+</table>
+<br/>
+<table border="1" cellpadding="4" cellspacing="1" width="100%">
+<tr><td align="left" class="td-linebottomrt-gray">Build Log</td></tr>
+<tr><td valign="top" class="td-script">
+<pre>
+<span class="td-line-number">    1   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "NetworkActivationTime_mexutil.cpp"</span>
+<span class="td-line-number">    2   </span><span class="td-line-normal">NetworkActivationTime_mexutil.cpp</span>
+<span class="td-line-number">    3   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "NetworkActivationTime_data.cpp"</span>
+<span class="td-line-number">    4   </span><span class="td-line-normal">NetworkActivationTime_data.cpp</span>
+<span class="td-line-number">    5   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "NetworkActivationTime_initialize.cpp"</span>
+<span class="td-line-number">    6   </span><span class="td-line-normal">NetworkActivationTime_initialize.cpp</span>
+<span class="td-line-number">    7   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "NetworkActivationTime_terminate.cpp"</span>
+<span class="td-line-number">    8   </span><span class="td-line-normal">NetworkActivationTime_terminate.cpp</span>
+<span class="td-line-number">    9   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "NetworkActivationTime.cpp"</span>
+<span class="td-line-number">   10   </span><span class="td-line-normal">NetworkActivationTime.cpp</span>
+<span class="td-line-number">   11   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "GetNodes.cpp"</span>
+<span class="td-line-number">   12   </span><span class="td-line-normal">GetNodes.cpp</span>
+<span class="td-line-number">   13   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "error.cpp"</span>
+<span class="td-line-number">   14   </span><span class="td-line-normal">error.cpp</span>
+<span class="td-line-number">   15   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "assertValidSizeArg.cpp"</span>
+<span class="td-line-number">   16   </span><span class="td-line-normal">assertValidSizeArg.cpp</span>
+<span class="td-line-number">   17   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "eml_int_forloop_overflow_check.cpp"</span>
+<span class="td-line-number">   18   </span><span class="td-line-normal">eml_int_forloop_overflow_check.cpp</span>
+<span class="td-line-number">   19   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "sort1.cpp"</span>
+<span class="td-line-number">   20   </span><span class="td-line-normal">sort1.cpp</span>
+<span class="td-line-number">   21   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "sortIdx.cpp"</span>
+<span class="td-line-number">   22   </span><span class="td-line-normal">sortIdx.cpp</span>
+<span class="td-line-number">   23   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "GetSimulationParam.cpp"</span>
+<span class="td-line-number">   24   </span><span class="td-line-normal">GetSimulationParam.cpp</span>
+<span class="td-line-number">   25   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "strcmp.cpp"</span>
+<span class="td-line-number">   26   </span><span class="td-line-normal">strcmp.cpp</span>
+<span class="td-line-number">   27   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "randperm.cpp"</span>
+<span class="td-line-number">   28   </span><span class="td-line-normal">randperm.cpp</span>
+<span class="td-line-number">   29   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "rand.cpp"</span>
+<span class="td-line-number">   30   </span><span class="td-line-normal">rand.cpp</span>
+<span class="td-line-number">   31   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "eml_rand.cpp"</span>
+<span class="td-line-number">   32   </span><span class="td-line-normal">eml_rand.cpp</span>
+<span class="td-line-number">   33   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "eml_rand_mcg16807_stateful.cpp"</span>
+<span class="td-line-number">   34   </span><span class="td-line-normal">eml_rand_mcg16807_stateful.cpp</span>
+<span class="td-line-number">   35   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "eml_rand_shr3cong_stateful.cpp"</span>
+<span class="td-line-number">   36   </span><span class="td-line-normal">eml_rand_shr3cong_stateful.cpp</span>
+<span class="td-line-number">   37   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "eml_rand_mt19937ar_stateful.cpp"</span>
+<span class="td-line-number">   38   </span><span class="td-line-normal">eml_rand_mt19937ar_stateful.cpp</span>
+<span class="td-line-number">   39   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "mod.cpp"</span>
+<span class="td-line-number">   40   </span><span class="td-line-normal">mod.cpp</span>
+<span class="td-line-number">   41   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "fillUpMatrix.cpp"</span>
+<span class="td-line-number">   42   </span><span class="td-line-normal">fillUpMatrix.cpp</span>
+<span class="td-line-number">   43   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "eml_setop.cpp"</span>
+<span class="td-line-number">   44   </span><span class="td-line-normal">eml_setop.cpp</span>
+<span class="td-line-number">   45   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "issorted.cpp"</span>
+<span class="td-line-number">   46   </span><span class="td-line-normal">issorted.cpp</span>
+<span class="td-line-number">   47   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "EvolveSINetwork.cpp"</span>
+<span class="td-line-number">   48   </span><span class="td-line-normal">EvolveSINetwork.cpp</span>
+<span class="td-line-number">   49   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "calcSpTime.cpp"</span>
+<span class="td-line-number">   50   </span><span class="td-line-normal">calcSpTime.cpp</span>
+<span class="td-line-number">   51   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "interface/_coder_NetworkActivationTime_info.cpp"</span>
+<span class="td-line-number">   52   </span><span class="td-line-normal">_coder_NetworkActivationTime_info.cpp</span>
+<span class="td-line-number">   53   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "interface/_coder_NetworkActivationTime_api.cpp"</span>
+<span class="td-line-number">   54   </span><span class="td-line-normal">_coder_NetworkActivationTime_api.cpp</span>
+<span class="td-line-number">   55   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "interface/_coder_NetworkActivationTime_mex.cpp"</span>
+<span class="td-line-number">   56   </span><span class="td-line-normal">_coder_NetworkActivationTime_mex.cpp</span>
+<span class="td-line-number">   57   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "NetworkActivationTime_emxutil.cpp"</span>
+<span class="td-line-number">   58   </span><span class="td-line-normal">NetworkActivationTime_emxutil.cpp</span>
+<span class="td-line-number">   59   </span><span class="td-line-normal">cl /c /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE  /O2 /Oy- /DNDEBUG /fp:strict    /I "C:\PROGRA~1\MATLAB\R2017b\simulink\include" /I "C:\PROGRA~1\MATLAB\R2017b\toolbox\shared\simtargets" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src\codegen\mex\NetworkActivationTime" /I "D:\Dropbox\p\postdoc\programs\matlab\sirs\SPREAD~1\src" /I ".\interface" /I "C:\PROGRA~1\MATLAB\R2017b\extern\include" /I "." "cpp_mexapi_version.cpp"</span>
+<span class="td-line-number">   60   </span><span class="td-line-normal">cpp_mexapi_version.cpp</span>
+<span class="td-line-number">   61   </span><span class="td-line-normal">link /nologo /manifest /DLL /LIBPATH:"C:\Program Files\MATLAB\R2017b\extern\lib\win64\microsoft" libmx.lib libmex.lib libmat.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /EXPORT:mexFunction /NODEFAULTLIB:LIBCMT   /OUT:NetworkActivationTime_mex.mexw64  NetworkActivationTime_mexutil.obj NetworkActivationTime_data.obj NetworkActivationTime_initialize.obj NetworkActivationTime_terminate.obj NetworkActivationTime.obj GetNodes.obj error.obj assertValidSizeArg.obj eml_int_forloop_overflow_check.obj sort1.obj sortIdx.obj GetSimulationParam.obj strcmp.obj randperm.obj rand.obj eml_rand.obj eml_rand_mcg16807_stateful.obj eml_rand_shr3cong_stateful.obj eml_rand_mt19937ar_stateful.obj mod.obj fillUpMatrix.obj eml_setop.obj issorted.obj EvolveSINetwork.obj calcSpTime.obj _coder_NetworkActivationTime_info.obj _coder_NetworkActivationTime_api.obj _coder_NetworkActivationTime_mex.obj NetworkActivationTime_emxutil.obj cpp_mexapi_version.obj   @NetworkActivationTime_mex_mex.arf</span>
+<span class="td-line-number">   62   </span><span class="td-line-normal">   Creating library NetworkActivationTime_mex.lib and object NetworkActivationTime_mex.exp</span>
+<span class="td-line-number">   63   </span><span class="td-line-normal">Build completed using compiler msvcpp120</span>
+<span class="td-line-number">   64   </span><span class="td-line-normal">mt -outputresource:"NetworkActivationTime_mex.mexw64;2" -manifest "NetworkActivationTime_mex.mexw64.manifest"</span>
+<span class="td-line-number">   65   </span><span class="td-line-normal">Microsoft (R) Manifest Tool version 6.3.9600.16384</span>
+<span class="td-line-number">   66   </span><span class="td-line-normal">Copyright (c) Microsoft Corporation 2012. </span>
+<span class="td-line-number">   67   </span><span class="td-line-normal">All rights reserved.</span>
+</pre>
+</td></tr></table>
+
+</div>
+
+<!-- Potential Differences -->
+<div id="potentialDifferencesBody" class="ui-tabs-panel hidden">
+<div id="potentialDifferencesBanner">The following differences from MATLAB may be encountered while executing the generated code.
+<a href="matlab:helpview('C:/Program Files/MATLAB/R2017b/help/coder/helptargets.map','msginfo_Coder_reportGen_potentialDifferencesBannerText');">More information</a></div>
+<table class="grid" summary="This table lists the messages produced during code generation." cellspacing="0" cellpadding="6">
+<thead>
+<tr>
+<th id="msgorder" scope="col"><div class="d1"><div class="d2"><a href="#">Order</a></div></div></th>
+<th id="text" scope="col"><div class="d1"><div class="d2"><a href="#">Description</a></div></div></th>
+</tr>
+</thead>
+<tbody onmouseover="messagesMouseOver(event);" onmouseout="messagesMouseOut(event);" onclick="clickPotentialDifferenceMessage(event);">
+<tr class="message potentialdiff" id="PD1">
+<td class="msgorder" headers="msgorder"><a href="#">1</a></td>
+<td class="text" headers="text"><div>The generated code assumes that the number of iterations of the loop is representable using the C type 'int'.</div></td>
+</tr>
+<tr class="message potentialdiff" id="PD2">
+<td class="msgorder" headers="msgorder"><a href="#">2</a></td>
+<td class="text" headers="text"><div>The generated code assumes that the index is within the array bounds. If the index exceeds the bounds, the array will not grow. To grow the array, consider preallocating memory or using concatenation. For example, [X A].</div></td>
+</tr>
+<tr class="message potentialdiff" id="PD3">
+<td class="msgorder" headers="msgorder"><a href="#">3</a></td>
+<td class="text" headers="text"><div>The generated code assumes that the variable-size matrix input will not have a 0x0 size.</div></td>
+</tr>
+<tr class="message potentialdiff" id="PD4">
+<td class="msgorder" headers="msgorder"><a href="#">4</a></td>
+<td class="text" headers="text"><div>The generated code assumes that the input is representable using the C type 'int'.</div></td>
+</tr>
+<tr class="message potentialdiff" id="PD5">
+<td class="msgorder" headers="msgorder"><a href="#">5</a></td>
+<td class="text" headers="text"><div>For indexing a vector with a vector, vector1(vector2), the code generator assumed that the result would have the same orientation as vector1. If vector1 is a scalar at run time, the orientation of vector2 must match vector1.<br/><a href="matlab:helpview('C:/Program Files/MATLAB/R2017b/help/coder/helptargets.map','msginfo_Coder_potentialDifferences_VectorVector');">More information</a></div></td>
+</tr>
+<tr class="message potentialdiff" id="PD6">
+<td class="msgorder" headers="msgorder"><a href="#">6</a></td>
+<td class="text" headers="text"><div>In the generated code, the dimension to operate along is selected automatically, and might be different from MATLAB. Consider specifying the working dimension explicitly as a constant value.<br/><a href="matlab:helpview('C:/Program Files/MATLAB/R2017b/help/coder/helptargets.map','msginfo_Coder_potentialDifferences_autoDimIncompatibility');">More information</a></div></td>
+</tr>
+<tr class="message potentialdiff" id="PD7">
+<td class="msgorder" headers="msgorder"><a href="#">7</a></td>
+<td class="text" headers="text"><div>The generated code assumes that the dimension to operate along has non-zero length.</div></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+<!-- Begin MATLAB Code Panel -->
+<div class="center">
+<div class="center-title">
+<div class="ui-tabs-nav-item ui-tabs-selected">
+<span class="functiontitle">
+</span>
+<!-- Begin Call Sites -->
+<span id="callsiteselecttable" class="call-sites-tbl">
+<span id="callsiteselectlabel" class="filtered">Calls:</span>
+<select id="callsiteselect" onchange="callSiteChange(event)">
+<option value="callsiteprompt">Select a function call:</option>
+</select>
+</span>
+<!-- End Call Sites -->
+</div>
+</div>
+<div class="ui-tabs-panel">
+<iframe id="hiddenCodeFrame"></iframe>
+<div class="code" onmouseover="mcodeMouseOver(event);" onmouseout="mcodeMouseOut(event);"onclick="mcodeClick(event);">
+</div>
+</div>
+</div>
+<!-- End MATLAB Code Panel -->
+</body>
+</html>

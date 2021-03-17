@@ -1,0 +1,218 @@
+<!-- saved from url=(0014)about:internet -->
+<html>
+<body>
+<script src="resources/eml_report_loadable_data.js"></script>
+<div class="dead">
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="1,1" id="srcline1">  1</a></span><span class="line">function [Cp1,Cp2,H,Cf,T,Tn,S,Sn] = TwoSeedsSpreading(A, Theta, tTotal, isCompetitive)</span></span>
+<span class="srcline"><span class="lineno"><a href="1,2" id="srcline2">  2</a></span><span class="line"><span class="comment">% Cp -&gt; competitiveness of a node</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,3" id="srcline3">  3</a></span><span class="line"><span class="comment">% H -&gt; entropy of a node</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,4" id="srcline4">  4</a></span><span class="line"><span class="comment">% Cf -&gt; conformity of a node</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,5" id="srcline5">  5</a></span><span class="line"><span class="comment">% T -&gt; network activation time for each pair of seeds</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,6" id="srcline6">  6</a></span><span class="line"><span class="comment">% Tn -&gt; node activation time for each pair of seeds Tn(i,j,k) -&gt; time for seeds (i,j) to activate node k</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,7" id="srcline7">  7</a></span><span class="line"><span class="comment">% S -&gt; network activation time (in inverse weight units) for each pair of seeds</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,8" id="srcline8">  8</a></span><span class="line"><span class="comment">% Sn -&gt; node activation time (in inverse weight units) for each pair of seeds Tn(i,j,k) -&gt; time for seeds (i,j) to activate node k</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,9" id="srcline9">  9</a></span><span class="line"><span class="comment">%</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,10" id="srcline10"> 10</a></span><span class="line"><span class="comment">% defined in Misic et al 2015 Neuron; pg 1527-1528 (pdf 11-12).</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,11" id="srcline11"> 11</a></span><span class="line"><span class="comment">%</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,12" id="srcline12"> 12</a></span><span class="line"><span class="comment">% Cp_i == size of cascades iniated at node i, averaged over all competing nodes j</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,13" id="srcline13"> 13</a></span><span class="line"><span class="comment">% H_i == - sum_c P(x_c)*log[P(x_c)]</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,14" id="srcline14"> 14</a></span><span class="line"><span class="comment">%      where c runs over all available states (2 seeds, c = 2)</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,15" id="srcline15"> 15</a></span><span class="line"><span class="comment">%      P_i(x_c)=n_i(x_c)/k_i is the probability of finding a neighbor of i with state x_c;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,16" id="srcline16"> 16</a></span><span class="line"><span class="comment">%         n_i(x_c) is the amount of neighbors of i with state x_c;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,17" id="srcline17"> 17</a></span><span class="line"><span class="comment">%         k_i is the connectivity of node i</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,18" id="srcline18"> 18</a></span><span class="line"><span class="comment">%      the definition of P(x_c) in the paper is ambiguous,</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,19" id="srcline19"> 19</a></span><span class="line"><span class="comment">%      it could also be interpreted as the probability of finding all the neighbors of i in state x_c</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,20" id="srcline20"> 20</a></span><span class="line"><span class="comment">% Cf_i == the proportion of neighbors in the same state as i</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,21" id="srcline21"> 21</a></span><span class="line"><span class="comment">%</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,22" id="srcline22"> 22</a></span><span class="line"><span class="comment">% these measures must be averaged over all seeds</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,23" id="srcline23"> 23</a></span><span class="line"><span class="comment">%</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,24" id="srcline24"> 24</a></span><span class="line"><span class="comment">% Cp1 is the average avalanche size of state 1</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,25" id="srcline25"> 25</a></span><span class="line"><span class="comment">% Cp2 is the average avalanche size of state 2</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,26" id="srcline26"> 26</a></span><span class="line"><span class="comment">%</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,27" id="srcline27"> 27</a></span><span class="line"><span class="comment">% theoretically, Cp1' == Cp2, because of the symmetry of the system</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,28" id="srcline28"> 28</a></span><span class="line"><span class="comment">%       (avalanche sizes for state 1 seeds (i,j) are equal to avalanche sizes of state 2 for seeds (j,i);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,29" id="srcline29"> 29</a></span><span class="line"><span class="comment">% however, the function UpdateInputNSeed does not treat all the states equally:</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,30" id="srcline30"> 30</a></span><span class="line"><span class="comment">% if the input weights for each state to a given node are equal,</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,31" id="srcline31"> 31</a></span><span class="line"><span class="comment">% then the state state 1 is preferred over state 2, 2 over 3, and so on,</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,32" id="srcline32"> 32</a></span><span class="line"><span class="comment">% due to the finding of maximum weight algorithm in that function</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,33" id="srcline33"> 33</a></span><span class="line"><span class="comment">% I improved the UpdateInputNSeed function to change to a random state when an equal weighted input is found</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,34" id="srcline34"> 34</a></span><span class="line"><span class="comment">% now, Cp1' is statistically equal Cp2</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,35" id="srcline35"> 35</a></span><span class="line">    N = size(A,1);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,36" id="srcline36"> 36</a></span><span class="line">    [ii,jj] = meshgrid(1:N,1:N);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,37" id="srcline37"> 37</a></span><span class="line">    seedInd = [ ii(:), jj(:) ];</span></span>
+<span class="srcline"><span class="lineno"><a href="1,38" id="srcline38"> 38</a></span><span class="line">    seedInd(1:(N+1):(N*N),:) = []; <span class="comment">% excluding the entries with two seeds in the same node</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,39" id="srcline39"> 39</a></span><span class="line">    nSim = size(seedInd,1); <span class="comment">% one simulation for each seed combination</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,40" id="srcline40"> 40</a></span><span class="line">    p = GetSimulationParam(A, 2, isCompetitive, 'fixed', seedInd, nSim);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,41" id="srcline41"> 41</a></span><span class="line">    n = GetNodes(A, Theta, 0, 2, isCompetitive);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,42" id="srcline42"> 42</a></span><span class="line">    SS = zeros(nSim,1); <span class="comment">% spreading time (in inverse weight units) from each seed combination to the whole network</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,43" id="srcline43"> 43</a></span><span class="line">    TT = zeros(nSim, 1); <span class="comment">% spreading time from each seed combination to the whole network</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,44" id="srcline44"> 44</a></span><span class="line">    SSn = zeros(nSim, N); <span class="comment">% spreading time (in inverse weight units) from each seed combination to each node in the network</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,45" id="srcline45"> 45</a></span><span class="line">    TTn = zeros(nSim, N); <span class="comment">% spreading time from each seed combination to each node in the network</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,46" id="srcline46"> 46</a></span><span class="line">    CCp1 = zeros(nSim, 1);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,47" id="srcline47"> 47</a></span><span class="line">    CCp2 = zeros(nSim, 1);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,48" id="srcline48"> 48</a></span><span class="line">    Cf = zeros(N, 1);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,49" id="srcline49"> 49</a></span><span class="line">    H = zeros(N, 1);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,50" id="srcline50"> 50</a></span><span class="line">    <span class="comment">%CCf = zeros(nSim, 1);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,51" id="srcline51"> 51</a></span><span class="line">    <span class="comment">%HH = zeros(nSim, 1);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,52" id="srcline52"> 52</a></span><span class="line"><span class="comment">%     x = zeros(nSim, N);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,53" id="srcline53"> 53</a></span><span class="line">    for i = 1:nSim</span></span>
+<span class="srcline"><span class="lineno"><a href="1,54" id="srcline54"> 54</a></span><span class="line">        [xx,p,TT(i),spTemp] = EvolveSINetwork(n, tTotal, p, 1);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,55" id="srcline55"> 55</a></span><span class="line">        SS(i) = max(spTemp(end,:));</span></span>
+<span class="srcline"><span class="lineno"><a href="1,56" id="srcline56"> 56</a></span><span class="line">        x = xx(end,:);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,57" id="srcline57"> 57</a></span><span class="line">        CCp1(i) = getAvalancheSizeForNode(x(seedInd(i,1)), x); <span class="comment">% get size of avalanche starting at seed seedInd(i,1)</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,58" id="srcline58"> 58</a></span><span class="line">        CCp2(i) = getAvalancheSizeForNode(x(seedInd(i,2)), x); <span class="comment">% get size of avalanche starting at seed seedInd(i,1)</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,59" id="srcline59"> 59</a></span><span class="line">        Cf = Cf + getConformityForNetwork(n, x);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,60" id="srcline60"> 60</a></span><span class="line">        H = H + getEntropyForNetwork(n, x, p.x0);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,61" id="srcline61"> 61</a></span><span class="line">        TTn(i,:) = getNodeActivationTime(xx);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,62" id="srcline62"> 62</a></span><span class="line">        SSn(i,:) = spTemp(end,:);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,63" id="srcline63"> 63</a></span><span class="line">        SSn(i,SSn(i,:)==0) = NaN;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,64" id="srcline64"> 64</a></span><span class="line"><span class="comment">%         [x(i,:),p,TT(i)] = EvolveSINetwork(n, tTotal, p, 0);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,65" id="srcline65"> 65</a></span><span class="line"><span class="comment">%         CCp1(i) = getAvalancheSizeForNode(x(i,seedInd(i,1)), x(i,:)); % get size of avalanche starting at seed seedInd(i,1)</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,66" id="srcline66"> 66</a></span><span class="line"><span class="comment">%         CCp2(i) = getAvalancheSizeForNode(x(i,seedInd(i,2)), x(i,:)); % get size of avalanche starting at seed seedInd(i,1)</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,67" id="srcline67"> 67</a></span><span class="line"><span class="comment">%         Cf = Cf + getConformityForNetwork(n, x(i,:));</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,68" id="srcline68"> 68</a></span><span class="line"><span class="comment">%         H = H + getEntropyForNetwork(n, x(i,:), p.x0);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,69" id="srcline69"> 69</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,70" id="srcline70"> 70</a></span><span class="line">    </span></span>
+<span class="srcline"><span class="lineno"><a href="1,71" id="srcline71"> 71</a></span><span class="line">    <span class="comment">%Cp = averageForOneSeed(CCp, N);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,72" id="srcline72"> 72</a></span><span class="line">    <span class="comment">%T = averageForOneSeed(TT, N);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,73" id="srcline73"> 73</a></span><span class="line">    Cp1 = vecToMatrix(CCp1,seedInd,N);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,74" id="srcline74"> 74</a></span><span class="line">    Cp2 = vecToMatrix(CCp2,seedInd,N);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,75" id="srcline75"> 75</a></span><span class="line">    T = vecToMatrix(TT,seedInd,N);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,76" id="srcline76"> 76</a></span><span class="line">    Tn = matToTensor(TTn,seedInd,N);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,77" id="srcline77"> 77</a></span><span class="line">    S = vecToMatrix(SS,seedInd,N);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,78" id="srcline78"> 78</a></span><span class="line">    Sn = matToTensor(SSn,seedInd,N);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,79" id="srcline79"> 79</a></span><span class="line">    H = H ./ nSim;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,80" id="srcline80"> 80</a></span><span class="line">    Cf = Cf ./ nSim;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,81" id="srcline81"> 81</a></span><span class="line">end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,82" id="srcline82"> 82</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,83" id="srcline83"> 83</a></span><span class="line">function Tn = getNodeActivationTime(x)</span></span>
+<span class="srcline"><span class="lineno"><a href="1,84" id="srcline84"> 84</a></span><span class="line"><span class="comment">% x(:,i) is the timeseries for each node i</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,85" id="srcline85"> 85</a></span><span class="line">    N = size(x,2);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,86" id="srcline86"> 86</a></span><span class="line">    Tn = zeros(1,N);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,87" id="srcline87"> 87</a></span><span class="line">    for i = 1:N</span></span>
+<span class="srcline"><span class="lineno"><a href="1,88" id="srcline88"> 88</a></span><span class="line">        f = find(x(:,i),1,'first');</span></span>
+<span class="srcline"><span class="lineno"><a href="1,89" id="srcline89"> 89</a></span><span class="line">        if isempty(f)</span></span>
+<span class="srcline"><span class="lineno"><a href="1,90" id="srcline90"> 90</a></span><span class="line">            Tn(i) = NaN;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,91" id="srcline91"> 91</a></span><span class="line">        else</span></span>
+<span class="srcline"><span class="lineno"><a href="1,92" id="srcline92"> 92</a></span><span class="line">            Tn(i) = f;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,93" id="srcline93"> 93</a></span><span class="line">        end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,94" id="srcline94"> 94</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,95" id="srcline95"> 95</a></span><span class="line">end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,96" id="srcline96"> 96</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,97" id="srcline97"> 97</a></span><span class="line">function T = matToTensor(M,si,N)</span></span>
+<span class="srcline"><span class="lineno"><a href="1,98" id="srcline98"> 98</a></span><span class="line">    T = zeros(N,N,N);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,99" id="srcline99"> 99</a></span><span class="line">    n = size(si,1);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,100" id="srcline100">100</a></span><span class="line">    for k = 1:N</span></span>
+<span class="srcline"><span class="lineno"><a href="1,101" id="srcline101">101</a></span><span class="line">        for ii = 1:n</span></span>
+<span class="srcline"><span class="lineno"><a href="1,102" id="srcline102">102</a></span><span class="line">            i = si(ii,1);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,103" id="srcline103">103</a></span><span class="line">            j = si(ii,2);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,104" id="srcline104">104</a></span><span class="line">            T(i,j,k) = M(ii,k);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,105" id="srcline105">105</a></span><span class="line">        end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,106" id="srcline106">106</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,107" id="srcline107">107</a></span><span class="line">end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,108" id="srcline108">108</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,109" id="srcline109">109</a></span><span class="line">function M = vecToMatrix(v,si,N)</span></span>
+<span class="srcline"><span class="lineno"><a href="1,110" id="srcline110">110</a></span><span class="line"><span class="comment">%     M = 1-eye(N);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,111" id="srcline111">111</a></span><span class="line">    M = zeros(N);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,112" id="srcline112">112</a></span><span class="line">    for i = 1:numel(v)</span></span>
+<span class="srcline"><span class="lineno"><a href="1,113" id="srcline113">113</a></span><span class="line">        M(si(i,1),si(i,2)) = v(i);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,114" id="srcline114">114</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,115" id="srcline115">115</a></span><span class="line">end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,116" id="srcline116">116</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,117" id="srcline117">117</a></span><span class="line">function C = getConformityForNetwork(n, x)</span></span>
+<span class="srcline"><span class="lineno"><a href="1,118" id="srcline118">118</a></span><span class="line">    N = numel(n);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,119" id="srcline119">119</a></span><span class="line">    C = zeros(N,1);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,120" id="srcline120">120</a></span><span class="line">    for i = 1:N <span class="comment">% for each node</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,121" id="srcline121">121</a></span><span class="line">        <span class="comment">% find the number of neighbors with the same state of i</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,122" id="srcline122">122</a></span><span class="line">        k = 0;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,123" id="srcline123">123</a></span><span class="line">        for jj = 1:numel(n(i).neigh) <span class="comment">% for each neighbor</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,124" id="srcline124">124</a></span><span class="line">            j = n(i).neigh(jj);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,125" id="srcline125">125</a></span><span class="line">            if (x(j) == x(i))</span></span>
+<span class="srcline"><span class="lineno"><a href="1,126" id="srcline126">126</a></span><span class="line">                k = k + 1;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,127" id="srcline127">127</a></span><span class="line">            end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,128" id="srcline128">128</a></span><span class="line">        end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,129" id="srcline129">129</a></span><span class="line">        C(i) = k / numel( n(i).neigh );</span></span>
+<span class="srcline"><span class="lineno"><a href="1,130" id="srcline130">130</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,131" id="srcline131">131</a></span><span class="line">end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,132" id="srcline132">132</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,133" id="srcline133">133</a></span><span class="line">function H = getEntropyForNetwork(n, x, xc)</span></span>
+<span class="srcline"><span class="lineno"><a href="1,134" id="srcline134">134</a></span><span class="line">    N = numel(n);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,135" id="srcline135">135</a></span><span class="line">    H = zeros(N,1);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,136" id="srcline136">136</a></span><span class="line">    nStates = numel(xc);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,137" id="srcline137">137</a></span><span class="line">    for i = 1:N</span></span>
+<span class="srcline"><span class="lineno"><a href="1,138" id="srcline138">138</a></span><span class="line">        P = zeros(1,nStates); <span class="comment">% probability of finding a neighbor in each of the available states xc</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,139" id="srcline139">139</a></span><span class="line">        for k = 1:nStates <span class="comment">% check which neighbors of i are in each state</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,140" id="srcline140">140</a></span><span class="line">            for jj = 1:numel(n(i).neigh)</span></span>
+<span class="srcline"><span class="lineno"><a href="1,141" id="srcline141">141</a></span><span class="line">                j = n(i).neigh(jj);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,142" id="srcline142">142</a></span><span class="line">                if (x(j) == xc(k)) <span class="comment">% if a given neighbor is in the state k</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,143" id="srcline143">143</a></span><span class="line">                    P(k) = P(k) + 1; <span class="comment">% sums 1 to probability of finding neighbor in state k</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,144" id="srcline144">144</a></span><span class="line">                end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,145" id="srcline145">145</a></span><span class="line">            end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,146" id="srcline146">146</a></span><span class="line">            P(k) = P(k) / numel(n(i).neigh);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,147" id="srcline147">147</a></span><span class="line">            H(i) = H(i) + xlogx(P(k));</span></span>
+<span class="srcline"><span class="lineno"><a href="1,148" id="srcline148">148</a></span><span class="line">        end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,149" id="srcline149">149</a></span><span class="line">        H(i) = -H(i);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,150" id="srcline150">150</a></span><span class="line">        <span class="comment">%H(i) = - sum(P.*log(P));</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,151" id="srcline151">151</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,152" id="srcline152">152</a></span><span class="line">end</span></span>
+</pre>
+</div>
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="1,153" id="srcline153">153</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,154" id="srcline154">154</a></span><span class="line"><span class="keyword">function</span> <span class="var type1" id="S104T4U697">h</span> = xlogx(<span class="var type1" id="S105T4U700">x</span>)</span></span>
+<span class="srcline"><span class="lineno"><a href="1,155" id="srcline155">155</a></span><span class="line">    <span class="keyword">if</span> (<span class="mxinfo " id="T15:U3"><span class="var type1" id="S105T4U705">x</span> == <span class="mxinfo " id="T4:U5">0</span></span>)</span></span>
+<span class="srcline"><span class="lineno"><a href="1,156" id="srcline156">156</a></span><span class="line">        <span class="mxinfo " id="T4:U6"><span class="var type1" id="S104T4U709">h</span> = <span class="mxinfo " id="T4:U8">0</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,157" id="srcline157">157</a></span><span class="line">        <span class="keyword">return</span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,158" id="srcline158">158</a></span><span class="line">    <span class="keyword">else</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,159" id="srcline159">159</a></span><span class="line">        <span class="mxinfo " id="T4:U9"><span class="var type1" id="S104T4U715">h</span> = <span class="mxinfo " id="T4:U11"><span class="var type1" id="S105T4U717">x</span>*<span class="mxinfo " id="T4:U13"><span class="potentialdiff PD1">log(<span class="var type1" id="S105T4U720">x</span>)</span></span></span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,160" id="srcline160">160</a></span><span class="line">        <span class="keyword">return</span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,161" id="srcline161">161</a></span><span class="line">    <span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,162" id="srcline162">162</a></span><span class="line"><span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,163" id="srcline163">163</a></span><span class="line"></span></span>
+</pre>
+<div class="dead">
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="1,164" id="srcline164">164</a></span><span class="line">function s = getAvalancheSizeForNode(xk, x)</span></span>
+<span class="srcline"><span class="lineno"><a href="1,165" id="srcline165">165</a></span><span class="line">    s = numel(find(x(x==xk)));</span></span>
+<span class="srcline"><span class="lineno"><a href="1,166" id="srcline166">166</a></span><span class="line">end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,167" id="srcline167">167</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,168" id="srcline168">168</a></span><span class="line">function s = getAvalancheSizeForEachState(x, xc)</span></span>
+<span class="srcline"><span class="lineno"><a href="1,169" id="srcline169">169</a></span><span class="line">    s = zeros(size(xc));</span></span>
+<span class="srcline"><span class="lineno"><a href="1,170" id="srcline170">170</a></span><span class="line">    for k = 1:numel(xc)</span></span>
+<span class="srcline"><span class="lineno"><a href="1,171" id="srcline171">171</a></span><span class="line">        s(k) = numel(find(x==xc(k)));</span></span>
+<span class="srcline"><span class="lineno"><a href="1,172" id="srcline172">172</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,173" id="srcline173">173</a></span><span class="line">end</span></span>
+<span class="srcline"><span class="lineno"><a href="1,174" id="srcline174">174</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,175" id="srcline175">175</a></span><span class="line"><span class="comment">% function r = averageForOneSeed(x, N)</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,176" id="srcline176">176</a></span><span class="line"><span class="comment">%     r = zeros(N,1);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,177" id="srcline177">177</a></span><span class="line"><span class="comment">%     for k = 1:N</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,178" id="srcline178">178</a></span><span class="line"><span class="comment">%         ind = ((k-1)*N+2-k):(k*N-k); % this indices correspond to all the lines of x that had k as a seed</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,179" id="srcline179">179</a></span><span class="line"><span class="comment">%         % this is a consequence from lines 20, 21, 22 of this script; i.e. the seed pairs were generated using meshgrid</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,180" id="srcline180">180</a></span><span class="line"><span class="comment">%         % and the double seeds were removed</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,181" id="srcline181">181</a></span><span class="line"><span class="comment">%         for i = ind</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,182" id="srcline182">182</a></span><span class="line"><span class="comment">%             r(k) = r(k) + x(i); % variables corresponding to seed k</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,183" id="srcline183">183</a></span><span class="line"><span class="comment">%         end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,184" id="srcline184">184</a></span><span class="line"><span class="comment">%         r(k) = r(k) / numel(ind);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,185" id="srcline185">185</a></span><span class="line"><span class="comment">%     end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,186" id="srcline186">186</a></span><span class="line"><span class="comment">% end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,187" id="srcline187">187</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,188" id="srcline188">188</a></span><span class="line"><span class="comment">% function Cp = meanAvalancheSize(x)</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,189" id="srcline189">189</a></span><span class="line"><span class="comment">%     %nSim = size(x,1);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,190" id="srcline190">190</a></span><span class="line"><span class="comment">%     N = size(x,2);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,191" id="srcline191">191</a></span><span class="line"><span class="comment">%     Cp = zeros(N,1);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,192" id="srcline192">192</a></span><span class="line"><span class="comment">%     for k = 1:N</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,193" id="srcline193">193</a></span><span class="line"><span class="comment">%         ind = ((k-1)*N+2-k):(k*N-k); % this indices correspond to all the lines of x that had k as a seed</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,194" id="srcline194">194</a></span><span class="line"><span class="comment">%         % this is a consequence from lines 20, 21, 22 of this script; i.e. the seed pairs were generated using meshgrid</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,195" id="srcline195">195</a></span><span class="line"><span class="comment">%         % and the double seeds were removed</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,196" id="srcline196">196</a></span><span class="line"><span class="comment">%         for i = ind</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,197" id="srcline197">197</a></span><span class="line"><span class="comment">%             Cp(k) = Cp(k) + getAvalancheSizeForNode(x(i,k),x(i,:)); % gets the amount of nodes that have state equal to node k</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,198" id="srcline198">198</a></span><span class="line"><span class="comment">%         end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,199" id="srcline199">199</a></span><span class="line"><span class="comment">%         Cp(k) = Cp(k) / numel(ind); % average over all the competing seeds</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,200" id="srcline200">200</a></span><span class="line"><span class="comment">%     end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,201" id="srcline201">201</a></span><span class="line"><span class="comment">% end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,202" id="srcline202">202</a></span><span class="line"> </span></span>
+</pre>
+</div>
+</body>
+</html>

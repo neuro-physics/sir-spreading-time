@@ -1,0 +1,36 @@
+* Density
+  - matrix A (no edge length sampling) = 0.24111
+  - matrix B    (edge length sampling) = 0.24988
+  - all matrices average               = 0.26174
+---
+* Weighted clustering coefficient
+  - matrix A (no edge length sampling) (mean +/- sderr) = 0.24118 +/- 0.005796
+  - matrix B    (edge length sampling) (mean +/- sderr) = 0.24498 +/- 0.0047025
+  - all matrices                       (mean +/- sderr) = 0.27185 +/- 0.0043075
+* Weighted clustering coefficient mean absolute error
+  - matrix A (no edge length sampling) (mean +/- sderr) = 0.038513 +/- 0.0031911
+  - matrix B    (edge length sampling) (mean +/- sderr) = 0.028304 +/- 0.0020421
+---
+* Node connectivity
+  - matrix A (no edge length sampling) (mean +/- sderr) = 21.7 +/- 1.1047
+  - matrix B    (edge length sampling) (mean +/- sderr) = 22.489 +/- 0.89223
+  - all matrices                       (mean +/- sderr) = 23.556 +/- 0.71915
+* Node connectivity mean absolute error
+  - matrix A (no edge length sampling) (mean +/- sderr) = 5.6731 +/- 0.46391
+  - matrix B    (edge length sampling) (mean +/- sderr) = 2.3104 +/- 0.18061
+---
+* Connectivity distribution
+  - matrix A (no edge length sampling) (mean +/- sderr) = 0.011111 +/- 0.0017292
+  - matrix B    (edge length sampling) (mean +/- sderr) = 0.011111 +/- 0.0021142
+  - all matrices                       (mean +/- sderr) = 0.011111 +/- 0.0017019
+* Connectivity distribution mean absolute error
+  - matrix A (no edge length sampling) (mean +/- sderr) = 0.0067106 +/- 0.00098824
+  - matrix B    (edge length sampling) (mean +/- sderr) = 0.0066447 +/- 0.0010654
+---
+* Betweenness centrality
+  - matrix A (no edge length sampling) (mean +/- sderr) = 79.567 +/- 9.2971
+  - matrix B    (edge length sampling) (mean +/- sderr) = 79.2 +/- 10.439
+  - all matrices                       (mean +/- sderr) = 79.007 +/- 7.7296
+* Betweenness centrality mean absolute error
+  - matrix A (no edge length sampling) (mean +/- sderr) = 34.591 +/- 4.6076
+  - matrix B    (edge length sampling) (mean +/- sderr) = 25.422 +/- 3.4026

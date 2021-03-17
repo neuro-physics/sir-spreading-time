@@ -1,0 +1,2 @@
+fdeb --nodes aal_nodes_xy_position.csv --edges TLE_0362_1_edges.csv --transparency 0.2 --I 100 --cycles 6 --visualize
+fdeb --nodes aal_nodes_xy_position.csv --edges TLE_0362_1_edges.csv --transparency 0.2 --I 100 --cycles 6 --json TLE_0362_1_edges.debundle-json

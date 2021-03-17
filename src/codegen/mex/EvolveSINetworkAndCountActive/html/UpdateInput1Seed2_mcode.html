@@ -1,0 +1,14 @@
+<!-- saved from url=(0014)about:internet -->
+<html>
+<body>
+<script src="resources/eml_report_loadable_data.js"></script>
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="2,1" id="srcline1">1</a></span><span class="line"><span class="keyword">function</span> [<span class="var type1" id="S2T1U3">Isyn</span>,<span class="var type1" id="S3T1U4">kMax</span>] = UpdateInput1Seed(<span class="var type1" id="S4T1U7">i</span>, <span class="var type1" id="S5T2U8">nodes</span>)</span></span>
+<span class="srcline"><span class="lineno"><a href="2,2" id="srcline2">2</a></span><span class="line">    <span class="mxinfo " id="T1:U5"><span class="var type1" id="S2T1U11">Isyn</span> = <span class="mxinfo " id="T1:U7">0.0</span></span>; <span class="mxinfo " id="T1:U8"><span class="var type1" id="S3T1U15">kMax</span> = <span class="mxinfo " id="T1:U10">1</span></span>; <span class="comment">%spTime = 0.0; nAct = 0; spTimePrev = 0.0;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,3" id="srcline3">3</a></span><span class="line">    <span class="keyword">for</span> <span class="var type1" id="S6T1U19">j</span> = <span class="potentialdiff PD1"><span class="mxinfo " id="T1:U12">1</span>:<span class="mxinfo " id="T1:U13"><span class="mxinfo " id="T4:U14"><span class="mxinfo " id="T5:U15"><span class="var type1" id="S5T2U25">nodes</span>(<span class="var type1" id="S4T1U26">i</span>)</span>.par</span>.n</span></span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,4" id="srcline4">4</a></span><span class="line">        <span class="mxinfo " id="T1:U18"><span class="var type1" id="S2T1U31">Isyn</span> = <span class="mxinfo " id="T1:U20"><span class="var type1" id="S2T1U33">Isyn</span> + <span class="mxinfo " id="T1:U22"><span class="mxinfo " id="T1:U23"><span class="mxinfo " id="T3:U24"><span class="mxinfo " id="T5:U25"><span class="var type1" id="S5T2U38">nodes</span>(<span class="var type1" id="S4T1U39">i</span>)</span>.w</span>(<span class="var type1" id="S6T1U41">j</span>)</span> .* <span class="mxinfo " id="T1:U29"><span class="mxinfo " id="T5:U30"><span class="potentialdiff PD3"><span class="var type1" id="S5T2U44">nodes</span>(<span class="mxinfo " id="T1:U32"><span class="mxinfo " id="T3:U33"><span class="mxinfo " id="T5:U34"><span class="var type1" id="S5T2U48">nodes</span>(<span class="var type1" id="S4T1U49">i</span>)</span>.neigh</span>(<span class="var type1" id="S6T1U51">j</span>)</span>)</span></span>.x</span></span></span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,5" id="srcline5">5</a></span><span class="line">    <span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,6" id="srcline6">6</a></span><span class="line"><span class="keyword">end</span></span></span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!-- saved from url=(0014)about:internet -->
+<html>
+<body>
+<script src="resources/eml_report_loadable_data.js"></script>
+<div class="dead">
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="71,1" id="srcline1"> 1</a></span><span class="line">function M = fillUpMatrix(A, m, n, N)</span></span>
+<span class="srcline"><span class="lineno"><a href="71,2" id="srcline2"> 2</a></span><span class="line"><span class="comment">% M is a matrix m X n</span></span></span>
+<span class="srcline"><span class="lineno"><a href="71,3" id="srcline3"> 3</a></span><span class="line"><span class="comment">% composed of A (top left corner)</span></span></span>
+<span class="srcline"><span class="lineno"><a href="71,4" id="srcline4"> 4</a></span><span class="line"><span class="comment">% if size(A) &gt; size(M), then A is trimmed to fit M</span></span></span>
+<span class="srcline"><span class="lineno"><a href="71,5" id="srcline5"> 5</a></span><span class="line"><span class="comment">% if number of cols of A is less than n, then the remaining n-size(A,2) cols of each line of A are</span></span></span>
+<span class="srcline"><span class="lineno"><a href="71,6" id="srcline6"> 6</a></span><span class="line"><span class="comment">%       filled with randperm(N,n-size(A,2)) numbers not contained in the given line of A</span></span></span>
+<span class="srcline"><span class="lineno"><a href="71,7" id="srcline7"> 7</a></span><span class="line"><span class="comment">% if number of rows of A is less than m, the matrix (with given corrections) is periodically</span></span></span>
+<span class="srcline"><span class="lineno"><a href="71,8" id="srcline8"> 8</a></span><span class="line"><span class="comment">%       repeated, one below each other.</span></span></span>
+<span class="srcline"><span class="lineno"><a href="71,9" id="srcline9"> 9</a></span><span class="line">    [nr,nc] = size(A);</span></span>
+<span class="srcline"><span class="lineno"><a href="71,10" id="srcline10">10</a></span><span class="line">    mm = min(m,nr);</span></span>
+<span class="srcline"><span class="lineno"><a href="71,11" id="srcline11">11</a></span><span class="line">    nn = min(n,nc);</span></span>
+<span class="srcline"><span class="lineno"><a href="71,12" id="srcline12">12</a></span><span class="line">    M = zeros(m,n);</span></span>
+<span class="srcline"><span class="lineno"><a href="71,13" id="srcline13">13</a></span><span class="line">    for i = 1:mm</span></span>
+<span class="srcline"><span class="lineno"><a href="71,14" id="srcline14">14</a></span><span class="line">        r = getRandPerm(N, n - nn, A(i,1:nn)); <span class="comment">% if n &lt; size(A,2), then r = []</span></span></span>
+<span class="srcline"><span class="lineno"><a href="71,15" id="srcline15">15</a></span><span class="line">        M(i,:) = [ A(i,1:nn), r ];</span></span>
+<span class="srcline"><span class="lineno"><a href="71,16" id="srcline16">16</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="71,17" id="srcline17">17</a></span><span class="line">    if (m &lt;= nr)</span></span>
+<span class="srcline"><span class="lineno"><a href="71,18" id="srcline18">18</a></span><span class="line">        return;</span></span>
+<span class="srcline"><span class="lineno"><a href="71,19" id="srcline19">19</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="71,20" id="srcline20">20</a></span><span class="line">    k = floor(m / nr);</span></span>
+<span class="srcline"><span class="lineno"><a href="71,21" id="srcline21">21</a></span><span class="line">    M(1:(k*nr),:) = repmat(M(1:nr,:), k, 1);</span></span>
+<span class="srcline"><span class="lineno"><a href="71,22" id="srcline22">22</a></span><span class="line">    M((k*nr+1):m,:) = M(1:(m-k*nr),:);</span></span>
+<span class="srcline"><span class="lineno"><a href="71,23" id="srcline23">23</a></span><span class="line">end</span></span>
+</pre>
+</div>
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="71,24" id="srcline24">24</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="71,25" id="srcline25">25</a></span><span class="line"><span class="keyword">function</span> <span class="var type1" id="S21T19U137">r</span> = getRandPerm(<span class="var type1" id="S22T4U140">N</span>, <span class="var type2" id="S23T4V1U141">m</span>, <span class="var type1" id="S24T9U142">x</span>)</span></span>
+<span class="srcline"><span class="lineno"><a href="71,26" id="srcline26">26</a></span><span class="line">    <span class="keyword">while</span> true</span></span>
+<span class="srcline"><span class="lineno"><a href="71,27" id="srcline27">27</a></span><span class="line">        <span class="mxinfo " id="T19:U5"><span class="var type1" id="S21T19U148">r</span> = <span class="mxinfo " id="T19:U7">randperm(<span class="var type1" id="S22T4U151">N</span>, <span class="var type1" id="S23T4U152">m</span>)</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="71,28" id="srcline28">28</a></span><span class="line">        <span class="keyword">if</span> <span class="mxinfo " id="T15:U10">isempty(<span class="mxinfo " id="T56:U11">intersect(<span class="var type1" id="S21T19U159">r</span>,<span class="mxinfo " id="T9:U13">sort(<span class="var type1" id="S24T9U162">x</span>)</span>)</span>)</span></span></span>
+<span class="srcline"><span class="lineno"><a href="71,29" id="srcline29">29</a></span><span class="line">            <span class="keyword">return</span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="71,30" id="srcline30">30</a></span><span class="line">        <span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="71,31" id="srcline31">31</a></span><span class="line">    <span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="71,32" id="srcline32">32</a></span><span class="line"><span class="keyword">end</span></span></span>
+</pre>
+</body>
+</html>

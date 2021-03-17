@@ -1,0 +1,98 @@
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>RTW Report - _coder_calcNodesDistance_info.cpp</title>
+<script language="JavaScript" type="text/javascript" src="rtwreport_utils.js"></script>
+</head>
+<body bgcolor="#eeeeee" text="#1122aa" onload="try {if (top) { if (top.rtwFileOnLoad) top.rtwFileOnLoad(window.document); else local_onload();}} catch(err) {};">
+<p>
+<table border="0" cellspacing="0" cellpadding="6" width="100%%" height="100%%"><tr><td width="100%%" valign="top" bgcolor="#ffffff">
+<h4>File: <a href="../interface/_coder_calcNodesDistance_info.cpp" target="rtwreport_document_frame" id="linkToText_plain">_coder_calcNodesDistance_info.cpp</a></h4>
+<pre id="RTWcode">
+<a name="1"><font color="#888888 "><i>    1   </i></font></a><font color="#117755"><i>/*</i></font>
+<a name="2"><font color="#888888 "><i>    2   </i></font></a><font color="#117755"><I> * _coder_calcNodesDistance_info.cpp</i></font>
+<a name="3"><font color="#888888 "><i>    3   </i></font></a><font color="#117755"><I> *</i></font>
+<a name="4"><font color="#888888 "><i>    4   </i></font></a><font color="#117755"><I> * Code generation for function '_coder_calcNodesDistance_info'</i></font>
+<a name="5"><font color="#888888 "><i>    5   </i></font></a><font color="#117755"><I> *</i></font>
+<a name="6"><font color="#888888 "><i>    6   </i></font></a><font color="#117755"><I> */</i></font>
+<a name="7"><font color="#888888 "><i>    7   </i></font></a>
+<a name="8"><font color="#888888 "><i>    8   </i></font></a><font color="#117755"><i>/* Include files */</i></font>
+<a name="9"><font color="#888888 "><i>    9   </i></font></a><font color="#992211">#</font><font color="#992211"><b>include</b></font> <font color="#992211">&quot;rt_nonfinite.h&quot;</font>
+<a name="10"><font color="#888888 "><i>   10   </i></font></a><font color="#992211">#</font><font color="#992211"><b>include</b></font> <font color="#992211">&quot;calcNodesDistance.h&quot;</font>
+<a name="11"><font color="#888888 "><i>   11   </i></font></a><font color="#992211">#</font><font color="#992211"><b>include</b></font> <font color="#992211">&quot;_coder_calcNodesDistance_info.h&quot;</font>
+<a name="12"><font color="#888888 "><i>   12   </i></font></a><font color="#992211">#</font><font color="#992211"><b>include</b></font> <font color="#992211">&quot;blas.h&quot;</font>
+<a name="13"><font color="#888888 "><i>   13   </i></font></a>
+<a name="14"><font color="#888888 "><i>   14   </i></font></a><font color="#117755"><i>/* Function Definitions */</i></font>
+<a name="15"><font color="#888888 "><i>   15   </i></font></a>mxArray *<a name="fcn_emlrtMexFcnProperties">emlrtMexFcnProperties</a>()
+<a name="16"><font color="#888888 "><i>   16   </i></font></a><b>{</b>
+<a name="17"><font color="#888888 "><i>   17   </i></font></a>  mxArray *xResult;
+<a name="18"><font color="#888888 "><i>   18   </i></font></a>  mxArray *xEntryPoints;
+<a name="19"><font color="#888888 "><i>   19   </i></font></a>  <font color="#112266"><b>const</b></font> <font color="#112266"><b>char</b></font> * fldNames[4] = <b>{</b> <font color="#1122ff">&quot;Name&quot;</font>, <font color="#1122ff">&quot;NumberOfInputs&quot;</font>, <font color="#1122ff">&quot;NumberOfOutputs&quot;</font>,
+<a name="20"><font color="#888888 "><i>   20   </i></font></a>    <font color="#1122ff">&quot;ConstantInputs&quot;</font> <b>}</b>;
+<a name="21"><font color="#888888 "><i>   21   </i></font></a>
+<a name="22"><font color="#888888 "><i>   22   </i></font></a>  mxArray *xInputs;
+<a name="23"><font color="#888888 "><i>   23   </i></font></a>  <font color="#112266"><b>const</b></font> <font color="#112266"><b>char</b></font> * b_fldNames[4] = <b>{</b> <font color="#1122ff">&quot;Version&quot;</font>, <font color="#1122ff">&quot;ResolvedFunctions&quot;</font>, <font color="#1122ff">&quot;EntryPoints&quot;</font>,
+<a name="24"><font color="#888888 "><i>   24   </i></font></a>    <font color="#1122ff">&quot;CoverageInfo&quot;</font> <b>}</b>;
+<a name="25"><font color="#888888 "><i>   25   </i></font></a>
+<a name="26"><font color="#888888 "><i>   26   </i></font></a>  xEntryPoints = emlrtCreateStructMatrix(1, 1, 4, fldNames);
+<a name="27"><font color="#888888 "><i>   27   </i></font></a>  xInputs = emlrtCreateLogicalMatrix(1, 2);
+<a name="28"><font color="#888888 "><i>   28   </i></font></a>  emlrtSetField(xEntryPoints, 0, <font color="#1122ff">&quot;Name&quot;</font>, mxCreateString(<font color="#1122ff">&quot;calcNodesDistance&quot;</font>));
+<a name="29"><font color="#888888 "><i>   29   </i></font></a>  emlrtSetField(xEntryPoints, 0, <font color="#1122ff">&quot;NumberOfInputs&quot;</font>, mxCreateDoubleScalar(2.0));
+<a name="30"><font color="#888888 "><i>   30   </i></font></a>  emlrtSetField(xEntryPoints, 0, <font color="#1122ff">&quot;NumberOfOutputs&quot;</font>, mxCreateDoubleScalar(1.0));
+<a name="31"><font color="#888888 "><i>   31   </i></font></a>  emlrtSetField(xEntryPoints, 0, <font color="#1122ff">&quot;ConstantInputs&quot;</font>, xInputs);
+<a name="32"><font color="#888888 "><i>   32   </i></font></a>  xResult = emlrtCreateStructMatrix(1, 1, 4, b_fldNames);
+<a name="33"><font color="#888888 "><i>   33   </i></font></a>  emlrtSetField(xResult, 0, <font color="#1122ff">&quot;Version&quot;</font>, mxCreateString(<font color="#1122ff">&quot;9.0.0.341360 (R2016a)&quot;</font>));
+<a name="34"><font color="#888888 "><i>   34   </i></font></a>  emlrtSetField(xResult, 0, <font color="#1122ff">&quot;ResolvedFunctions&quot;</font>, (mxArray *)
+<a name="35"><font color="#888888 "><i>   35   </i></font></a>                <a href="#fcn_emlrtMexFcnResolvedFunctionsInfo" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_emlrtMexFcnResolvedFunctionsInfo');" target="_self"><font color="#1122aa">emlrtMexFcnResolvedFunctionsInfo</font></a>());
+<a name="36"><font color="#888888 "><i>   36   </i></font></a>  emlrtSetField(xResult, 0, <font color="#1122ff">&quot;EntryPoints&quot;</font>, xEntryPoints);
+<a name="37"><font color="#888888 "><i>   37   </i></font></a>  <font color="#112266"><b>return</b></font> xResult;
+<a name="38"><font color="#888888 "><i>   38   </i></font></a><b>}</b>
+<a name="39"><font color="#888888 "><i>   39   </i></font></a>
+<a name="40"><font color="#888888 "><i>   40   </i></font></a><font color="#112266"><b>const</b></font> mxArray *<a name="fcn_emlrtMexFcnResolvedFunctionsInfo">emlrtMexFcnResolvedFunctionsInfo</a>()
+<a name="41"><font color="#888888 "><i>   41   </i></font></a><b>{</b>
+<a name="42"><font color="#888888 "><i>   42   </i></font></a>  <font color="#112266"><b>const</b></font> mxArray *nameCaptureInfo;
+<a name="43"><font color="#888888 "><i>   43   </i></font></a>  <font color="#112266"><b>const</b></font> <font color="#112266"><b>char</b></font> * data[16] = <b>{</b>
+<a name="44"><font color="#888888 "><i>   44   </i></font></a>    <font color="#1122ff">&quot;789ced5dcb6f1b45189fd034b44205845495f26c40aa2a55784b2b55a8a7a479346e93366dd23425aab6ebf5389e767776b5bb4e9d5e3020211017382071ec11&quot;</font>
+<a name="45"><font color="#888888 "><i>   45   </i></font></a>    <font color="#1122ff">&quot;2121ae1cf907b8c109893b48dcfa07b0b30f7b3ddd78a63bb3b643c692e57cf67cb3bfeff19bf76ec044750584af97c377a705c054f879247cbf00e2d7e1449e&quot;</font>,
+<a name="46"><font color="#888888 "><i>   46   </i></font></a>    <font color="#1122ff">&quot;08dfa793cff8fb49702c913f0bdfa68303d80ee21fb1614390beea8e8db08183f55d17020ffa8eb503ebd12f0d64c17564c36527232ca150b017333f7505f293&quot;</font>
+<a name="47"><font color="#888888 "><i>   47   </i></font></a>    <font color="#1122ff">&quot;d7f4bb35032b2bc4afc80ed0b36332c78e1b193b5e4de4ad857bf397b479cf716b4e5b7335d7f183ba636aaee76c7b86ed6bb61158464df391e76bbeeb41a38e&quot;</font>,
+<a name="48"><font color="#888888 "><i>   48   </i></font></a>    <font color="#1122ff">&quot;f0b6d6686153330dcbbceed4a13f8ffcc0c026acd8118e730c1c937d382601763c9be87dc4d09ba2f04f455e6ed52cc8677f95d227f256757973e1dedc256d35&quot;</font>
+<a name="49"><font color="#888888 "><i>   49   </i></font></a>    <font color="#1122ff">&quot;36f81471baafadccae2fcf5ed66e9d3ff7e145430b1cc722ee81b6a559a896fa24fc08fda011f8a1e5bd3864ed98cac13191c17134f93e447f7c6de58fd9e2fa&quot;</font>,
+<a name="50"><font color="#888888 "><i>   50   </i></font></a>    <font color="#1122ff">&quot;a2d797a77f26a33f91a30f329f45ca7f0906c7f916e88f3391a5c5797a1b6297fcd9c3b3cac0f32e8587c866c81baf82c2c6c3c3865541fee516b2822abedeb2&quot;</font>
+<a name="51"><font color="#888888 "><i>   51   </i></font></a>    <font color="#1122ff">&quot;a187cc67e250840f2c3f6d52fa9b45fc44de67236bb4b3a9391a6d4ee5197e3f475e2d9dfaed77c50b8ef2fb8d1727293c44a67851b30cbfd2c69e7d7e8f3894&quot;</font>,
+<a name="52"><font color="#888888 "><i>   52   </i></font></a>    <font color="#1122ff">&quot;c18b354a7fad889f72797196d8a345f6243d86407ff1fe770f557f218317c38e378b176f5078889cc70b842d8461cfce41e3aef495ad97d73feb94deba64ffc4&quot;</font>
+<a name="53"><font color="#888888 "><i>   53   </i></font></a>    <font color="#1122ff">&quot;76c40e12c8a78b473e55fdc4ff910f1ce3a7880f2d1fea1e6c90bf85f8f00d03cf5d4aefae64ff64ec9030af50bce02dff3d181c7713f4c79dc825f062ba062d&quot;</font>,
+<a name="54"><font color="#888888 "><i>   54   </i></font></a>    <font color="#1122ff">&quot;e7911e343de8371dabdec5c7e2c9db143e22e7f1245b7391f9bad9343c9e76e40e85e78e647f75ed48d61d143f54bf91c5f3168587c8141fd266b63bc518c6fc&quot;</font>
+<a name="55"><font color="#888888 "><i>   55   </i></font></a>    <font color="#1122ff">&quot;6283d2df90e7a7c49e9eab04f2eac73b27d5fc42062f861d6f567b7ea80fcf2160d47c2979df66e85fa1f4af14f14366fd015a64f921442fd4fe777ebd7d5ae5&quot;</font>,
+<a name="56"><font color="#888888 "><i>   56   </i></font></a>    <font color="#1122ff">&quot;394ff951c757adb3aa7556c50329ebaabe69588657212d7fcfaeb2d68f4a1c17c67624be49f114ec07befdf392ea07f643fe6f32aeff1e757d2253f96fb8aeb5&quot;</font>
+<a name="57"><font color="#888888 "><i>   57   </i></font></a>    <font color="#1122ff">&quot;bb1625cf620b9b017270cfbe1946fdaf50f513b991d4a2370d5c0f3b069e75a42daa9ead227ecae5458e79e2fcf8fae905c50f9ef2e31af7b2fa8d7dbc1fa7fa&quot;</font>,
+<a name="58"><font color="#888888 "><i>   58   </i></font></a>    <font color="#1122ff">&quot;8f1cfdb2f9c18af728d747f2f0bc48e121b2070dcb465868fdb4c3d0bb465df75a113ff4f5a3e11f5a825c38dfc1cf6a7d88af7c078c479c6718385ea2701039&quot;</font>
+<a name="59"><font color="#888888 "><i>   59   </i></font></a>    <font color="#1122ff">&quot;ac5a4f733dada7acfd82bde6c9ab628e703db4630450cb9822344f5679cf597edce22d61fcd3b01c235809bfb3327696c50729e7b572fbc19e1995cc79ad82e3&quot;</font>,
+<a name="60"><font color="#888888 "><i>   60   </i></font></a>    <font color="#1122ff">&quot;1eb54fc0597edcc63d12f880701db657106e0d733e501e2f7ae688f3026cbc16a8f5d483cc0b72ef4696174b8c7a4f50f59ed8a3de2a0ec6812791798a273dfd&quot;</font>
+<a name="61"><font color="#888888 "><i>   61   </i></font></a>    <font color="#1122ff">&quot;83c613563ebf4ee121725e3eaf5a2d7f14fcb849d577539abfba66c938bfa7f8c1597edcf8c1ea47dea1f010994c5ac26af586e3598ee3eace0ef41ae438a0d9&quot;</font>,
+<a name="62"><font color="#888888 "><i>   62   </i></font></a>    <font color="#1122ff">&quot;84e643b17d3ad6baf47d4aef7e11ff64a763b1bb06d823320fefa8793867f95fc0e0b87f01fae34ee4b2e33e3db880de84960bbd62f36be4375019fd096bdf73&quot;</font>
+<a name="63"><font color="#888888 "><i>   63   </i></font></a>    <font color="#1122ff">&quot;91aa6fb1a81f1ba80debae13a2d0882d82e7f87e523ce12b3feaf8ce30ae7f8cba3e91918fe3a33f01b9cd5c6c3daac3d0cbbd7f5cd8fe0c7eb173dc2acf39cb&quot;</font>,
+<a name="64"><font color="#888888 "><i>   64   </i></font></a>    <font color="#1122ff">&quot;eff7fea0c8fa5258b56db4cbe5c755eaba5745fd162d67c7c825ccb3d57889b3fc41e507d9e2db9ffce86e732a7e80d1cfb3f7e17d40e938ff16b41c37ad776c&quot;</font>
+<a name="65"><font color="#888888 "><i>   65   </i></font></a>    <font color="#1122ff">&quot;e7d97e483858d762ef243eca5d824a2d129a67ffbd80152f64f41b9f83feb813b9ecb84f475bbdba19f2c6d7c9c3aa0c847d3d2d3447beeee257fbe36a7f7c94&quot;</font>,
+<a name="66"><font color="#888888 "><i>   66   </i></font></a>    <font color="#1122ff">&quot;fcf9010c8e771bf4c79bc8a5f307f9ba8fb631acf793468db3d438eba08db396187838d65393e7d60442e32b965fcadbd74b9f5713c878de9ff16057f180a73c&quot;</font>
+<a name="67"><font color="#888888 "><i>   67   </i></font></a>    <font color="#1122ff">&quot;6b3cfd31e88f3791b7aa9b73e2ddc2423b0efc3c7461d8fa637337dbfe49b80f296e61e7c22fb7215e8a6f1dca8d0befb9f4167e889d4798cb6f3aa5af839827&quot;</font>,
+<a name="68"><font color="#888888 "><i>   68   </i></font></a>    <font color="#1122ff">&quot;dc8e1bd891e698567145f8f28ffd44f14546bf711bf4c79dc8cf157746fb787979766dd68db63504cf893ccbbf61f06254ed49415e7cf2d757ea7c084ff92760&quot;</font>
+<a name="69"><font color="#888888 "><i>   69   </i></font></a>    <font color="#1122ff">&quot;70dc1f80feb813595e7b78b5babed6725dc70b603d270fdc1e4ed5afa87e651cf9336efdca7d069e0f283c44a678329894397129c297270cfd716977147f46cb&quot;</font>,
+<a name="70"><font color="#888888 "><i>   70   </i></font></a>    <font color="#1122ff">&quot;9f61cf5b59ebbd6f5278889c379f4f78d9adb7ac79fdb0db97827c38fa58cdebb9ca171d47c87edea609770c4b8f1f0128693f31e2858f1e43dd0dbcd4deb278&quot;</font>
+<a name="71"><font color="#888888 "><i>   71   </i></font></a>    <font color="#1122ff">&quot;51e2b9e6c84fa91d82e710d5733639cb8f2b2f9618b88e53b8884cf1c2d44dc30f72e29057df61aa3e2287355d380ff87821bc3f38705c159ba2c64f3d7dc58b&quot;</font>,
+<a name="72"><font color="#888888 "><i>   72   </i></font></a>    <font color="#1122ff">&quot;c2fb22f1736816b60b9fdf7a9eff83b44ae9af4af3536a86d0f315cefc7b43f181a77c078c479c67183878cfad979df7eafcbacafbb2dab73c1c47281c4426f7&quot;</font>
+<a name="73"><font color="#888888 "><i>   73   </i></font></a>    <font color="#1122ff">&quot;7bd846d01c46be4b3b0742ddaf42f04b3807a2f29db33c6b9cbbd7737464e6fb7403797e10df5757f47e3cd17c1ff5fd592acfcbcbf3ff00047b0952&quot;</font>,
+<a name="74"><font color="#888888 "><i>   74   </i></font></a>    <font color="#1122ff">&quot;&quot;</font> <b>}</b>;
+<a name="75"><font color="#888888 "><i>   75   </i></font></a>
+<a name="76"><font color="#888888 "><i>   76   </i></font></a>  nameCaptureInfo = NULL;
+<a name="77"><font color="#888888 "><i>   77   </i></font></a>  emlrtNameCaptureMxArrayR2016a(data, 30096U, &amp;nameCaptureInfo);
+<a name="78"><font color="#888888 "><i>   78   </i></font></a>  <font color="#112266"><b>return</b></font> nameCaptureInfo;
+<a name="79"><font color="#888888 "><i>   79   </i></font></a><b>}</b>
+<a name="80"><font color="#888888 "><i>   80   </i></font></a>
+<a name="81"><font color="#888888 "><i>   81   </i></font></a><font color="#117755"><i>/* End of code generation (_coder_calcNodesDistance_info.cpp) */</i></font>
+<a name="82"><font color="#888888 "><i>   82   </i></font></a></pre>
+</td></tr></table>
+</p>
+</body>
+</html>

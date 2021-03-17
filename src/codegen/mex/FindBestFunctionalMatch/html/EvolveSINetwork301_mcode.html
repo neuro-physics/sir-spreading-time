@@ -1,0 +1,86 @@
+<!-- saved from url=(0014)about:internet -->
+<html>
+<body>
+<script src="resources/eml_report_loadable_data.js"></script>
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="92,1" id="srcline1"> 1</a></span><span class="line"><span class="keyword">function</span> [<span class="var type1" id="S2T2U3">xData</span>,<span class="var type1" id="S3T41U4">par</span>,<span class="var type1" id="S4T3U5">netActTime</span>,<span class="var type1" id="S5T2U6">spTime</span>] = EvolveSINetwork(<span class="var type1" id="S6T67U9">nodes</span>, <span class="var type1" id="S7T3U10">tTotal</span>, <span class="var type1" id="S3T41U11">par</span>, <span class="var type2" id="S8T5V4U12">returnTimeEvol</span>)</span></span>
+<span class="srcline"><span class="lineno"><a href="92,2" id="srcline2"> 2</a></span><span class="line">    <span class="keyword">if</span> nargin &lt; 4 || isempty(<span class="var type1" id="S8T5U22">returnTimeEvol</span>)</span></span>
+<span class="srcline"><span class="lineno"><a href="92,3" id="srcline3"> 3</a></span><span class="line">        <span class="var type0" id="S8T0U25">returnTimeEvol</span> = 0;</span></span>
+<span class="srcline"><span class="lineno"><a href="92,4" id="srcline4"> 4</a></span><span class="line">    <span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="92,5" id="srcline5"> 5</a></span><span class="line">    <span class="keyword">if</span> <span class="mxinfo " id="T5:U10"><span class="var type1" id="S3T41U30">par</span>.isCompetitive</span></span></span>
+<span class="srcline"><span class="lineno"><a href="92,6" id="srcline6"> 6</a></span><span class="line">        [<span class="var type1" id="S2T2U35">xData</span>,<span class="var type1" id="S3T41U36">par</span>,<span class="var type1" id="S4T3U37">netActTime</span>,<span class="var type1" id="S5T2U38">spTime</span>] = <span class="fcn" id="F296N4:B40">EvolveSINetwork_internal</span>(<span class="var type1" id="S6T67U41">nodes</span>, <span class="var type1" id="S7T3U42">tTotal</span>, <span class="var type1" id="S3T41U43">par</span>, @UpdateInputNSeed, @SINElementIter, <span class="var type1" id="S8T5U48">returnTimeEvol</span>);</span></span>
+<span class="srcline"><span class="lineno"><a href="92,7" id="srcline7"> 7</a></span><span class="line">    <span class="keyword">else</span></span></span>
+<span class="srcline"><span class="lineno"><a href="92,8" id="srcline8"> 8</a></span><span class="line">        [<span class="var type1" id="S2T50U53">xData</span>,<span class="var type1" id="S3T41U54">par</span>,<span class="var type1" id="S4T3U55">netActTime</span>,<span class="var type1" id="S5T50U56">spTime</span>] = <span class="fcn" id="F300N4:B58">EvolveSINetwork_internal</span>(<span class="var type1" id="S6T67U59">nodes</span>, <span class="var type1" id="S7T3U60">tTotal</span>, <span class="var type1" id="S3T41U61">par</span>, @UpdateInput1Seed, @SIElementIter, <span class="var type1" id="S8T5U66">returnTimeEvol</span>);</span></span>
+<span class="srcline"><span class="lineno"><a href="92,9" id="srcline9"> 9</a></span><span class="line">    <span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="92,10" id="srcline10">10</a></span><span class="line"><span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="92,11" id="srcline11">11</a></span><span class="line"></span></span>
+</pre>
+<div class="dead">
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="92,12" id="srcline12">12</a></span><span class="line">function [xData,par,netActTime,spTime] = EvolveSINetwork_internal(nodes, tTotal, par, UpdateInput, ElementIter, returnTimeEvol)</span></span>
+<span class="srcline"><span class="lineno"><a href="92,13" id="srcline13">13</a></span><span class="line">    if returnTimeEvol</span></span>
+<span class="srcline"><span class="lineno"><a href="92,14" id="srcline14">14</a></span><span class="line">        [xData,par,netActTime,spTime] = EvolveSINetwork_main(nodes, tTotal, par, UpdateInput, ElementIter, @getTimeIndex_same, returnTimeEvol);</span></span>
+<span class="srcline"><span class="lineno"><a href="92,15" id="srcline15">15</a></span><span class="line">    else</span></span>
+<span class="srcline"><span class="lineno"><a href="92,16" id="srcline16">16</a></span><span class="line">        [xData,par,netActTime,spTime] = EvolveSINetwork_main(nodes, tTotal, par, UpdateInput, ElementIter, @getTimeIndex_one, returnTimeEvol);</span></span>
+<span class="srcline"><span class="lineno"><a href="92,17" id="srcline17">17</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="92,18" id="srcline18">18</a></span><span class="line">end</span></span>
+<span class="srcline"><span class="lineno"><a href="92,19" id="srcline19">19</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="92,20" id="srcline20">20</a></span><span class="line">function t = getTimeIndex_same(tt)</span></span>
+<span class="srcline"><span class="lineno"><a href="92,21" id="srcline21">21</a></span><span class="line">    t = tt;</span></span>
+<span class="srcline"><span class="lineno"><a href="92,22" id="srcline22">22</a></span><span class="line">end</span></span>
+<span class="srcline"><span class="lineno"><a href="92,23" id="srcline23">23</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="92,24" id="srcline24">24</a></span><span class="line">function t = getTimeIndex_one(tt)</span></span>
+<span class="srcline"><span class="lineno"><a href="92,25" id="srcline25">25</a></span><span class="line">    t = 1;</span></span>
+<span class="srcline"><span class="lineno"><a href="92,26" id="srcline26">26</a></span><span class="line">end</span></span>
+<span class="srcline"><span class="lineno"><a href="92,27" id="srcline27">27</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="92,28" id="srcline28">28</a></span><span class="line">function [xData,par,netActTime,spTime] = EvolveSINetwork_main(nodes, tTotal, par, UpdateInput, ElementIter, TimeInd, returnTimeEvol)</span></span>
+<span class="srcline"><span class="lineno"><a href="92,29" id="srcline29">29</a></span><span class="line">    N = numel(nodes);</span></span>
+<span class="srcline"><span class="lineno"><a href="92,30" id="srcline30">30</a></span><span class="line">    if par.seedTrial &gt; size(par.seeds,1)</span></span>
+<span class="srcline"><span class="lineno"><a href="92,31" id="srcline31">31</a></span><span class="line">        par.seedTrial = 1;</span></span>
+<span class="srcline"><span class="lineno"><a href="92,32" id="srcline32">32</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="92,33" id="srcline33">33</a></span><span class="line">    for i = 1:size(par.seeds,2)</span></span>
+<span class="srcline"><span class="lineno"><a href="92,34" id="srcline34">34</a></span><span class="line">        nodes(par.seeds(par.seedTrial,i)).x = par.x0(i);</span></span>
+<span class="srcline"><span class="lineno"><a href="92,35" id="srcline35">35</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="92,36" id="srcline36">36</a></span><span class="line">    par.seedTrial = par.seedTrial + 1; <span class="comment">% increasing seedTrial for next simulation run (if any)</span></span></span>
+<span class="srcline"><span class="lineno"><a href="92,37" id="srcline37">37</a></span><span class="line">    if returnTimeEvol</span></span>
+<span class="srcline"><span class="lineno"><a href="92,38" id="srcline38">38</a></span><span class="line">        xData = zeros(tTotal + 1, N);</span></span>
+<span class="srcline"><span class="lineno"><a href="92,39" id="srcline39">39</a></span><span class="line">        spTime = zeros(tTotal + 1, N);</span></span>
+<span class="srcline"><span class="lineno"><a href="92,40" id="srcline40">40</a></span><span class="line">    else</span></span>
+<span class="srcline"><span class="lineno"><a href="92,41" id="srcline41">41</a></span><span class="line">        xData = zeros(1, N);</span></span>
+<span class="srcline"><span class="lineno"><a href="92,42" id="srcline42">42</a></span><span class="line">        spTime = zeros(1, N);</span></span>
+<span class="srcline"><span class="lineno"><a href="92,43" id="srcline43">43</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="92,44" id="srcline44">44</a></span><span class="line">    for i = 1:N</span></span>
+<span class="srcline"><span class="lineno"><a href="92,45" id="srcline45">45</a></span><span class="line">        xData(1,i) = nodes(i).x;</span></span>
+<span class="srcline"><span class="lineno"><a href="92,46" id="srcline46">46</a></span><span class="line">        spTime(1,i) = nodes(i).par.spTime;</span></span>
+<span class="srcline"><span class="lineno"><a href="92,47" id="srcline47">47</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="92,48" id="srcline48">48</a></span><span class="line">    tTotal = tTotal + 1;</span></span>
+<span class="srcline"><span class="lineno"><a href="92,49" id="srcline49">49</a></span><span class="line">    t = 1;</span></span>
+<span class="srcline"><span class="lineno"><a href="92,50" id="srcline50">50</a></span><span class="line">    for t = 2:tTotal</span></span>
+<span class="srcline"><span class="lineno"><a href="92,51" id="srcline51">51</a></span><span class="line">        for i = 1:N</span></span>
+<span class="srcline"><span class="lineno"><a href="92,52" id="srcline52">52</a></span><span class="line">            [nodes(i).par.Isyn,nodes(i).par.kInp] = UpdateInput(i, nodes);</span></span>
+<span class="srcline"><span class="lineno"><a href="92,53" id="srcline53">53</a></span><span class="line">        end</span></span>
+<span class="srcline"><span class="lineno"><a href="92,54" id="srcline54">54</a></span><span class="line">        <span class="comment">%isFullyActive = nodes(1).x &gt; 0;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="92,55" id="srcline55">55</a></span><span class="line">        isFullyActive = true;</span></span>
+<span class="srcline"><span class="lineno"><a href="92,56" id="srcline56">56</a></span><span class="line">        for i = 1:N</span></span>
+<span class="srcline"><span class="lineno"><a href="92,57" id="srcline57">57</a></span><span class="line">            [nodes(i).x,nodes(i).par.spTime] = ElementIter(i,nodes);<span class="comment">%ElementIter(nodes(i).x, nodes(i).par);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="92,58" id="srcline58">58</a></span><span class="line">            xData(TimeInd(t),i) = nodes(i).x;</span></span>
+<span class="srcline"><span class="lineno"><a href="92,59" id="srcline59">59</a></span><span class="line">            spTime(TimeInd(t),i) = nodes(i).par.spTime;</span></span>
+<span class="srcline"><span class="lineno"><a href="92,60" id="srcline60">60</a></span><span class="line">            isFullyActive = isFullyActive &amp;&amp; (nodes(i).x &gt; 0);</span></span>
+<span class="srcline"><span class="lineno"><a href="92,61" id="srcline61">61</a></span><span class="line">        end</span></span>
+<span class="srcline"><span class="lineno"><a href="92,62" id="srcline62">62</a></span><span class="line">        if isFullyActive</span></span>
+<span class="srcline"><span class="lineno"><a href="92,63" id="srcline63">63</a></span><span class="line">            break;</span></span>
+<span class="srcline"><span class="lineno"><a href="92,64" id="srcline64">64</a></span><span class="line">        end</span></span>
+<span class="srcline"><span class="lineno"><a href="92,65" id="srcline65">65</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="92,66" id="srcline66">66</a></span><span class="line">    <span class="comment">%netActTime = t - 1;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="92,67" id="srcline67">67</a></span><span class="line">    netActTime = t;</span></span>
+<span class="srcline"><span class="lineno"><a href="92,68" id="srcline68">68</a></span><span class="line">    if returnTimeEvol</span></span>
+<span class="srcline"><span class="lineno"><a href="92,69" id="srcline69">69</a></span><span class="line">        <span class="comment">%xData = xData(1:(t-1),:);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="92,70" id="srcline70">70</a></span><span class="line">        xData = xData(1:t,:);</span></span>
+<span class="srcline"><span class="lineno"><a href="92,71" id="srcline71">71</a></span><span class="line">        spTime = spTime(1:t,:);</span></span>
+<span class="srcline"><span class="lineno"><a href="92,72" id="srcline72">72</a></span><span class="line">    end</span></span>
+<span class="srcline"><span class="lineno"><a href="92,73" id="srcline73">73</a></span><span class="line">end</span></span>
+<span class="srcline"><span class="lineno"><a href="92,74" id="srcline74">74</a></span><span class="line"> </span></span>
+</pre>
+</div>
+</body>
+</html>

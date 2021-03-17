@@ -1,0 +1,14 @@
+<!-- saved from url=(0014)about:internet -->
+<html>
+<body>
+<script src="resources/eml_report_loadable_data.js"></script>
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="93,1" id="srcline1">1</a></span><span class="line"><span class="keyword">function</span> [<span class="var type1" id="S2T3U3">Isyn</span>,<span class="var type1" id="S3T3U4">kMax</span>] = UpdateInput1Seed(<span class="var type1" id="S4T3U7">i</span>, <span class="var type1" id="S5T72U8">nodes</span>)</span></span>
+<span class="srcline"><span class="lineno"><a href="93,2" id="srcline2">2</a></span><span class="line">    <span class="mxinfo " id="T3:U5"><span class="var type1" id="S2T3U11">Isyn</span> = <span class="mxinfo " id="T3:U7">0.0</span></span>; <span class="mxinfo " id="T3:U8"><span class="var type1" id="S3T3U15">kMax</span> = <span class="mxinfo " id="T3:U10">1</span></span>; <span class="comment">%spTime = 0.0; nAct = 0; spTimePrev = 0.0;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="93,3" id="srcline3">3</a></span><span class="line">    <span class="keyword">for</span> <span class="var type1" id="S6T3U19">j</span> = <span class="mxinfo " id="T3:U12">1</span>:<span class="mxinfo " id="T3:U13"><span class="mxinfo " id="T51:U14"><span class="mxinfo " id="T68:U15"><span class="var type1" id="S5T72U25">nodes</span>(<span class="var type1" id="S4T3U26">i</span>)</span>.par</span>.n</span></span></span>
+<span class="srcline"><span class="lineno"><a href="93,4" id="srcline4">4</a></span><span class="line">        <span class="mxinfo " id="T3:U18"><span class="var type1" id="S2T3U31">Isyn</span> = <span class="mxinfo " id="T3:U20"><span class="var type1" id="S2T3U33">Isyn</span> + <span class="mxinfo " id="T3:U22"><span class="mxinfo " id="T3:U23"><span class="mxinfo " id="T7:U24"><span class="mxinfo " id="T68:U25"><span class="var type1" id="S5T72U38">nodes</span>(<span class="var type1" id="S4T3U39">i</span>)</span>.w</span>(<span class="var type1" id="S6T3U41">j</span>)</span> .* <span class="mxinfo " id="T3:U29"><span class="mxinfo " id="T68:U30"><span class="var type1" id="S5T72U44">nodes</span>(<span class="mxinfo " id="T3:U32"><span class="mxinfo " id="T7:U33"><span class="mxinfo " id="T68:U34"><span class="var type1" id="S5T72U48">nodes</span>(<span class="var type1" id="S4T3U49">i</span>)</span>.neigh</span>(<span class="var type1" id="S6T3U51">j</span>)</span>)</span>.x</span></span></span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="93,5" id="srcline5">5</a></span><span class="line">    <span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="93,6" id="srcline6">6</a></span><span class="line"><span class="keyword">end</span></span></span>
+</pre>
+</body>
+</html>

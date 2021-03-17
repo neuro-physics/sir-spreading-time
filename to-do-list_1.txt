@@ -1,0 +1,73 @@
+to do list:
+
+? - output the names of nodes that have the greater number of trends (or organize node names by number of trends)
+    - is it interesting?
+
+8) plot_sim_data.m must output a txt file in the main output directory stating the plot details, such as the data origin (raw, flip, z-score to controls), the side (group), number of nodes, the sorting of nodes, etc
+
+------------------------------------------------------------------
+
+POSTPONED 5) adjust scatter and spider plots to plot more than two groups (so I can put R and L TLE in the same plot)
+
+POSTPONED 3) I will select some relevant nodes using richclubness and betweenness centrality to analyze their spreading times separately
+    (DONE) - verify the rich club definition for different levels of connectivity k (plot curves RC vs k for groups)
+    (DONE) - check Seok-Jun paper or original on how to define the rich club region (after which level of k)
+    (DONE) - select rich club nodes to reduce the number of comparisons
+
+POSTPONED 6) plot spider figure of sp times from each MTL node inside functional communities and lobes in one panel (one curve for each MTL seed)
+
+------------------------------------------------------------------
+DONE TASKS
+
+DONE 1) fix number of panenls in spider, scatter, and z-score matrix/brain plots
+
+DONE 7) adjust color of patients and controls in spider plots to match the scatter plots
+    DONE 7.1) adjust color in top panels of surface plots to match scatter and spider plots (top panels will be disregarded)
+
+DONE 4) add asterisk to panels of scatter and spider plots if controls is significantly different than patients
+
+DONE 1) weighted spreading times
+    DONE 1.1) implement simulations
+    DONE 1.2) adapt parseSpreadingTime.m
+    DONE 1.3) adapt processSpreadingTime.m
+    DONE 1.4) create plotting functions
+
+DONE 1) run simulations for theta = [0.005, 0.015, 0.02, 0.025]
+
+DONE 2) calculate stddev for communities and lobes in processSpreadingData.m
+
+DONE 1) I will do a sanity check for the z-scoring of my data again, see if everything is done in the correct order
+        - verify order of the calculations:
+            - parseSpreadingData.m
+                1) gather data from directories
+                2) delete Z-scored data if any
+                3) from the collected data, calculate the flip and z-score to controls data sets
+                4) perform necessary calculations (speed-ups and average in and out spreading time) using all data sets
+                5) z-score to controls the last calculations
+
+            - processSpreadingData.m
+                1) calculate means for all data sets
+
+DONE 2) I will implement the multivariate analysis of in and out spreading times and plot it on the map (focusing on the whole brain and separately on the MTL)
+
+DONE 2.1) spider plot: plot an area around controls (z=0) corresponding to z_controls + stddev and z_controls - stddev to situate better the patients data
+
+DONE 4) add "plotData" (raw, flip, zScoreToControls) to function plot_sim_data_spider_scatter.m
+
+DONE 7) verify my results with Boris' data (check specifically the weighted short path matrix for each subject, clustering, etc)
+Resolution:
+Boris calculates the weighted distance matrix based on the inverse FA weights to calculate shortest path that differ between patients and controls
+Check e-mail conversation "Analysis" from 16 and 17 of October 2017
+
+    - only 44 subjects are shared between our data
+        - 19 Controls: 301_1, 304_1, 306_1, 307_2, 308_1, 313_1, 314_1, 315_1, 317_2, 318_1, 319_1, 320_1, 323_1, 325_1, 327_1, 328_1, 329_1, 333_1, 346_1
+        - 13 RTLE: 0369_1, 0380_1, 0384_1, 0393_1, 0394_1, 0405_1, 0419_1, 0436_1, 0444_1, 0449_1, 0454_1, 0458_1, 0474_1 (all HS)
+        - 12 LTLE: 0361_1 (HS or Gliosis?), 0364_1, 0370_1, 0392_1, 0396_1, 0403_1, 0415_1, 0421_1, 0422_1, 0428_1, 0437_1, 0460_1 (all HS, except 0361_1 maybe)
+
+    - my data set includes all the patients listed above, PLUS (for Age and Sex Match with my Controls):
+        - Controls (n=12): 305_2, 309_1, 316_1, 324_1, 336_1, 337_1, 339_2, 340_2, 341_1, 342_1, 343_2, 345_1
+        - RTLE: 0435_1, 0453_1, 0456_1
+        - LTLE: 0362_1, 0375_1, 0387_1
+
+    - is 0361_1 HS or Gliosis? -- it is in my data set as HS, but in Boris' as Gliosis
+    it is HS (Neda verified it)
