@@ -4,6 +4,9 @@ dataDir = 'D:\Dropbox\p\postdoc\data';
 if isunix
     dataDir = '/host/scarus/local_raid/mauricio/data';
 end
+if ~(exist(dataDir,'dir') == 7)
+    dataDir = fullfile('.','aux_files');
+end
 
 cdb = load(fullfile(dataDir,'TLE_NB_BB.mat'));
 % cdb = load(fullfile(dataDir,'FCD_table.mat'));

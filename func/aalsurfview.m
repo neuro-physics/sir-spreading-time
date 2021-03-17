@@ -42,11 +42,14 @@ function [fh,axh,cb,aal,aalParcelLab,sh,subh] = aalsurfview(values, titleTxt, co
     if (nargin < 12) || isempty(showSymbols)
         showSymbols = true;
     end
-    dataDir = 'D:\Dropbox\p\postdoc\data';
+    dataDir = 'D:\Dropbox\p\postdoc\data\AAL_data';
     if isunix
-        dataDir = '/host/scarus/local_raid/mauricio/data';
+        dataDir = '/host/scarus/local_raid/mauricio/data/AAL_data';
     end
-    aal = load(fullfile(dataDir,'AAL_data','aal_cortex_map_olf294_fix.mat'));
+    if ~(exist(dataDir,'dir') == 7)
+        dataDir = fullfile('.','aux_files');
+    end
+    aal = load(fullfile(dataDir,'aal_cortex_map_olf294_fix.mat'));
 
     %load label and colortable
     N = numel(values);

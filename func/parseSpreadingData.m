@@ -43,6 +43,9 @@ function d = parseSpreadingData(dirName, outFileName, isActThresh, flipRTLE, zSc
     if isunix
         cdbDataDir = '/host/scarus/local_raid/mauricio/data';
     end
+    if ~(exist(cdbDataDir,'dir') == 7)
+        cdbDataDir = fullfile('.','aux_files');
+    end
     cdb = load(fullfile(cdbDataDir,patientTableFile)); % inputs variable casesMetaData containing a table of patients that Neda gave me
 
     if dirName(end) ~= filesep

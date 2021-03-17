@@ -122,6 +122,9 @@ function r = processSpreadingData(spDataMatFile, commMatFile, shortPathMatFile, 
     if isunix
         dataDir = '/host/scarus/local_raid/mauricio/data';
     end
+    if ~(exist(dataDir,'dir') == 7)
+        dataDir = fullfile('.','aux_files');
+    end
     cdb = load(fullfile(dataDir,patientTableFile)); % inputs variable casesMetaData containing a table of patients that Neda gave me
     
     %%%% creating hippocampus volume struct
