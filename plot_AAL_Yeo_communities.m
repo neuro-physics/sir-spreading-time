@@ -25,8 +25,12 @@ function fh=plot_AAL_Yeo_communities(N,outputDir,figFormat,color_vec,show_all_to
         else
             color_vec = color_vec(1:nComm,:);
         end
-        fh = aalsurfview(aal.comm.(lab),'Communities',[1,1,1;color_vec]);
+        [fh,~,cb] = aalsurfview(aal.comm.(lab),'Communities',[1,1,1;color_vec]);
         fn = fullfile(outputDir,'communities');
+        comm_labels = ['_',strsplit(shrinkStrByCapLetters(aal.labels.AAL09comm,1),'-')];
+        comm_labels{1}='';
+        cb.Ticks = 0:9;
+        cb.TickLabels = comm_labels;
     else
         plotf=@(i)aalsurfview(aal.comm.(lab)==i,strrep(aal.labels.AAL09comm{i},'_',' '),[1,1,1;color_vec]);
         fh = gobjects(1,nComm);
