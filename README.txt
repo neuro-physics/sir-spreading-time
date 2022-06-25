@@ -1,3 +1,12 @@
+Code that generated the results published in (please, cite)
+
+ * Girardi-Schappo, M., Fadaie, F., Lee, H.M., Caldairou, B., Sziklas, V., Crane, J.,
+   Bernhardt, B.C., Bernasconi, A. and Bernasconi, N. (2021),
+   Altered communication dynamics reflect cognitive deficits in temporal lobe epilepsy.
+   Epilepsia, 62: 1022-1033. https://doi.org/10.1111/epi.16864
+
+
+
 Spreading times source code
 ---------------------------
 
