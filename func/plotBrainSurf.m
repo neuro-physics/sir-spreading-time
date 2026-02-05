@@ -1,4 +1,4 @@
-function [fh, axh, lh] = plotBrainSurf(fh, axh, brainColor, alphaValue, lightPos, shiftZCoord, contourLevel, contourArgs)
+function [fh, axh, lh] = plotBrainSurf(fh, axh, brainColor, alphaValue, lightPos, shiftZCoord, contourLevel, contourArgs, perpendicular_axis_contour)
     if isempty(fh) || isempty(fh)
         fh = figure;
     end
@@ -25,12 +25,15 @@ function [fh, axh, lh] = plotBrainSurf(fh, axh, brainColor, alphaValue, lightPos
     if (nargin < 8) || isempty(contourArgs)
         contourArgs = {};
     end
+    if (nargin < 9) || isempty(perpendicular_axis_contour)
+        perpendicular_axis_contour = 'z';
+    end
     [~,~,~,aal,~]=aalsurfview(zeros(90,1));
     if isempty(contourLevel)
         [fh,axh,lh] = plotBrainSurf_internal(fh, axh, ones(size(aal.map.AAL90)), aal.surf, brainColor, alphaValue, lightPos, shiftZCoord);
     else
         brain = struct('vertices',aal.surf.coord','faces',aal.surf.tri);
-        [~,sz] = getSurfaceContour(brain,contourLevel);
+        [~,sz] = getSurfaceContour(brain,contourLevel,[],[],perpendicular_axis_contour);
         lh = trisurf(sz.faces,sz.vertices(:,1),sz.vertices(:,2),sz.vertices(:,3),'EdgeAlpha', alphaValue, 'FaceAlpha', alphaValue, 'FaceColor', brainColor, contourArgs{:});
     end
 end

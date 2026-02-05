@@ -1,7 +1,15 @@
-function hv = getHipVolStruct(cdb, cnOrder, keepVol)
+function hv = getHipVolStruct(cdb, cnOrder, keepVol, group_controls_patients)
+    dataDir = 'D:/Dropbox/p/postdoc/data';
+    if (nargin < 1) || isempty(cdb)
+        cdb = load(fullfile(dataDir,'TLE_NB_BB.mat')); % 'ipsi' or 'contra'
+    end
     if (nargin < 3) || isempty(keepVol)
         keepVol = 'ipsi'; % 'ipsi' or 'contra'
     end
+    if (nargin < 4) || isempty(group_controls_patients)
+        group_controls_patients = true; % 'ipsi' or 'contra'
+    end
+    
     hvt = struct('caseName',[],'Group',[],'HipVol',[],'HipVol_flip',[],'HipVol_Z',[],'excludedInd',[]);
     selCases = cdb.casesMetaData.UseForSpSim==1;
     hvt.caseName = cdb.casesMetaData.Code(selCases);
@@ -37,6 +45,10 @@ function hv = getHipVolStruct(cdb, cnOrder, keepVol)
     hvt.HipVol_flip(:,i2) = [];
     hvt.HipVol_Z(:,i2) = [];
     %hvt.HipVol_flip(k,2) = hvRTLE_L; % setting the new R Hip Vol of RTLE to the old L hip vol of RTLE
+    if ~group_controls_patients
+        hv = hvt;
+        return;
+    end
     hv = struct('raw',[],'flip',[],'zToControls',[]);
     hv.raw = hvt;
     hv.flip = hvt;

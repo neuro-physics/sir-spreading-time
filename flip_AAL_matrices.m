@@ -1,5 +1,5 @@
 function A = flip_AAL_matrices(inp,flipSide,outputDir,aal,casesMetaData)
-    dataDir = 'D:\Dropbox\p\postdoc\data';
+    dataDir = 'D:/Dropbox/p/postdoc/data';
     if isunix
         dataDir = '/host/scarus/local_raid/mauricio/data';
     end

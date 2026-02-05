@@ -1,4 +1,4 @@
-function [B,i,j] = flipAALMatrix_rowsPerCols(A,aal,indToFlip,i,j)
+function [B,i,j] = flipAALMatrix_rowsPerCols(A,aal,indToFlip,i,j,verbose)
 % if A is a cell array, only flip matrices or vectors indexed by indices in indToFlip vector
 % otherwise, or if indToFlip is empty, flips every matrix/vector in A
     if (nargin < 2) || isempty(aal)
@@ -14,6 +14,10 @@ function [B,i,j] = flipAALMatrix_rowsPerCols(A,aal,indToFlip,i,j)
     if (nargin < 5)
         j = [];
     end
+    if (nargin < 6)
+        verbose = [];
+    end
+    
 
     [l,d] = getAALLabel(A);
     B = A;
@@ -29,10 +33,10 @@ function [B,i,j] = flipAALMatrix_rowsPerCols(A,aal,indToFlip,i,j)
         i = find(cellfun(@(x)~isempty(x),regexp(aal.labels.(l),'_L(_*\d*$|$)'))); % ind of nodes
         j = getContraLateralLabel(aal.surf.coord,l,i,aal); % ind of contra lateral nodes
     end
-    B = flip_internal(A,d,aal,i,j,indToFlip);
+    B = flip_internal(A,d,aal,i,j,indToFlip,verbose);
 end
 
-function B = flip_internal(A,dim,aal,i,j,indToFlip)
+function B = flip_internal(A,dim,aal,i,j,indToFlip,verbose)
     if iscell(A)
         if isempty(indToFlip)
             B = cell(size(A));
@@ -49,24 +53,32 @@ function B = flip_internal(A,dim,aal,i,j,indToFlip)
 
 %     fprintf('  * size(A) == [%d,%d]\n',size(A,1),size(A,2));
     if isvector(A)
-%         disp('    - flipping vector');
+        if verbose
+            disp('    - flipping vector');
+        end
         B = flipVector(A,i,j);
     else
         B = zeros(size(A));
         if dim == 0 % square matrix
-%             disp('    - flipping square matrix');
+            if verbose
+                disp('    - flipping square matrix');
+            end
             for k = 1:numel(i)
                 B(:,i(k)) = flipVector(A(:,j(k)),i,j);
                 B(:,j(k)) = flipVector(A(:,i(k)),i,j);
             end
         else
             if dim == 1
-%                 fprintf('    - flipping over lines; dim == %d\n',dim);
+                if verbose
+                    fprintf('    - flipping over lines; dim == %d\n',dim);
+                end
                 % flipping over lines
                 B(i,:) = A(j,:);
                 B(j,:) = A(i,:);
             elseif dim == 2
-%                 fprintf('    - flipping over columns; dim == %d\n',dim);
+                if verbose
+                    fprintf('    - flipping over columns; dim == %d\n',dim);
+                end
                 % flipping over cols
                 B(:,i) = A(:,j);
                 B(:,j) = A(:,i);

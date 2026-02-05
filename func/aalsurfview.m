@@ -1,4 +1,4 @@
-function [fh,axh,cb,aal,aalParcelLab,sh,subh] = aalsurfview(values, titleTxt, colorArr, colorMode, colorLim, showSymbolLegend, fhp, axR0, alphaValues, mask, forceColorLim, showSymbols)
+function [fh,axh,cb,aal,aalParcelLab,sh,subh] = aalsurfview(values, titleTxt, colorArr, colorMode, colorLim, showSymbolLegend, fhp, axR0, alphaValues, mask, forceColorLim, showSymbols, surfstat_inflate_w)
     %load template surface
     %surf = SurfStatReadSurf('/host/weka/export02/data/min/TLEcheckCT/template.obj');
     %surf = SurfStatReadSurf('D:\Dropbox\p\postdoc\data\AAL_data\template_surf\cortex_template.obj');
@@ -41,6 +41,9 @@ function [fh,axh,cb,aal,aalParcelLab,sh,subh] = aalsurfview(values, titleTxt, co
     end
     if (nargin < 12) || isempty(showSymbols)
         showSymbols = true;
+    end
+    if (nargin < 13) || isempty(surfstat_inflate_w)
+        surfstat_inflate_w = NaN;
     end
     dataDir = 'D:\Dropbox\p\postdoc\data\AAL_data';
     if isunix
@@ -115,6 +118,13 @@ function [fh,axh,cb,aal,aalParcelLab,sh,subh] = aalsurfview(values, titleTxt, co
         cMap1 = fhp.Colormap;
     end
 %     [fh,axh,cb,sh] = BoSurfStatViewData(s, aal.surf, [], [titleTxt, ', $N=',num2str(N),'$'], [], fhp, axR0, a, colorMode);
+    if ~isnan(surfstat_inflate_w) && (surfstat_inflate_w>0)
+        try
+            aal.surf = SurfStatInflate(aal.surf,surfstat_inflate_w);
+        catch
+            warning('aalsurfview:Inflate','Error inflating... maybe you dont have SurfStat');
+        end
+    end
     [fh,axh,cb,sh] = BoSurfStatViewData(s, aal.surf, [], titleTxt, [], fhp, axR0, a, colorMode);
     
     if isempty(fhp)

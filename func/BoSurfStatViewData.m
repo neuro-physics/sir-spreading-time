@@ -78,8 +78,7 @@ w=0.20;
 %a(1)=axes('position',[0.1 0.3 w h]);
 axPos = [axR0(1),axR0(2),2*(fp.wAx+fp.lMargin)/4,fp.hAx];
 axh(1)=axes('position', axPos);
-sh(1) = trisurf(surf.tri(tl,:),surf.coord(1,vl),surf.coord(2,vl),surf.coord(3,vl),...
-    double(data(vl)),'EdgeColor','none', alphaPropL{:});
+sh(1) = trisurf(surf.tri(tl,:),surf.coord(1,vl),surf.coord(2,vl),surf.coord(3,vl),double(data(vl)),'EdgeColor','none', alphaPropL{:});
 view(-90,0); 
 daspect([1 1 1]); axis tight; camlight; axis vis3d off;
 lighting phong; material dull; shading interp;
@@ -87,8 +86,7 @@ lighting phong; material dull; shading interp;
 
 %a(2)=axes('position',[0.1+w 0.3 w h]);
 axh(2)=axes('position',[axPos(1)+axPos(3),axPos(2),axPos(3),axPos(4)]);
-sh(2) = trisurf(surf.tri(tl,:),surf.coord(1,vl),surf.coord(2,vl),surf.coord(3,vl),...
-    double(data(vl)),'EdgeColor','none', alphaPropL{:});
+sh(2) = trisurf(surf.tri(tl,:),surf.coord(1,vl),surf.coord(2,vl),surf.coord(3,vl), double(data(vl)),'EdgeColor','none', alphaPropL{:});
 view(90,0); 
 daspect([1 1 1]); axis tight; camlight; axis vis3d off;
 lighting phong; material dull; shading interp;
@@ -96,8 +94,7 @@ lighting phong; material dull; shading interp;
 
 %a(3)=axes('position',[0.1+2*w 0.3 w h]);
 axh(3)=axes('position',[axPos(1)+2*axPos(3),axPos(2),axPos(3),axPos(4)]);
-sh(3) = trisurf(surf.tri(tr,:)-nVertex/2,surf.coord(1,vr),surf.coord(2,vr),surf.coord(3,vr),...
-    double(data(vr)),'EdgeColor','none', alphaPropR{:});
+sh(3) = trisurf(surf.tri(tr,:)-nVertex/2,surf.coord(1,vr),surf.coord(2,vr),surf.coord(3,vr), double(data(vr)),'EdgeColor','none', alphaPropR{:});
 view(-90,0); 
 daspect([1 1 1]); axis tight; camlight; axis vis3d off;
 lighting phong; material dull; shading interp;
@@ -105,8 +102,7 @@ lighting phong; material dull; shading interp;
 
 %a(4)=axes('position',[0.1+3*w 0.3 w h]);
 axh(4)=axes('position',[axPos(1)+3*axPos(3),axPos(2),axPos(3),axPos(4)]);
-sh(4) = trisurf(surf.tri(tr,:)-nVertex/2,surf.coord(1,vr),surf.coord(2,vr),surf.coord(3,vr),...
-    double(data(vr)),'EdgeColor','none', alphaPropR{:});
+sh(4) = trisurf(surf.tri(tr,:)-nVertex/2,surf.coord(1,vr),surf.coord(2,vr),surf.coord(3,vr), double(data(vr)),'EdgeColor','none', alphaPropR{:});
 view(90,0); 
 daspect([1 1 1]); axis tight; camlight; axis vis3d off;
 lighting phong; material dull; shading interp;

@@ -45,7 +45,9 @@ end
 function n = getCaseName_internal(inp, netSize)
     [~,fn,fn2] = fileparts(inp);
     fn = [fn,fn2];
-    m = regexp(fn, '[^\d]?0?\d{3,}((?:_3T)|_\d)?((?:_postop(\d|(?:sim))*)|(?:_\d{1,}))?[^\d]?', 'match');
+    %m = regexp(fn, '[^\d]?0?\d{3,}((?:_3T)|_\d)?((?:_postop(\d|(?:sim))*)|(?:_\d{1,}))?[^\d]?', 'match');
+    m = regexp(fn, '(?<!N)0?\d{3,}((?:_3T)|_\d)?((?:_postop(\d|(?:sim))*)|(?:_\d{1,}))?', 'match');
+
     if isempty(m)
         n = '999_9';
         return

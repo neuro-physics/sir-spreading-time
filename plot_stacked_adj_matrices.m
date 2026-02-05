@@ -1,4 +1,4 @@
-function [fh,cMap,cbh]=plot_stacked_adj_matrices(N,nMat,axDisp,dAlpha,sortNodesBy,axScale,caseName,cmapFunc,nullColor,cLim,showCBar)
+function [fh,cMap,cbh]=plot_stacked_adj_matrices(N,nMat,axDisp,dAlpha,sortNodesBy,axScale,caseName,cmapFunc,nullColor,cLim,showCBar,A)
     dataDir = 'D:\Dropbox\p\postdoc\data';
     if isunix
         dataDir = '/host/scarus/local_raid/mauricio/data';
@@ -36,26 +36,31 @@ function [fh,cMap,cbh]=plot_stacked_adj_matrices(N,nMat,axDisp,dAlpha,sortNodesB
     if (nargin < 11) || isempty(showCBar)
         showCBar = true;
     end
+    if (nargin < 12) || isempty(A)
+        A = {}; % if given, this is a cell-array of adjacency matrices (ignores caseName)
+    end
     %aal = load('D:\Dropbox\p\postdoc\data\AAL_data\aal_cortex_map_olf294_fix.mat');
     [~,~,~,aal] = aalsurfview(zeros(90,1));
-    matDir = ['AALmatrix_N',num2str(N)];
-    [A,cn] = loadAALMatrix(fullfile(dataDir,matDir,'selected','TLE_*FA*.mat'));
-
-    [~,sc,lobeLim] = groupAALNodes(N,sortNodesBy,aal);
-    hp = createCommPattern(90,lobeLim);
-
-    isPatient = ~cellfun(@isempty,regexp(cn, '^0\d{3}_\d{1}'));
-    if isempty(caseName)
-        A = A(~isPatient);
-        A = A(randperm(numel(A),nMat));
-    else
-        if ~iscell(caseName)
-            caseName = { caseName };
+    
+    if isempty(A)
+        matDir         = ['AALmatrix_N',num2str(N)];
+        [A,cn]         = loadAALMatrix(fullfile(dataDir,matDir,'selected','TLE_*FA*.mat'));
+        isPatient      = ~cellfun(@isempty,regexp(cn, '^0\d{3}_\d{1}'));
+        if isempty(caseName)
+            A = A(~isPatient);
+            A = A(randperm(numel(A),nMat));
+        else
+            if ~iscell(caseName)
+                caseName = { caseName };
+            end
+            [~,~,k] = intersect(caseName,cn,'stable');
+            k = repeatToComplete(k,nMat);
+            A = A(k);
         end
-        [~,~,k] = intersect(caseName,cn,'stable');
-        k = repeatToComplete(k,nMat);
-        A = A(k);
     end
+    
+    [~,sc,lobeLim] = groupAALNodes(N,sortNodesBy,aal);
+    hp             = createCommPattern(90,lobeLim);
     
     if isa(cmapFunc,'function_handle')
         cMap = cmapFunc(numel(A{1}));
@@ -84,19 +89,23 @@ function [fh,cMap,cbh]=plot_stacked_adj_matrices(N,nMat,axDisp,dAlpha,sortNodesB
         axh(i) = axes('Position',axPos);
 %                           plotMatrix(fh,axh   ,A          ,matrixView,elemHighlight,patternHighlight,cMap,                axProp,imgProp,elHighlightProp,...
 %                                      ptrnHighlightProp);
+        alpha = 1 - (i-1) * dAlpha;
+        
         [~,~,ih,~,axM(i),cbh1] = plotMatrix(fh,axh(i),A{i}(sc,sc),    'full',           [],              hp,cMap, {'ShowColorBar',showCBar},     [],             [],...
                                        {'Type','contour','Alpha',0.4,'LineStyle','-','LineWidth',0.5,'Color',0.01.*ones(1,3)},...
                                        {'ColorLim', cLim});
-        alpha = 1 - (i-1) * dAlpha;
+
         if alpha <= 0
             k = i;
             break;
         end
         ih.AlphaData = alpha;
 %         axM(i) = createPatternHighlight(fh,axh(i),hp,0.6,[0,0,0;1,1,1]);
-        axh(i).XTick = [];
-        axh(i).YTick = [];
-        axh(i).Layer = 'top';
+        axh(i).XTick  = [];
+        axh(i).YTick  = [];
+        axh(i).XColor = [0,0,0,alpha];
+        axh(i).YColor = [0,0,0,alpha];
+        axh(i).Layer  = 'top';
         axh(i).Position(1) = axh(i).Position(1) + axDisp*(i>1);
         axh(i).Position(2) = axh(i).Position(2) + axDisp*r*(i>1);
 %         axM(i).Position = axh(i).Position;

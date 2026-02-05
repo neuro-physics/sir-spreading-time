@@ -1,4 +1,4 @@
-function [fh, axh, colorMatrix] = plotEdges(fh,axh,r,A,colorArr,colorMode,posArgs,edgeArgs,widthMode,brainShade,brainColor,onlyAddEdgesToAxes,lightPos,Gdb,contourLevel,contourArgs)
+function [fh, axh, colorMatrix] = plotEdges(fh,axh,r,A,colorArr,colorMode,posArgs,edgeArgs,widthMode,brainShade,brainColor,onlyAddEdgesToAxes,lightPos,Gdb,contourLevel,contourArgs,perpendicular_axis_contour)
     A(1:(size(A,1)+1):end) = 0; % removing main diagonal elements
     if isempty(fh)
         fh = figure;
@@ -43,22 +43,31 @@ function [fh, axh, colorMatrix] = plotEdges(fh,axh,r,A,colorArr,colorMode,posArg
     if (nargin < 16) || isempty(contourArgs)
         contourArgs = {};
     end
+    if (nargin < 17) || isempty(perpendicular_axis_contour)
+        perpendicular_axis_contour = 'z';
+    end
     if ~onlyAddEdgesToAxes
         if brainShade
-            [fh,axh] = plotBrainSurf(fh,axh,brainColor,brainShade,lightPos,[],contourLevel,contourArgs);
+            [fh,axh] = plotBrainSurf(fh,axh,brainColor,brainShade,lightPos,[],contourLevel,contourArgs,perpendicular_axis_contour);
         end
         if isempty(Gdb)
             [fh,axh] = plot3DPosition(fh,axh,r,ones(size(A,1),1),posArgs,colorArr,colorMode,[],'o','value');
         else
             n = struct2table(Gdb.nodes);
-            r = [n.x,n.y];
+            if strcmpi(perpendicular_axis_contour,'z')
+                r = [n.x,n.y,zeros(size(n.x))];
+            elseif strcmpi(perpendicular_axis_contour,'x')
+                r = [zeros(size(n.x)),n.x,n.y];
+            elseif strcmpi(perpendicular_axis_contour,'y')
+                r = [n.x,zeros(size(n.x)),n.y];
+            end
             [fh,axh] = plot3DPosition(fh,axh,r,ones(size(A,1),1),posArgs,colorArr,colorMode,[],'o','value');
         end
     end
-    [fh,axh,colorMatrix] = plotEdges_internal(fh,axh,r,A,colorArr,colorMode,edgeArgs,widthMode,Gdb);
+    [fh,axh,colorMatrix] = plotEdges_internal(fh,axh,r,A,colorArr,colorMode,edgeArgs,widthMode,Gdb,perpendicular_axis_contour);
 end
 
-function [fh,axh,colorMatrix] = plotEdges_internal(fh,axh,r,A,colorArr,colorMode,edgeArgs,widthMode,Gdb)
+function [fh,axh,colorMatrix] = plotEdges_internal(fh,axh,r,A,colorArr,colorMode,edgeArgs,widthMode,Gdb,perpendicular_axis_contour)
     if strcmpi(colorMode, 'discrete')
         getColor = @(ii,xx)getPColor_discrete(ii,colorArr);
     elseif strcmpi(colorMode, 'continuous')
@@ -107,6 +116,9 @@ function [fh,axh,colorMatrix] = plotEdges_internal(fh,axh,r,A,colorArr,colorMode
             end
         end
     else
+        
+        
+        
         [i_list,j_list] = find(tril(A,-1));
         colorMatrix = zeros(size(A,1),size(A,2),3);
         hold(axh,'on');
@@ -114,11 +126,17 @@ function [fh,axh,colorMatrix] = plotEdges_internal(fh,axh,r,A,colorArr,colorMode
         for k = 1:numel(i_list)
             i = i_list(k);
             j = j_list(k);
-            if A(i,j) ~= 0%if ~isempty(Gdb.edges{i,j})
+            if ~isempty(Gdb.edges{i,j})
                 eColor = getColor(i+(j-1)*N, A(i,j));
                 colorMatrix(i,j,:) = reshape(eColor,1,1,numel(eColor));
                 pArgs = [ edgeArgs, 'Color', [eColor,edgeAlpha], 'LineWidth', getLineWidth(A(i,j)) ];
-                line(Gdb.edges{i,j}.x,Gdb.edges{i,j}.y,pArgs{:});
+                if strcmpi(perpendicular_axis_contour,'z')
+                    line(Gdb.edges{i,j}.x,Gdb.edges{i,j}.y,zeros(size(Gdb.edges{i,j}.x)),pArgs{:});
+                elseif strcmpi(perpendicular_axis_contour,'x')
+                    line(zeros(size(Gdb.edges{i,j}.x)),Gdb.edges{i,j}.x,Gdb.edges{i,j}.y,pArgs{:});
+                elseif strcmpi(perpendicular_axis_contour,'y')
+                    line(Gdb.edges{i,j}.x,zeros(size(Gdb.edges{i,j}.x)),Gdb.edges{i,j}.y,pArgs{:});
+                end
             end
         end
     end
